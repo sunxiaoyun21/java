@@ -1,0 +1,3 @@
+127.0.0.1 - - [05/Dec/2016:14:09:07 +0800] "GET /main.jsp HTTP/1.1" 200 1921 http-bio-8080-exec-1 1466
+127.0.0.1 - - [05/Dec/2016:14:09:07 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 15
+127.0.0.1 - - [05/Dec/2016:14:10:02 +0800] "GET /ajax?name=ss HTTP/1.1" 200 15 http-bio-8080-exec-2 16
