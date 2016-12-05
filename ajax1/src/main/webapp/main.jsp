@@ -28,7 +28,7 @@
       }
       function sendGet(name) {
           var xml=creatxmlHttp();
-          xml.open("get","/ajax?name="+name);
+          xml.open("get","/ajax?name="+name+"&_="+new Date().getTime());
           xml.send();
       }
       function sendPost(name) {

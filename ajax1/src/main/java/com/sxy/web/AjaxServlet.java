@@ -32,6 +32,7 @@ public class AjaxServlet extends HttpServlet {
        req.setCharacterEncoding("UTF-8");
        resp.setCharacterEncoding("UTF-8");
         System.out.print("hello post"+"->"+name);
+        resp.setContentType("text/plain;charset=UTF-8");
 
         PrintWriter out=resp.getWriter();
         if("tom".equals(name)){

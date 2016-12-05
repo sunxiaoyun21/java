@@ -1,1 +1,3 @@
+com\sxy\entity\User.class
+com\sxy\web\UserServlet.class
 com\sxy\web\AjaxServlet.class
