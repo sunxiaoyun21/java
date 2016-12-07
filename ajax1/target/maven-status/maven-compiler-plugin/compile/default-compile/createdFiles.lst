@@ -1,3 +1,7 @@
 com\sxy\entity\User.class
+com\sxy\test\Test.class
+com\sxy\util\HttpUtil.class
 com\sxy\web\UserServlet.class
 com\sxy\web\AjaxServlet.class
+com\sxy\web\RssServlet.class
+com\sxy\web\JsonDataServlet.class
