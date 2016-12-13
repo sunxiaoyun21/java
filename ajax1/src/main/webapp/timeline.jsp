@@ -19,7 +19,6 @@
     $(function () {
         var MaxId=0
         function  call() {
-
             $.get("/timeline",{"MaxId":MaxId}).done(function (data) {
                     if(data.length){
                         for(var i=0;i<data.length;i++){
