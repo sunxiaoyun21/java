@@ -15,15 +15,15 @@
     <div class="container">
         <form id="forms">
             <div class="form-group">
-                <label for>账号</label>
-                <input type="text" id="username" name="username" class="form-control">
+                <label for>电子邮件</label>
+                <input type="text" id="username" name="mail" class="form-control">
             </div>
             <div class="form-group">
                 <label for>密码</label>
                 <input type="password" id="password" name="password"  class="form-control">
             </div>
             <div>
-                <button type="button" class="btn btn-default" id="btn">登录</button>
+                <button type="button" class="btn btn-default" id="btn">保存</button>
             </div>
         </form>
       </div>
@@ -36,10 +36,10 @@
     <script>
         $(function () {
             $(document).ajaxSend(function(){
-                $("#btn").text("登录中。。。。。").attr("disable","disable");
+                $("#btn").text("保存中。。。。。").attr("disable","disable");
             });
             $(document).ajaxComplete(function(){
-                $("#btn").html("登录").removeAttr("disable");
+                $("#btn").html("保存").removeAttr("disable");
             });
             $("#btn").click(function () {
                 $("#forms").submit();
@@ -50,16 +50,20 @@
                 errorElement:"span",
                 errorClass:"text-danger",
                 rules:{
-                    username:{
-                        required:true
+                    mail:{
+                        required:true,
+                        email:true,
+                        remote:"/checkemail"
                     },
                     password:{
                         required:true
                     }
                 },
                 messages:{
-                    username:{
-                        required:"请输入账号"
+                    mail:{
+                        required:"请输入账号",
+                        email:"邮件格式错误",
+                        remote:"电子邮件已被占用"
                     },
                     password:{
                         required:"请输入密码"
