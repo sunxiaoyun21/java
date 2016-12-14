@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db_22@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db_22">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="kaishengit_db"/>
+    <schema id="5" parent="1" name="lib22"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sxy_db"/>
+    <schema id="9" parent="1" name="test"/>
+    <table id="10" parent="2" name="db_bank"/>
+    <table id="11" parent="2" name="login"/>
+    <table id="12" parent="2" name="message"/>
+    <table id="13" parent="2" name="sc"/>
+    <table id="14" parent="2" name="school"/>
+    <table id="15" parent="2" name="stu"/>
+    <table id="16" parent="2" name="student"/>
+    <table id="17" parent="2" name="study"/>
+    <table id="18" parent="2" name="user"/>
+    <column id="19" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="21" parent="10" name="password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="22" parent="10" name="money">
+      <Position>4</Position>
+      <DataType>int(100)|0</DataType>
+    </column>
+    <column id="23" parent="10" name="state">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <key id="24" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="11" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="27" parent="11" name="password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="28" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="12" name="message">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="31" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="13" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="34" parent="13" name="password">
+      <Position>3</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <key id="35" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="14" name="school">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="14" name="tel">
+      <Position>3</Position>
+      <DataType>char(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="39" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="15" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="15" name="tel">
+      <Position>3</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="43" parent="15" name="adress">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>&apos;henan&apos;</DefaultExpression>
+    </column>
+    <column id="44" parent="15" name="sex">
+      <Position>5</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <index id="45" parent="15" name="tel">
+      <ColNames>tel</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="46" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="47" parent="15" name="tel">
+      <ColNames>tel</ColNames>
+      <UnderlyingIndexName>tel</UnderlyingIndexName>
+    </key>
+    <column id="48" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="16" name="tel">
+      <Position>3</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="51" parent="16" name="adress">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>&apos;henan&apos;</DefaultExpression>
+    </column>
+    <index id="52" parent="16" name="tel">
+      <ColNames>tel</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="54" parent="16" name="tel">
+      <ColNames>tel</ColNames>
+      <UnderlyingIndexName>tel</UnderlyingIndexName>
+    </key>
+    <column id="55" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="17" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="17" name="adress">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="59" parent="17" name="schoolids">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="60" parent="17" name="fk_study_school">
+      <ColNames>schoolids</ColNames>
+    </index>
+    <key id="61" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="62" parent="17" name="fk_study_school">
+      <ColNames>schoolids</ColNames>
+      <RefSchemaName>db_22</RefSchemaName>
+      <RefTableName>school</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="63" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="18" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="18" name="tel">
+      <Position>4</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="67" parent="18" name="adress">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>&apos;USA&apos;</DefaultExpression>
+    </column>
+    <key id="68" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
