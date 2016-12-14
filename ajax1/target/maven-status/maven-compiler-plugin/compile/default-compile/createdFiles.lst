@@ -10,6 +10,7 @@ com\sxy\entity\Message.class
 com\sxy\web\BaseServlet.class
 com\sxy\test\test1.class
 com\sxy\web\TimelineServlet.class
+com\sxy\web\JsonpServlete.class
 com\sxy\web\CheckEmailServlet.class
 com\sxy\util\HttpUtil.class
 com\sxy\web\UserServlet.class
