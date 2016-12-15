@@ -14,7 +14,7 @@
       <dbcp-version>2.1.1</dbcp-version>
       <dbutils-version>1.6</dbutils-version>
       <sql-version>5.1.40</sql-version>
-      <log4j-version>1.2.17</log4j-version>
+      <log4j-version>1.2.16</log4j-version>
     </properties>
 
   <dependencies>
@@ -56,6 +56,7 @@
       <artifactId>log4j</artifactId>
       <version>${log4j-version}</version>
     </dependency>
+
   </dependencies>
   <build>
     <finalName>Junit</finalName>
