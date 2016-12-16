@@ -26,31 +26,31 @@
             <div class="control-group">
                 <label class="control-label">账号</label>
                 <div class="controls">
-                    <input type="text" name="username">
+                    <input type="text" name="username" style="height:30px;">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">密码</label>
                 <div class="controls">
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" style="height:30px;">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">重复密码</label>
                 <div class="controls">
-                    <input type="password" name="repassword">
+                    <input type="password" name="repassword" style="height:30px;">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">电子邮件</label>
                 <div class="controls">
-                    <input type="text" name="email">
+                    <input type="text" name="email" style="height:30px;">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">手机号码</label>
                 <div class="controls">
-                    <input type="text" name="phone">
+                    <input type="text" name="phone" style="height:30px;">
                 </div>
             </div>
             <div class="form-actions">
@@ -60,11 +60,12 @@
 
         </form>
 
-
-
     </div>
     <!--box end-->
 </div>
 <!--container end-->
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="/static/js/uesr/reg.js"></script>
 </body>
 </html>
