@@ -1,0 +1,17 @@
+127.0.0.1 - - [17/Dec/2016:11:45:45 +0800] "GET /reg HTTP/1.1" 200 2950 http-bio-80-exec-1 1673
+127.0.0.1 - - [17/Dec/2016:11:45:50 +0800] "GET /only/user?username=jack HTTP/1.1" 200 14 http-bio-80-exec-3 691
+127.0.0.1 - - [17/Dec/2016:11:45:57 +0800] "GET /only/email?email=479338314%40qq.com HTTP/1.1" 200 15 http-bio-80-exec-5 28
+127.0.0.1 - - [17/Dec/2016:11:46:08 +0800] "GET /only/email?email=812348132%40q HTTP/1.1" 200 14 http-bio-80-exec-7 19
+127.0.0.1 - - [17/Dec/2016:11:46:08 +0800] "GET /only/email?email=812348132%40qq HTTP/1.1" 200 14 http-bio-80-exec-8 0
+127.0.0.1 - - [17/Dec/2016:11:46:10 +0800] "GET /only/email?email=812348132%40qq.c HTTP/1.1" 200 14 http-bio-80-exec-9 0
+127.0.0.1 - - [17/Dec/2016:11:46:10 +0800] "GET /only/email?email=812348132%40qq.co HTTP/1.1" 200 14 http-bio-80-exec-10 0
+127.0.0.1 - - [17/Dec/2016:11:46:10 +0800] "GET /only/email?email=812348132%40qq.com HTTP/1.1" 200 14 http-bio-80-exec-10 0
+127.0.0.1 - - [17/Dec/2016:11:46:17 +0800] "POST /reg HTTP/1.1" 200 30 http-bio-80-exec-3 249
+127.0.0.1 - - [17/Dec/2016:11:46:52 +0800] "GET /user/active?_=45bf89a9-9900-4cba-8dbf-6660f9837aa7 HTTP/1.1" 200 1281 http-bio-80-exec-5 289
+127.0.0.1 - - [17/Dec/2016:11:46:54 +0800] "GET /login HTTP/1.1" 200 2330 http-bio-80-exec-5 165
+127.0.0.1 - - [17/Dec/2016:11:46:54 +0800] "GET /static/js/uesr/login.js HTTP/1.1" 304 - http-bio-80-exec-5 9
+127.0.0.1 - - [17/Dec/2016:11:47:00 +0800] "GET /login HTTP/1.1" 200 2330 http-bio-80-exec-9 17
+127.0.0.1 - - [17/Dec/2016:11:47:08 +0800] "POST /login HTTP/1.1" 200 30 http-bio-80-exec-3 360
+127.0.0.1 - - [17/Dec/2016:11:47:09 +0800] "POST /login HTTP/1.1" 200 30 http-bio-80-exec-6 458
+127.0.0.1 - - [17/Dec/2016:11:47:12 +0800] "GET /ttl HTTP/1.1" 200 12063 http-bio-80-exec-6 262
+127.0.0.1 - - [17/Dec/2016:11:48:19 +0800] "GET /logout HTTP/1.1" 200 2330 http-bio-80-exec-4 149

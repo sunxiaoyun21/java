@@ -17,7 +17,7 @@
                 <c:when test="${not empty sessionScope.curr}">
                 <li>
                     <a href="#">
-                        <img src="../../static/img/1.jpg" class="img-circle" alt="" style="width: 30px ;height:30px;">
+                        <img src="http://ohwn2cnss.bkt.clouddn.com/${sessionScope.curr.avatar}?imageView2/1/w/30/h/30" class="img-circle" alt="" >
                     </a>
                 </li>
                 <li>
@@ -30,7 +30,7 @@
                     <a href="setting.html"><i class="fa fa-cog"></i></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-sign-out"></i></a>
+                    <a href="/logout"><i class="fa fa-sign-out"></i></a>
                 </li>
                 </c:when>
                 <c:otherwise>
