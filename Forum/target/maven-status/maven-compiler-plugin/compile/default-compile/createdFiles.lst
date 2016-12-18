@@ -7,6 +7,7 @@ com\sxy\util\ConnectionManager.class
 com\sxy\entity\User.class
 com\sxy\web\user\LogoutServlet.class
 com\sxy\util\StringUtils.class
+com\sxy\web\user\FingpasswordServlet.class
 com\sxy\web\user\OnlyEmailServlet.class
 com\sxy\web\BaseServlet.class
 com\sxy\web\user\OnlyUserServlet.class
@@ -15,6 +16,8 @@ com\sxy\util\Config.class
 com\sxy\dao\LoginLogdao.class
 com\sxy\web\user\UseractiveServlet.class
 com\sxy\web\user\RegServlet.class
+com\sxy\service\UserService$2.class
 com\sxy\dao\UserDao.class
+com\sxy\web\user\ResetPasswordServlet.class
 com\sxy\service\UserService$1.class
 com\sxy\service\UserService.class

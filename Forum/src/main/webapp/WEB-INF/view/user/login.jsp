@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -22,6 +23,11 @@
         </div>
 
         <form action="" class="form-horizontal" id="LoginForm">
+            <c:if test="${not empty requestScope.message}">
+                <div class="alert alert-success">
+                        ${requestScope.message}
+                </div>
+            </c:if>
             <div class="control-group">
                 <label class="control-label">账号</label>
                 <div class="controls">
@@ -37,7 +43,7 @@
             <div class="control-group">
                 <label class="control-label"></label>
                 <div class="controls">
-                    <a href="#">忘记密码</a>
+                    <a href="/findpassword">忘记密码</a>
                 </div>
             </div>
 

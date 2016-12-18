@@ -29,4 +29,9 @@ public class UserDao {
         String sql="update user set password=?,email=?,phone=?,status=?,avatar=? where id = ?";
         Dbhelp.update(sql,user.getPassword(),user.getEmail(),user.getPhone(),user.getStatus(),user.getAvatar(),user.getId() );
     }
+
+    public User findById(String id) {
+        String sql="select*from user where id=?";
+       return Dbhelp.query(sql,new BeanHandler<>(User.class),id);
+    }
 }

@@ -1,5 +1,6 @@
 package com.sxy.web.user;
 
+import com.sxy.service.UserService;
 import com.sxy.web.BaseServlet;
 
 import javax.servlet.ServletException;
@@ -21,4 +22,6 @@ public class LogoutServlet extends BaseServlet {
         req.setAttribute("message","你以安全退出");
         forword("user/login",req,resp);
     }
+
+
 }

@@ -11,6 +11,7 @@ import com.sxy.util.Config;
 import com.sxy.util.SendEmail;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +31,14 @@ public class UserService {
     //发送激活邮件的TOKEN缓存
     private static Cache<String,String> cache = CacheBuilder.newBuilder()
             .expireAfterWrite(6, TimeUnit.HOURS)
+            .build();
+    //发送找回密码邮件的TOKEN缓存
+    private  static Cache<String ,String> findcache=CacheBuilder.newBuilder()
+            .expireAfterWrite(30,TimeUnit.MINUTES)
+            .build();
+    //限制操作频率过快的缓存
+    private  static Cache<String,String> activecache=CacheBuilder.newBuilder()
+            .expireAfterWrite(60,TimeUnit.SECONDS)
             .build();
 
     /**
@@ -129,5 +138,73 @@ public class UserService {
         }
     }
 
+    /**
+     * 用户找回密码
+     * @param type email||phone
+     * @param value email值或者phone的值
+     * @param sessionId 客户端的sessionid，防止客户操作频率过快
+     */
+    public void findPassword(String type, String value, String sessionId) {
+        if(activecache.getIfPresent(sessionId)==null){
+            if("phone".equals(type)){
+                //
+            }else if("email".equals(type)){
+              User user= userDao.findEmail(value);
+              if(user!=null){
+                  Thread thread=new Thread(new Runnable() {
+                      @Override
+                      public void run() {
+                          String uuid=UUID.randomUUID().toString();
+                          String url="http://www.sxy.com/resetpassword?token="+uuid;
 
+                          findcache.put(uuid,user.getUsername());
+                          String html=user.getUsername()+"</br>,请点击<a href='"+url+"'>该链接</a>进行找回密码操作，链接在30分钟内有效";
+                          SendEmail.sendEmailHtml(value,"密码找回邮件",html);
+                      }
+                  });
+                  thread.start();
+              }
+            }
+            activecache.put(sessionId,"xxx");
+
+        }else {
+            throw new ServiceException("操作频率过快");
+        }
+
+    }
+
+    /**
+     * 根据用户找回密码的链接判断是哪个用户
+     * @param token
+     * @return
+     */
+    public User findpasswordToken(String token) {
+        String user=findcache.getIfPresent(token);
+        if(StringUtils.isEmpty(user)){
+            throw new ServiceException("token过期或错误");
+        }else {
+            User username=userDao.findUser(user);
+            if(username==null){
+                throw new ServiceException("未找到该用户");
+            }else {
+                return username;
+            }
+        }
+    }
+
+    /**
+     * 重置用户密码
+     * @param password
+     * @param token
+     * @param id
+     */
+    public void reSetPassword(String password, String token, String id) {
+        if(findcache.getIfPresent(token)==null){
+            throw new ServiceException("token过期或错误");
+        }else {
+            User user=userDao.findById(id);
+            user.setPassword(DigestUtils.md5Hex(Config.get("user.pwd.salt")+password));
+            userDao.update(user);
+        }
+    }
 }

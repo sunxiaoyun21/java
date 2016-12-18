@@ -1,6 +1,8 @@
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\OnlyUserServlet.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\user\FingpasswordServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\OnlyEmailServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\UseractiveServlet.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\user\ResetPasswordServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\BaseServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\exception\ServiceException.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\ConnectionManager.java
