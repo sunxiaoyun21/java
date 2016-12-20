@@ -5,6 +5,7 @@ com\sxy\util\SendEmail.class
 com\sxy\util\ConnectionManager.class
 com\sxy\entity\User.class
 com\sxy\web\user\OnlyEmailServlet.class
+com\sxy\web\filter\LoginFilter.class
 com\sxy\util\Config.class
 com\sxy\dao\LoginLogdao.class
 com\sxy\web\user\UseractiveServlet.class
@@ -17,8 +18,10 @@ com\sxy\util\Dbhelp.class
 com\sxy\web\user\SettingServlet.class
 com\sxy\web\user\LogoutServlet.class
 com\sxy\util\StringUtils.class
+com\sxy\web\filter\AbstracFilter.class
 com\sxy\web\BaseServlet.class
 com\sxy\web\user\OnlyUserServlet.class
 com\sxy\entity\Login.class
+com\sxy\web\filter\EncodingFilter.class
 com\sxy\service\UserService$2.class
 com\sxy\web\user\FindpasswordServlet.class
