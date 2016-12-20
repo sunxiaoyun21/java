@@ -16,7 +16,7 @@ import java.util.Map;
  * Created by Administrator on 2016/12/18.
  */
 @WebServlet("/findpassword")
-public class FingpasswordServlet extends BaseServlet {
+public class FindpasswordServlet extends BaseServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         forword("/user/findpassword",req,resp);

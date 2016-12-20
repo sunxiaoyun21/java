@@ -39,7 +39,7 @@ $(function () {
                     alert("登录成功");
                     location.href="/ttl"
                 }else {
-                    alert(data.messages)
+                    alert(data.message)
                 }
             }).error(function () {
                 alert("客户端错误");

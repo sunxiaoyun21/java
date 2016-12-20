@@ -120,7 +120,7 @@ public class UserService {
      */
     public User login(String username, String password, String ip) {
         User user = userDao.findUser(username);
-        if (user != null && DigestUtils.md2Hex(Config.get("user.pwd.salt") + password).equals(user.getPassword())) {
+        if (user != null && DigestUtils.md5Hex(Config.get("user.pwd.salt") + password).equals(user.getPassword())) {
             if (user.getStatus().equals(User.STATUS_ACTVE)) {
                 Login log = new Login();
                 log.setIp(ip);
@@ -205,6 +205,34 @@ public class UserService {
             User user=userDao.findById(id);
             user.setPassword(DigestUtils.md5Hex(Config.get("user.pwd.salt")+password));
             userDao.update(user);
+
+            findcache.invalidate(token);
         }
+    }
+
+    /**
+     * 修改用户的基本资料中的email
+     * @param email
+     * @param user
+     */
+    public void updateEmail(String email, User user) {
+        user.setEmail(email);
+        userDao.update(user);
+    }
+
+    /**
+     * 用户修改密码
+     * @param newpassword
+     * @param oldpassword
+     * @param user
+     */
+    public void updatepassword(String newpassword, String oldpassword, User user) {
+        if(DigestUtils.md5Hex(Config.get("user.pwd.salt")+oldpassword).equals(user.getPassword())){
+           user.setPassword(DigestUtils.md5Hex(Config.get("user.pwd.salt")+newpassword));
+           userDao.update(user);
+        }else {
+            throw new ServiceException("原始密码错误");
+        }
+
     }
 }

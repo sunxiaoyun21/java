@@ -72,7 +72,7 @@ $(function () {
                     alert("注册成功,请去邮箱激活你的账户");
 
                 }else {
-                    alert(data.messages)
+                    alert(data.message)
                 }
             }).error(function () {
                 alert("服务端错误")
