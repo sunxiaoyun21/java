@@ -15,6 +15,7 @@
     <link href="http://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/js/uploader/webuploader.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/js/upload/webuploader.css">
 </head>
 <body>
 <%@ include file="../include/common.jsp"%>
@@ -110,5 +111,41 @@
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 <script src="/static/js/uesr/setting.js"></script>
+<script src="/static/js/upload/webuploader.min.js"></script>
+<script>
+    $(function () {
+        var upload=WebUploader.create({
+            swf:"/static/js/upload/Uploader.swf",
+            server:"http://up-z1.qiniu.com",
+            pick:"#picker",
+            auto:true,
+            fileVal:'file',
+            formData:{'token':'${token}'},
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
+            }
+        });
+        //上传成功
+        upload.on("uploadSuccess",function (file,data) {
+            var filekey=data.key;
+            $.post("/setting?action=avatar",{"filekey":filekey}).done(function (data) {
+                if(data.state=="success"){
+                    var url="http://ohwn2cnss.bkt.clouddn.com/"+filekey;
+                    $("#avatar").attr("src",url+"?imageView2/1/w/40/h/40")
+                    $("#navbar-avatar").attr("src",url+"?imageView2/1/w/30/h/30")
+                }
+            }).error(function () {
+                alert("头像上传失败");
+                
+            })
+        });
+        //上传失败
+        upload.on("uploadError",function () {
+            alert("文件上传失败，请稍后再试")
+        });
+    })
+</script>
 </body>
 </html>

@@ -28,6 +28,7 @@
                         ${requestScope.message}
                 </div>
             </c:if>
+
             <div class="control-group">
                 <label class="control-label">账号</label>
                 <div class="controls">

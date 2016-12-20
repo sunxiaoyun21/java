@@ -23,6 +23,7 @@
         <email-version>1.4</email-version>
       <ehcache-version>2.6.11</ehcache-version>
       <slf4j-version>1.7.21</slf4j-version>
+      <qiniu-version>7.1.0</qiniu-version>
   </properties>
 
   <dependencies>
@@ -80,6 +81,11 @@
           <groupId>net.sf.ehcache</groupId>
           <artifactId>ehcache-core</artifactId>
           <version>${ehcache-version}</version>
+      </dependency>
+      <dependency>
+          <groupId>com.qiniu</groupId>
+          <artifactId>qiniu-java-sdk</artifactId>
+          <version>${qiniu-version}</version>
       </dependency>
       <dependency>
           <groupId>com.google.guava</groupId>

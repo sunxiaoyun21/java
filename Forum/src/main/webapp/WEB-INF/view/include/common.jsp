@@ -17,7 +17,7 @@
                 <c:when test="${not empty sessionScope.curr}">
                 <li>
                     <a href="/setting">
-                        <img src="http://ohwn2cnss.bkt.clouddn.com/${sessionScope.curr.avatar}?imageView2/1/w/30/h/30" class="img-circle" alt="" >
+                        <img id="navbar-avatar" src="http://ohwn2cnss.bkt.clouddn.com/${sessionScope.curr.avatar}?imageView2/1/w/30/h/30" class="img-circle" alt="" >
                     </a>
                 </li>
                 <li>
