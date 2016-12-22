@@ -1,9 +1,9 @@
 $(function () {
     $(document).ajaxSend(function () {
-        $("#regBtn").text("注册中。。。").attr("disable","disable")
+        $("#regBtn").text("注册中。。。").attr("disabled","disabled")
     })
     $(document).ajaxComplete(function () {
-        $("#regBtn").html("注册").removeAttr("disable")
+        $("#regBtn").html("注册").removeAttr("disabled")
     })
     $("#regBtn").click(function () {
         $("#regForm").submit();

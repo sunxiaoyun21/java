@@ -202,7 +202,8 @@ public class UserService {
         if(findcache.getIfPresent(token)==null){
             throw new ServiceException("token过期或错误");
         }else {
-            User user=userDao.findById(id);
+            String username=findcache.getIfPresent(token);
+           User user=userDao.findUser(username);
             user.setPassword(DigestUtils.md5Hex(Config.get("user.pwd.salt")+password));
             userDao.update(user);
 

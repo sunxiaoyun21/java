@@ -30,7 +30,7 @@ public class UserDao {
         Dbhelp.update(sql,user.getPassword(),user.getEmail(),user.getPhone(),user.getStatus(),user.getAvatar(),user.getId() );
     }
 
-    public User findById(String id) {
+    public User findById(Integer id) {
         String sql="select*from user where id=?";
        return Dbhelp.query(sql,new BeanHandler<>(User.class),id);
     }

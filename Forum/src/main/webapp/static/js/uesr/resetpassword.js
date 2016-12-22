@@ -3,10 +3,10 @@ $(function () {
         $("#resetForm").submit();
     })
     $(document).ajaxSend(function () {
-        $("#resetBtn").text("保存中。。。").attr("disable","disable")
+        $("#resetBtn").text("保存中。。。").attr("disabled","disabled")
     })
     $(document).ajaxComplete(function () {
-        $("#resetBtn").text("保存").removeAttr("disable")
+        $("#resetBtn").text("保存").removeAttr("disabled")
     })
     $("#resetForm").validate({
         errorElement:"span",

@@ -30,7 +30,7 @@ public class User implements Serializable {
     private String avatar;
 
     public Integer getId() {
-        return id;
+         return id;
     }
 
     public void setId(Integer id) {

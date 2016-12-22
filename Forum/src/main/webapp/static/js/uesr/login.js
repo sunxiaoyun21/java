@@ -1,10 +1,10 @@
 $(function () {
 
     $(document).ajaxSend(function () {
-        $("#LoginBtn").text("登录中。。。").attr("disable","disable");
+        $("#LoginBtn").text("登录中。。。").attr("disabled","disabled");
     })
     $(document).ajaxComplete(function () {
-        $("#LoginBtn").text("登录").removeAttr("disable");
+        $("#LoginBtn").text("登录").removeAttr("disabled");
     })
     $("#LoginBtn").click(function () {
         $("#LoginForm").submit();

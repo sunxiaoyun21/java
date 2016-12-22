@@ -1,8 +1,0 @@
-127.0.0.1 - - [20/Dec/2016:13:14:31 +0800] "POST /login HTTP/1.1" 200 30 http-bio-80-exec-1 2547
-127.0.0.1 - - [20/Dec/2016:13:14:31 +0800] "POST /login HTTP/1.1" 200 30 http-bio-80-exec-2 2547
-127.0.0.1 - - [20/Dec/2016:13:14:35 +0800] "GET /ttl HTTP/1.1" 200 12102 http-bio-80-exec-3 1489
-127.0.0.1 - - [20/Dec/2016:13:14:37 +0800] "GET /setting HTTP/1.1" 200 6626 http-bio-80-exec-5 480
-127.0.0.1 - - [20/Dec/2016:13:14:38 +0800] "GET /static/js/uploader/webuploader.css HTTP/1.1" 404 1019 http-bio-80-exec-6 4
-127.0.0.1 - - [20/Dec/2016:13:14:38 +0800] "GET /static/js/uesr/setting.js HTTP/1.1" 304 - http-bio-80-exec-7 5
-127.0.0.1 - - [20/Dec/2016:13:14:51 +0800] "POST /setting?action=avatar HTTP/1.1" 200 30 http-bio-80-exec-9 230
-127.0.0.1 - - [20/Dec/2016:13:14:55 +0800] "GET /ttl HTTP/1.1" 200 12102 http-bio-80-exec-10 0

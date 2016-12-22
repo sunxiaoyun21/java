@@ -2,6 +2,7 @@ package com.sxy.util;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -19,8 +20,7 @@ public class Dbhelp {
 			
 			e.printStackTrace();
 		}
-		
-		
+
 		
 		/*Connection conn=getConnection();
 		
@@ -35,7 +35,18 @@ public class Dbhelp {
 			close(conn);
 		}*/
 	}
-	
+	public static Integer insert(String sql,Object... params)  {
+		try {
+			QueryRunner queryRunner = new QueryRunner(ConnectionManager.getDataSource());
+
+			return queryRunner.insert(sql,new ScalarHandler<Long>(),params).intValue();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+
+		}
+		return null;
+	}
+
 	public static <T> T query(String sql, ResultSetHandler<T> handler,Object...params){
 	
 		QueryRunner query=new QueryRunner(ConnectionManager.getDataSource());

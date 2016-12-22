@@ -12,10 +12,10 @@ $(function () {
         $("#form").submit();
     })
     $(document).ajaxSend(function () {
-        $("#btn").text("提交中。。。").attr("disable","disable");
+        $("#btn").text("提交中。。。").attr("disabled","disabled");
     })
     $(document).ajaxComplete(function () {
-        $("#btn").text("提交").removeAttr("disable");
+        $("#btn").text("提交").removeAttr("disabled");
     })
     $("#form").validate({
         errorElement:"span",
