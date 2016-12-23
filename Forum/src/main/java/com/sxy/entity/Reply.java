@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  */
 public class Reply {
     private Integer id;
-    private  String replycontent;
+    private  String content;
     private Timestamp creattime;
     private  Integer topic_id;
     private  Integer user_id;
@@ -20,12 +20,12 @@ public class Reply {
         this.id = id;
     }
 
-    public String getReplycontent() {
-        return replycontent;
+    public String getContent() {
+        return content;
     }
 
-    public void setReplycontent(String replycontent) {
-        this.replycontent = replycontent;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Timestamp getCreattime() {

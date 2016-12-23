@@ -1,0 +1,7 @@
+127.0.0.1 - - [23/Dec/2016:17:19:46 +0800] "GET /topicdetail?topicid=33 HTTP/1.1" 200 8698 http-bio-80-exec-1 2122
+127.0.0.1 - - [23/Dec/2016:17:19:49 +0800] "GET /login?redirect=topicdetail?topicid=33 HTTP/1.1" 200 2360 http-bio-80-exec-3 213
+127.0.0.1 - - [23/Dec/2016:17:19:55 +0800] "POST /login HTTP/1.1" 200 30 http-bio-80-exec-4 258
+127.0.0.1 - - [23/Dec/2016:17:19:56 +0800] "GET /ttl HTTP/1.1" 200 12112 http-bio-80-exec-5 232
+127.0.0.1 - - [23/Dec/2016:17:20:01 +0800] "GET /topicdetail?topicid=33 HTTP/1.1" 200 9865 http-bio-80-exec-6 15
+127.0.0.1 - - [23/Dec/2016:17:20:09 +0800] "POST /reply HTTP/1.1" 302 - http-bio-80-exec-8 253
+127.0.0.1 - - [23/Dec/2016:17:20:09 +0800] "GET /topicdetail?topicid=33 HTTP/1.1" 200 9865 http-bio-80-exec-9 13

@@ -10,6 +10,7 @@
     <link href="http://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/js/editer/styles/simditor.css">
+    <link rel="stylesheet" href="/static/css/simditor-emoji.css">
 </head>
 <body>
 <%@include file="../include/common.jsp"%>
@@ -49,10 +50,26 @@
 <script src="/static/js/editer/scripts/uploader.min.js"></script>
 <script src="/static/js/editer/scripts/simditor.min.js"></script>
 <script src="//cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="/static/js/simditor-emoji.js"></script>
 <script>
     $(function () {
         var editer=new Simditor({
-            textarea:$("#editor")
+            textarea:$("#editor"),
+            toolbar: [ 'title','bold', 'italic','underline','strikethrough',
+                'fontScale','color','ol','ul', 'blockquote','code', 'table','link','image','hr','emoji'],
+            emoji: {
+                imagePath: '/static/img/emoji'
+            },
+            upload:{
+                url:"http://up-z1.qiniu.com",
+                params:{"token":"${token}"},
+                fileKey:"file",
+
+            }
+
+
+
+
         });
         $("#sendBtn").click(function () {
             $("#topicForm").submit();

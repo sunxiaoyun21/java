@@ -19,9 +19,11 @@ com\sxy\service\UserService.class
 com\sxy\util\Dbhelp.class
 com\sxy\dao\Nodedao.class
 com\sxy\web\user\SettingServlet.class
+com\sxy\web\topic\ReplyServlet.class
 com\sxy\web\topic\TopicServlet.class
 com\sxy\web\user\LogoutServlet.class
 com\sxy\util\StringUtils.class
+com\sxy\dao\Replydao.class
 com\sxy\dao\Topicdao.class
 com\sxy\entity\Node.class
 com\sxy\web\filter\AbstracFilter.class

@@ -1,4 +1,15 @@
 $(function () {
+    function getParameterByName(name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 
     $(document).ajaxSend(function () {
         $("#LoginBtn").text("登录中。。。").attr("disabled","disabled");
@@ -36,8 +47,17 @@ $(function () {
             var data=$(form).serialize();
             $.post("/login",data).done(function (data) {
                 if(data.state=="success"){
-                    alert("登录成功");
-                    location.href="/ttl"
+                    var url=getParameterByName("redirect");
+                    if(url){
+                        var hash=location.hash;
+                        if(hash){
+                            location.href=url+hash;
+                        }else {
+                            location.href=url;
+                        }
+                    }else {
+                        location.href="/ttl"
+                    }
                 }else {
                     alert(data.message)
                 }

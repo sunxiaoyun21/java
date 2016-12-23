@@ -15,12 +15,17 @@
     <link href="http://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/js/editer/styles/simditor.css">
+    <link rel="stylesheet" href="/static/css/styles/atom-one-dark.css">
     <style>
         body{
             background-image: url(/static/img/1.jpg);
         }
         .simditor .simditor-body {
             min-height: 100px;
+        }
+        .topic-body pre{
+            border: none;
+            background-color:transparent ;
         }
     </style>
 </head>
@@ -34,7 +39,7 @@
             <li class="active">${requestScope.topic.node.nodename}</li>
         </ul>
         <div class="topic-head">
-            <img class="img-rounded avatar" src="${requestScope.topic.user.avatar}?imageView2/1/w/60/h/60" alt="">
+            <img class="img-circle avatar" src="${requestScope.topic.user.avatar}?imageView2/1/w/70/h/70" alt="">
             <h3 class="title">${requestScope.topic.title}</h3>
             <p class="topic-msg muted"><a href="">${requestScope.topic.user.username}</a> . ${requestScope.topic.creattime}</p>
         </div>
@@ -155,18 +160,26 @@
         </div>
 
     </div>
-
-    <div class="box" style="margin:20px 0px;">
-        <div class="talk-item muted" style="font-size: 12px"><i class="fa fa-plus"></i> 添加一条新回复</div>
-        <form action="" style="padding: 15px;margin-bottom:0px;">
-            <textarea name="" id="editor"></textarea>
-        </form>
-        <div class="talk-item muted" style="text-align: right;font-size: 12px">
-            <span class="pull-left">请尽量让自己的回复能够对别人有帮助回复</span>
-            <button class="btn btn-primary">发布</button>
-        </div>
-    </div>
-
+    <c:choose>
+        <c:when test="${not empty sessionScope.curr}">
+            <div class="box" style="margin:20px 0px;">
+                <div class="talk-item muted" style="font-size: 12px"><i class="fa fa-plus"></i> 添加一条新回复</div>
+                <form action="/reply"method="post" style="padding: 15px;margin-bottom:0px;" id="replyForm">
+                    <input type="hidden" value="${topic.id}" name="topicid">
+                    <textarea name="content" id="editor"></textarea>
+                </form>
+                <div class="talk-item muted" style="text-align: right;font-size: 12px">
+                    <span class="pull-left">请尽量让自己的回复能够对别人有帮助回复</span>
+                    <button id ="replyBtn" class="btn btn-primary">发布</button>
+                </div>
+            </div>
+        </c:when>
+        <c:otherwise>
+             <div class="box" style="margin:20px 0px;">
+                <div class="talk-item" >请<a href="/login?redirect=topicdetail?topicid=${topic.id}">登录</a>后再回复</div>
+             </div>
+        </c:otherwise>
+    </c:choose>
 </div>
 <!--container end-->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -174,13 +187,19 @@
 <script src="/static/js/editer/scripts/hotkeys.min.js"></script>
 <script src="/static/js/editer/scripts/uploader.min.js"></script>
 <script src="/static/js/editer/scripts/simditor.min.js"></script>
+<script src="/static/js/highlight.pack.js"></script>
 <script>
     $(function(){
+
+        $("#replyBtn").click(function () {
+            $("#replyForm").submit();
+        })
         var editor = new Simditor({
             textarea: $('#editor'),
             toolbar:false
             //optional options
-        })
+        });
+        hljs.initHighlightingOnLoad();
     });
 </script>
 

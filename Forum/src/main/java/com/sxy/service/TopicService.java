@@ -1,12 +1,15 @@
 package com.sxy.service;
 
 import com.sxy.dao.Nodedao;
+import com.sxy.dao.Replydao;
 import com.sxy.dao.Topicdao;
 import com.sxy.dao.UserDao;
 import com.sxy.entity.Node;
+import com.sxy.entity.Reply;
 import com.sxy.entity.Topic;
 import com.sxy.entity.User;
 import com.sxy.exception.ServiceException;
+import com.sxy.util.Config;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -18,6 +21,7 @@ public class TopicService {
     private Nodedao nodedao=new Nodedao();
     private Topicdao topicdao=new Topicdao();
     private UserDao userDao=new UserDao();
+    private Replydao replydao=new Replydao();
 
     public List<Node> findAllNode() {
         return nodedao.findAllNode();
@@ -44,7 +48,7 @@ public class TopicService {
                 //通过topic对象中的userid和nodeid来获取user和node对象,并set topic对象中
                 User user=userDao.findById(topic.getUser_id());
                 Node node=nodedao.findById(topic.getNode_id());
-
+                user.setAvatar(Config.get("qiniu.domain")+user.getAvatar());
                 topic.setUser(user);
                 topic.setNode(node);
                 return  topic;
@@ -54,6 +58,18 @@ public class TopicService {
         }else{
             throw  new ServiceException("参数有误");
         }
+
+    }
+
+
+    public void addReply(String topicid, String content, User user) {
+        Reply reply=new Reply();
+        reply.setTopic_id(Integer.valueOf(topicid));
+        reply.setUser_id(user.getId());
+        reply.setContent(content);
+
+        replydao.addReply(reply);
+
 
     }
 }

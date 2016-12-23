@@ -1,10 +1,13 @@
 package com.sxy.web.topic;
 
 import com.google.common.collect.Maps;
+import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import com.sxy.entity.Node;
 import com.sxy.entity.Topic;
 import com.sxy.entity.User;
 import com.sxy.service.TopicService;
+import com.sxy.util.Config;
 import com.sxy.web.BaseServlet;
 
 import javax.servlet.ServletException;
@@ -23,6 +26,12 @@ public class TopicServlet extends BaseServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Auth auth=Auth.create(Config.get("qiniu.ak"),Config.get("qiniu.sk"));
+        StringMap stringMap=new StringMap();
+        stringMap.put("returnBody","{\"success\":true,\"file-path\":\""+Config.get("qiniu.domain")+"${key}\"}");
+       String token= auth.uploadToken(Config.get("qiniu.name"),null,3600,stringMap);
+
+
         TopicService topicService=new TopicService();
         List<Node> nodeList= topicService.findAllNode();
         req.setAttribute("nodeList",nodeList);
