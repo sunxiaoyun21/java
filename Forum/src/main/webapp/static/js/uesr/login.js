@@ -18,7 +18,13 @@ $(function () {
         $("#LoginBtn").text("登录").removeAttr("disabled");
     })
     $("#LoginBtn").click(function () {
-        $("#LoginForm").submit();
+
+    })
+
+    $("#password").keydown(function () {
+        if(event.keyCode=="13"){
+            $("#LoginForm").submit();
+        }
     })
     $("#LoginForm").validate({
         errorElement:"span",

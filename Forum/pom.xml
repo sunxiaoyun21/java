@@ -24,6 +24,7 @@
       <ehcache-version>2.6.11</ehcache-version>
       <slf4j-version>1.7.21</slf4j-version>
       <qiniu-version>7.1.0</qiniu-version>
+      <joda-version>2.9.4</joda-version>
   </properties>
 
   <dependencies>
@@ -102,6 +103,12 @@
           <artifactId>slf4j-api</artifactId>
           <version>${slf4j-version}</version>
       </dependency>
+      <dependency>
+          <groupId>joda-time</groupId>
+          <artifactId>joda-time</artifactId>
+          <version>${joda-version}</version>
+      </dependency>
+      
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>

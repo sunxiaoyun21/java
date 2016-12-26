@@ -1,6 +1,7 @@
 package com.sxy.web.topic;
 
 import com.sxy.entity.User;
+import com.sxy.exception.ServiceException;
 import com.sxy.service.TopicService;
 import com.sxy.web.BaseServlet;
 import org.apache.commons.lang3.StringUtils;
@@ -24,7 +25,11 @@ public class ReplyServlet extends BaseServlet {
         TopicService topicService=new TopicService();
 
         if(StringUtils.isNumeric(topicid)){
-            topicService.addReply(topicid,content,user);
+            try {
+                topicService.addReply(topicid,content,user);
+            }catch (ServiceException e){
+                resp.sendError(404,e.getMessage());
+            }
         }else {
             resp.sendError(404);
         }

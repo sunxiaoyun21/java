@@ -11,7 +11,9 @@ import com.sxy.entity.User;
 import com.sxy.exception.ServiceException;
 import com.sxy.util.Config;
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.DateTime;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -35,8 +37,19 @@ public class TopicService {
         topic.setContent(content);
         topic.setNode_id(nodeid);
         topic.setUser_id(userid);
+        //设置最后回复时间为当前时间
+        topic.setLastreplytime(new Timestamp(new DateTime().getMillis()));
         Integer topicid=topicdao.saveTopic(topic);
         topic.setId(topicid);
+        //更新node表中的topicnum
+        Node node=nodedao.findById(nodeid);
+        if(node!=null){
+            node.setTopicnum(node.getTopicnum()+1);
+            nodedao.update(node);
+        }else {
+            throw  new ServiceException("节点不存在");
+        }
+
 
         return topic;
     }
@@ -63,13 +76,33 @@ public class TopicService {
 
 
     public void addReply(String topicid, String content, User user) {
+      //新增回复到reply表
+
         Reply reply=new Reply();
         reply.setTopic_id(Integer.valueOf(topicid));
         reply.setUser_id(user.getId());
         reply.setContent(content);
-
         replydao.addReply(reply);
+        //更新topic表中的replynum和lastcreattime
+        Topic topic=topicdao.findtopicById(topicid);
+        if(topic!=null){
+            topic.setReplynum(topic.getReplynum()+1);
+            topic.setLastreplytime(new Timestamp(DateTime.now().getMillis()));
+            topicdao.update(topic);
+        }else {
+            throw new ServiceException("回复的帖子不存在或已被删除");
+        }
 
 
+
+
+    }
+
+    public void updateReply(Topic topic) {
+        topicdao.update(topic);
+    }
+
+    public List<Reply> findReplylistById(String topicid) {
+       return replydao.findlistBytopicId(topicid);
     }
 }

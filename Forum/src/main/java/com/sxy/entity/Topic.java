@@ -14,7 +14,7 @@ public class Topic {
     private Integer collectnum;
     private Integer thanknum;
     private Integer replynum;
-    private  Timestamp lastreplynum;
+    private  Timestamp lastreplytime;
     private  Integer user_id;
     private Integer node_id;
 
@@ -101,12 +101,12 @@ public class Topic {
         this.replynum = replynum;
     }
 
-    public Timestamp getLastreplynum() {
-        return lastreplynum;
+    public Timestamp getLastreplytime() {
+        return lastreplytime;
     }
 
-    public void setLastreplynum(Timestamp lastreplynum) {
-        this.lastreplynum = lastreplynum;
+    public void setLastreplytime(Timestamp lastreplytime) {
+        this.lastreplytime = lastreplytime;
     }
 
     public Integer getUser_id() {

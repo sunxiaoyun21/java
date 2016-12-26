@@ -4,8 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Administrator on 2016/12/20.
@@ -27,6 +26,15 @@ public class LoginFilter extends AbstracFilter {
         String url=request.getRequestURI();
         if(urlList!=null && urlList.contains(url)){
             if(request.getSession().getAttribute("curr")==null){
+             Map map= request.getParameterMap();
+             Set paramset=map.entrySet();
+                Iterator it=paramset.iterator();
+                while (it.hasNext()){
+                    Map.Entry me= (Map.Entry) it.next();
+                    Object key=me.getKey();
+                    Object value=me.getValue();
+                    String valString= (String) value;
+                }
                 response.sendRedirect("/login?redirect="+url);
             }else {
                 filterChain.doFilter(request,response);

@@ -21,4 +21,9 @@ public class Nodedao {
         String sql="select*from node where id=?";
         return Dbhelp.query(sql,new BeanHandler<>(Node.class),node_id);
     }
+
+    public void update(Node node) {
+        String sql="UPDATE node SET topicnum=? ,nodename=? where id=?";
+        Dbhelp.update(sql,node.getTopicnum(),node.getNodename(),node.getId());
+    }
 }

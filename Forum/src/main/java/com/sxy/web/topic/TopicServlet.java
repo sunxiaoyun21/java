@@ -6,6 +6,7 @@ import com.qiniu.util.StringMap;
 import com.sxy.entity.Node;
 import com.sxy.entity.Topic;
 import com.sxy.entity.User;
+import com.sxy.exception.ServiceException;
 import com.sxy.service.TopicService;
 import com.sxy.util.Config;
 import com.sxy.web.BaseServlet;
@@ -48,10 +49,15 @@ public class TopicServlet extends BaseServlet {
 
        User user= (User) req.getSession().getAttribute("curr");
         TopicService topicService=new TopicService();
-       Topic topic= topicService.saveTopic(title,content,Integer.valueOf(nodeid),user.getId());
         Map<String,Object> result= Maps.newHashMap();
-        result.put("state","success");
-        result.put("topic",topic);
+        try {
+            Topic topic= topicService.saveTopic(title,content,Integer.valueOf(nodeid),user.getId());
+            result.put("state","success");
+            result.put("topic",topic);
+        }catch (ServiceException e){
+            result.put("message",e.getMessage());
+        }
+
         readerJson(result,resp);
     }
 }
