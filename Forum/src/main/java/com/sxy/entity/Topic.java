@@ -1,5 +1,7 @@
 package com.sxy.entity;
 
+import org.joda.time.DateTime;
+
 import java.sql.Timestamp;
 
 /**
@@ -124,4 +126,14 @@ public class Topic {
     public void setNode_id(Integer node_id) {
         this.node_id = node_id;
     }
+
+    public boolean isChange(){
+        DateTime dateTime=new DateTime(getCreattime());
+        if(dateTime.plusMinutes(50).isAfterNow() &&getReplynum()==0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 }

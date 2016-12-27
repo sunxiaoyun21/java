@@ -1,11 +1,14 @@
 package com.sxy.web.topic;
 
 import com.google.common.collect.Maps;
+import com.sxy.entity.Collect;
 import com.sxy.entity.Reply;
 import com.sxy.entity.Topic;
+import com.sxy.entity.User;
 import com.sxy.exception.ServiceException;
 import com.sxy.service.TopicService;
 import com.sxy.web.BaseServlet;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,6 +39,13 @@ public class TopicDetailServlet extends BaseServlet {
             req.setAttribute("replyList",replyList);
             result.put("state","success");
            req.setAttribute("topic",topic);
+
+            User user= (User) req.getSession().getAttribute("curr");
+            //判断用户是否收藏该主题
+            if(user!=null && StringUtils.isNumeric(topicid)){
+                Collect collect=topicService.findCollectByUserAndTopic(topicid,user);
+                req.setAttribute("collect",collect);
+            }
             forword("/topic/topicdetail",req,resp);
         }catch (ServiceException e){
             resp.sendError(404);

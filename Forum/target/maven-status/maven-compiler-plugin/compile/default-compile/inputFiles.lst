@@ -2,6 +2,7 @@ D:\sxy\git\Forum\src\main\java\com\sxy\web\topic\TopicServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\filter\AbstracFilter.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\filter\LoginFilter.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\UseractiveServlet.java
+D:\sxy\git\Forum\src\main\java\com\sxy\entity\Collect.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\ResetPasswordServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\BaseServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\filter\EncodingFilter.java
@@ -10,7 +11,9 @@ D:\sxy\git\Forum\src\main\java\com\sxy\dao\Replydao.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\Config.java
 D:\sxy\git\Forum\src\main\java\com\sxy\dao\UserDao.java
 D:\sxy\git\Forum\src\main\java\com\sxy\service\UserService.java
+D:\sxy\git\Forum\src\main\java\com\sxy\dao\Collectdao.java
 D:\sxy\git\Forum\src\main\java\com\sxy\dao\Topicdao.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\topic\TopicChangeServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\dao\Nodedao.java
 D:\sxy\git\Forum\src\main\java\com\sxy\entity\Node.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\SendEmail.java
@@ -21,6 +24,7 @@ D:\sxy\git\Forum\src\main\java\com\sxy\web\topic\ReplyServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\OnlyEmailServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\service\TopicService.java
 D:\sxy\git\Forum\src\main\java\com\sxy\exception\ServiceException.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\topic\CollectServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\ConnectionManager.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\topic\TopicDetailServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\LoginServlet.java

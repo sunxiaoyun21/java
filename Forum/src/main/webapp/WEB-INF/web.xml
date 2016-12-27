@@ -24,7 +24,7 @@
         <filter-class>com.sxy.web.filter.LoginFilter</filter-class>
         <init-param>
             <param-name>validateUrl</param-name>
-            <param-value>/setting,/newtopic</param-value>
+            <param-value>/setting,/newtopic,/topicChange</param-value>
         </init-param>
     </filter>
     <filter-mapping>

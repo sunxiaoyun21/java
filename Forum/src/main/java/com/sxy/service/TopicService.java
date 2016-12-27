@@ -1,13 +1,7 @@
 package com.sxy.service;
 
-import com.sxy.dao.Nodedao;
-import com.sxy.dao.Replydao;
-import com.sxy.dao.Topicdao;
-import com.sxy.dao.UserDao;
-import com.sxy.entity.Node;
-import com.sxy.entity.Reply;
-import com.sxy.entity.Topic;
-import com.sxy.entity.User;
+import com.sxy.dao.*;
+import com.sxy.entity.*;
 import com.sxy.exception.ServiceException;
 import com.sxy.util.Config;
 import org.apache.commons.lang3.StringUtils;
@@ -24,6 +18,7 @@ public class TopicService {
     private Topicdao topicdao=new Topicdao();
     private UserDao userDao=new UserDao();
     private Replydao replydao=new Replydao();
+    private Collectdao collectdao=new Collectdao();
 
     public List<Node> findAllNode() {
         return nodedao.findAllNode();
@@ -104,5 +99,48 @@ public class TopicService {
 
     public List<Reply> findReplylistById(String topicid) {
        return replydao.findlistBytopicId(topicid);
+    }
+
+    public void updateTopicById(String title, String content, String nodeid, String topicid) {
+        Topic topic=topicdao.findtopicById(topicid);
+        if(topic.isChange() ){
+            topic.setTitle(title);
+            topic.setContent(content);
+            topic.setNode_id(Integer.valueOf(nodeid));
+            topic.setId(Integer.valueOf(topicid));
+
+            topicdao.update(topic);
+        }else {
+            throw new ServiceException("该帖子不可修改了");
+        }
+
+
+    }
+
+    public Collect findCollectByUserAndTopic(String topicid, User user) {
+        Collect collect=collectdao.findCollectByUserAndTopic(topicid,user.getId());
+        return collect;
+
+    }
+
+    public void collect(String topicid, User user) {
+        Collect collect=new Collect();
+        collect.setUser_id(user.getId());
+        collect.setTopic_id(Integer.valueOf(topicid));
+        collectdao.addCollect(collect);
+        //收藏+1
+        Topic topic=topicdao.findtopicById(topicid);
+        topic.setCollectnum(topic.getCollectnum()+1);
+        topicdao.update(topic);
+
+
+    }
+
+    public void uncollect(String topicid, User user) {
+       collectdao.uncollect(topicid,user.getId());
+        //收藏-1
+        Topic topic=topicdao.findtopicById(topicid);
+        topic.setCollectnum(topic.getCollectnum()-1);
+        topicdao.update(topic);
     }
 }

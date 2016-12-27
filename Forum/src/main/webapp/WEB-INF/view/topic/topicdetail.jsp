@@ -48,47 +48,58 @@
         <div class="topic-body">
             ${requestScope.topic.content} </div>
         <div class="topic-toolbar">
-            <ul class="unstyled inline pull-left">
-                <li><a href="">加入收藏</a></li>
-                <li><a href="">感谢</a></li>
-                <li><a href=""></a></li>
-            </ul>
+            <c:if test="${not empty sessionScope.curr}">
+                <ul class="unstyled inline pull-left">
+                    <c:choose>
+                        <c:when test="${not empty collect}">
+                            <li><a href="javascript:;" id="collecttopic">取消收藏</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="javascript:;" id="collecttopic">加入收藏</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <li><a href="">感谢</a></li>
+                    <c:if test="${sessionScope.curr.id==topic.user_id and topic.change }">
+                        <li><a href="/topicChange?topicid=${topic.id}">编辑</a></li>
+                    </c:if>
+                </ul>
+            </c:if>
             <ul class="unstyled inline pull-right muted">
                 <li>${topic.clicknum}次点击</li>
-                <li>${topic.collectnum}人收藏</li>
+                <li><span id="topicCollect">${topic.collectnum}</span>人收藏</li>
                 <li>${topic.thanknum}人感谢</li>
             </ul>
         </div>
     </div>
     <!--box end-->
-
-    <div class="box" style="margin-top:20px;">
-        <div class="talk-item muted" style="font-size: 12px">
-           ${fn:length(replyList)}个回复 | 直到 <span id="lastreply">${topic.lastreplytime}</span>
-        </div>
-      <c:forEach items="${replyList}" var="reply" varStatus="vs">
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <a name="reply${vs.count}"></a>
-                    <td width="50">
-                        <img class="avatar" src="${reply.user.avatar}?imageView2/1/w/40/h/40" alt="">
-                    </td>
-                    <td width="auto">
-                        <a href="" style="font-size: 12px">${reply.user.username}</a> <span style="font-size: 12px" class="reply">${reply.creattime}</span>
-                        <br>
-                        <p style="font-size: 14px">${reply.content}</p>
-                    </td>
-                    <td width="70" align="right" style="font-size: 12px">
-                        <a href="javascript:;" rel="${vs.count}" class="answer" title="回复"><i class="fa fa-reply"></i></a>&nbsp;
-                        <span class="badge">${vs.count}</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <c:if test="${not empty replyList }">
+        <div class="box" style="margin-top:20px;">
+            <div class="talk-item muted" style="font-size: 12px">
+                    ${fn:length(replyList)}个回复 | 直到 <span id="lastreply">${topic.lastreplytime}</span>
+            </div>
+            <c:forEach items="${replyList}" var="reply" varStatus="vs">
+                <div class="talk-item">
+                    <table class="talk-table">
+                        <tr>
+                            <a name="reply${vs.count}"></a>
+                            <td width="50">
+                                <img class="avatar" src="${reply.user.avatar}?imageView2/1/w/40/h/40" alt="">
+                            </td>
+                            <td width="auto">
+                                <a href="" style="font-size: 12px">${reply.user.username}</a> <span style="font-size: 12px" class="reply">${reply.creattime}</span>
+                                <br>
+                                <p style="font-size: 14px">${reply.content}</p>
+                            </td>
+                            <td width="70" align="right" style="font-size: 12px">
+                                <a href="javascript:;" rel="${vs.count}" class="answer" title="回复"><i class="fa fa-reply"></i></a>&nbsp;
+                                <span class="badge">${vs.count}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
       </c:forEach>
-
     </div>
+    </c:if>
     <c:choose>
         <c:when test="${not empty sessionScope.curr}">
             <div class="box" style="margin:20px 0px;">
@@ -127,12 +138,20 @@
         $("#replyBtn").click(function () {
             $("#replyForm").submit();
         })
-        var editor = new Simditor({
-            textarea: $('#editor'),
-            toolbar:false
-            //optional options
-        });
 
+        <c:if test="${not empty sessionScope.curr}">
+            var editor = new Simditor({
+                textarea: $('#editor'),
+                toolbar:false
+                //optional options
+            });
+        $(".answer").click(function () {
+            var count=$(this).attr("rel")
+            var html="<a href='#reply"+count+"'>#"+count+"</a>"
+            editor.setValue(html+editor.getValue())
+            location.href="#reply"
+        })
+        </c:if>
         hljs.initHighlightingOnLoad();
 
 
@@ -142,11 +161,25 @@
             var time=$(this).text();
             return moment(time).fromNow();
         });
-        $(".answer").click(function () {
-            var count=$(this).attr("rel")
-            var html="<a href='#reply"+count+"'>#"+count+"</a>"
-            editor.setValue(html+editor.getValue())
-            location.href="#reply"
+        $("#collecttopic").click(function () {
+            var text="";
+            if($(this).text()=="加入收藏"){
+                text="collect"
+            }else {
+                text="uncollect"
+            }
+            $.post("/collect",{"topicid":${topic.id},"text":text}).done(function (json) {
+                if(json.state=="success"){
+                    if(text=="collect"){
+                        $("#collecttopic").text("取消收藏")
+                    }else {
+                        $("#collecttopic").text("加入收藏")
+                    }
+                    $("#topicCollect").text(json.collectnum);
+                }
+            }).error(function () {
+                alert("服务端错误")
+            })
         })
 
 

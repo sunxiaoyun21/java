@@ -10,16 +10,19 @@ com\sxy\web\filter\LoginFilter.class
 com\sxy\util\Config.class
 com\sxy\dao\LoginLogdao.class
 com\sxy\service\TopicService.class
+com\sxy\entity\Collect.class
 com\sxy\web\user\UseractiveServlet.class
 com\sxy\dao\Replydao$1.class
 com\sxy\web\user\RegServlet.class
 com\sxy\dao\UserDao.class
+com\sxy\web\topic\TopicChangeServlet.class
 com\sxy\web\user\ResetPasswordServlet.class
 com\sxy\service\UserService$1.class
 com\sxy\service\UserService.class
 com\sxy\util\Dbhelp.class
 com\sxy\dao\Nodedao.class
 com\sxy\web\user\SettingServlet.class
+com\sxy\web\topic\CollectServlet.class
 com\sxy\web\topic\ReplyServlet.class
 com\sxy\web\topic\TopicServlet.class
 com\sxy\web\user\LogoutServlet.class
@@ -31,6 +34,7 @@ com\sxy\web\filter\AbstracFilter.class
 com\sxy\web\BaseServlet.class
 com\sxy\web\user\OnlyUserServlet.class
 com\sxy\entity\Login.class
+com\sxy\dao\Collectdao.class
 com\sxy\web\filter\EncodingFilter.class
 com\sxy\service\UserService$2.class
 com\sxy\entity\Reply.class
