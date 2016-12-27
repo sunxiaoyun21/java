@@ -21,9 +21,11 @@ com\sxy\web\user\ResetPasswordServlet.class
 com\sxy\service\UserService$1.class
 com\sxy\service\UserService.class
 com\sxy\util\Dbhelp.class
+com\sxy\util\Page.class
 com\sxy\dao\Nodedao.class
 com\sxy\web\user\SettingServlet.class
 com\sxy\web\topic\CollectServlet.class
+com\sxy\dao\Topicdao$1.class
 com\sxy\web\topic\ReplyServlet.class
 com\sxy\web\topic\TopicServlet.class
 com\sxy\web\user\LogoutServlet.class

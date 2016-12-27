@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -21,276 +22,37 @@
     <div class="box">
         <div class="talk-item">
             <ul class="topic-type unstyled inline" style="margin-bottom:0px;">
-                <li class="active"><a href="">全部</a></li>
-                <li><a href="">问与答</a></li>
-                <li><a href="">分享</a></li>
-                <li><a href="">Java</a></li>
+                <li class="${empty param.nodeid?'active':''}"><a href="/ttl">全部</a></li>
+                <c:forEach items="${nodeList}" var="node">
+                    <li class="${param.nodeid==node.id?'active':''}"><a href="/ttl?nodeid=${node.id}">${node.nodename}</a></li>
+                </c:forEach>
             </ul>
         </div>
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">如何看待Goole离开大陆市场</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
 
-        <div class="talk-item">
+       <c:forEach items="${topicPage.items}" var="topic">
+            <div class="talk-item">
             <table class="talk-table">
                 <tr>
                     <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
+                        <img class="avatar" src="${topic.user.avatar}?imageView2/1/w/40/h/40"  alt="" style="width:40px;height:40px;">
                     </td>
                     <td width="80">
-                        <a href="">xiaoyun</a>
+                        <a href="">${topic.user.username}</a>
                     </td>
                     <td width="auto">
-                        <a href="#">女程序员有歧视</a>
+                        <a href="/topicdetail?topicid=${topic.id}">${topic.title}</a>
                     </td>
                     <td width="50" align="center">
-                        <span class="badge">12</span>
+                        <span class="badge">${topic.replynum}</span>
                     </td>
                 </tr>
             </table>
         </div>
+       </c:forEach>
 
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">Python和Ruby哪个语言好</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
+        <div class="pagination pagination-mini pagination-centered">
+            <ul id="pagination" style="margin-bottom:20px;"></ul>
         </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">今年的圣诞如何过</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">论坛对于一些90后是听都没听过的东西</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">苹果公司越做越烂</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">写了一个可以把你网站所有 js 代码格式化成圣诞树的 NodeJS 库： js2image</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">王健林和马云PK唱演员，你是怎么看待的</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">对于大陆版权我也是没谁了</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">网易云音乐的推荐很赞</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">e</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">如何看待前端</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">ajax是主流么</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="talk-item">
-            <table class="talk-table">
-                <tr>
-                    <td width="50">
-                        <img class="avatar" src="../../static/img/1.jpg" alt="" style="width:40px;height:40px;">
-                    </td>
-                    <td width="80">
-                        <a href="">xiaoyun</a>
-                    </td>
-                    <td width="auto">
-                        <a href="#">maven</a>
-                    </td>
-                    <td width="50" align="center">
-                        <span class="badge">12</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-
 
     </div>
     <!--box end-->
@@ -301,5 +63,22 @@
         Copyright © 2016 sxy
     </div>
 </div>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/js/jquery.twbsPagination.min.js"></script>
+<script src="/static/js/uesr/notify.js"></script>
+<script>
+    $(function(){
+        $("#pagination").twbsPagination({
+            totalPages:${topicPage.totalPage},
+            visiblePages:5,
+            first:'首页',
+            last:'末页',
+            prev:'上一页',
+            next:'下一页',
+            href: '?p={{number}}&node=${param.node}'
+        });
+
+    });
+</script>
 </body>
 </html>

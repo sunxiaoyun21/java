@@ -9,6 +9,7 @@ D:\sxy\git\Forum\src\main\java\com\sxy\web\user\ResetPasswordServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\BaseServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\filter\EncodingFilter.java
 D:\sxy\git\Forum\src\main\java\com\sxy\entity\Topic.java
+D:\sxy\git\Forum\src\main\java\com\sxy\util\Page.java
 D:\sxy\git\Forum\src\main\java\com\sxy\dao\Replydao.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\Config.java
 D:\sxy\git\Forum\src\main\java\com\sxy\dao\UserDao.java

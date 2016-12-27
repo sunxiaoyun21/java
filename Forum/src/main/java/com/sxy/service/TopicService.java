@@ -1,13 +1,16 @@
 package com.sxy.service;
 
+import com.google.common.collect.Maps;
 import com.sxy.dao.*;
 import com.sxy.entity.*;
 import com.sxy.exception.ServiceException;
 import com.sxy.util.Config;
+import com.sxy.util.Page;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
 import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -168,5 +171,23 @@ public class TopicService {
         Topic topic=topicdao.findtopicById(topicid);
         topic.setThanknum(topic.getThanknum()-1);
         topicdao.update(topic);
+    }
+
+    public Page<Topic> findAllTopic(String nodeid, Integer pagenum) {
+        HashMap<String,Object> map= Maps.newHashMap();
+        int count=0;
+        if(StringUtils.isEmpty(nodeid)){
+           count=topicdao.count();
+        }else {
+            count=topicdao.count(nodeid);
+        }
+       /* count=nodedao.findById(Integer.valueOf(nodeid)).getTopicnum();*/
+        Page<Topic> topicPage=new Page<>(count,pagenum);
+        map.put("nodeid",nodeid);
+        map.put("start",topicPage.getStart());
+        map.put("pagesize",topicPage.getPageSize());
+        List<Topic> topicList=topicdao.findAllTopic(map);
+        topicPage.setItems(topicList);
+        return topicPage;
     }
 }
