@@ -1,10 +1,7 @@
 package com.sxy.web.topic;
 
 import com.google.common.collect.Maps;
-import com.sxy.entity.Collect;
-import com.sxy.entity.Reply;
-import com.sxy.entity.Topic;
-import com.sxy.entity.User;
+import com.sxy.entity.*;
 import com.sxy.exception.ServiceException;
 import com.sxy.service.TopicService;
 import com.sxy.web.BaseServlet;
@@ -45,6 +42,11 @@ public class TopicDetailServlet extends BaseServlet {
             if(user!=null && StringUtils.isNumeric(topicid)){
                 Collect collect=topicService.findCollectByUserAndTopic(topicid,user);
                 req.setAttribute("collect",collect);
+            }
+            //判断用户是否感谢该主题
+            if(user!=null &&StringUtils.isNumeric(topicid)){
+                Thank thank=topicService.findThankByUserAndTopic(topicid,user);
+                req.setAttribute("thank",thank);
             }
             forword("/topic/topicdetail",req,resp);
         }catch (ServiceException e){

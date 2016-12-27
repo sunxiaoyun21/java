@@ -19,6 +19,7 @@ public class TopicService {
     private UserDao userDao=new UserDao();
     private Replydao replydao=new Replydao();
     private Collectdao collectdao=new Collectdao();
+    private Thankdao thankdao=new Thankdao();
 
     public List<Node> findAllNode() {
         return nodedao.findAllNode();
@@ -141,6 +142,31 @@ public class TopicService {
         //收藏-1
         Topic topic=topicdao.findtopicById(topicid);
         topic.setCollectnum(topic.getCollectnum()-1);
+        topicdao.update(topic);
+    }
+
+    public Thank findThankByUserAndTopic(String topicid, User user) {
+        return thankdao.findThankByUserAndTopic(topicid,user.getId());
+
+    }
+
+    public void thank(String topicid, User user) {
+        Thank thank=new Thank();
+        thank.setTopic_id(Integer.valueOf(topicid));
+        thank.setUser_id(user.getId());
+        thankdao.addThank(thank);
+        //topic表中感谢+1
+        Topic topic=topicdao.findtopicById(topicid);
+        topic.setThanknum(topic.getThanknum()+1);
+        topicdao.update(topic);
+    }
+
+    public void unthank(String topicid, User user) {
+
+        thankdao.unthank(topicid,user.getId());
+        //topic表中感谢-1
+        Topic topic=topicdao.findtopicById(topicid);
+        topic.setThanknum(topic.getThanknum()-1);
         topicdao.update(topic);
     }
 }

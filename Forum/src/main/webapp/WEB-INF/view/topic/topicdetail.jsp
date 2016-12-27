@@ -58,7 +58,15 @@
                             <li><a href="javascript:;" id="collecttopic">加入收藏</a></li>
                         </c:otherwise>
                     </c:choose>
-                    <li><a href="">感谢</a></li>
+                    <c:choose>
+                        <c:when test="${not empty thank}">
+                            <li><a href="" id="thanktopic">取消感谢</a></li>
+                        </c:when>
+                       <c:otherwise>
+                           <li><a href="" id="thanktopic">感谢</a></li>
+                       </c:otherwise>
+                    </c:choose>
+
                     <c:if test="${sessionScope.curr.id==topic.user_id and topic.change }">
                         <li><a href="/topicChange?topicid=${topic.id}">编辑</a></li>
                     </c:if>
@@ -67,7 +75,7 @@
             <ul class="unstyled inline pull-right muted">
                 <li>${topic.clicknum}次点击</li>
                 <li><span id="topicCollect">${topic.collectnum}</span>人收藏</li>
-                <li>${topic.thanknum}人感谢</li>
+                <li><span id="topicthank">${topic.thanknum}</span>人感谢</li>
             </ul>
         </div>
     </div>
@@ -181,7 +189,26 @@
                 alert("服务端错误")
             })
         })
-
+        $("#thanktopic").click(function () {
+            var action="";
+            if($(this).text()=="感谢"){
+                action="thank"
+            }else{
+                action="unthank"
+            }
+            $.post("/thank",{"topicid":${topic.id},"action":action}).done(function (json) {
+                if(json.state=="success"){
+                    if(action=="thank"){
+                        $("#thanktopic").text("取消感谢")
+                    }else {
+                        $("#thanktopic").text("感谢")
+                    }
+                    $("#topicthank").text(json.thanknum)
+                }
+            }).error(function () {
+                alert("服务端错误")
+            })
+        })
 
 
     });
