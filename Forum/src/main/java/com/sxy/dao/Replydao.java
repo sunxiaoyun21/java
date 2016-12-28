@@ -40,4 +40,9 @@ public class Replydao {
             }
         }, topicid);
     }
+
+    public void delReplyById(String id) {
+        String sql="delete from reply where topic_id=?";
+        Dbhelp.update(sql,id);
+    }
 }

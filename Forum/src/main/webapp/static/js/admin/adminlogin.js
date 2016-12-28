@@ -30,14 +30,14 @@ $(function () {
         errorElement:"span",
         errorClass:"text-error",
         rules:{
-           username:{
-               required:true,
-               minlength:3
-           },
-           password:{
-               required:true,
-               rangelength:[6,18]
-           }
+            username:{
+                required:true,
+                minlength:3
+            },
+            password:{
+                required:true,
+                rangelength:[6,18]
+            }
         },
         messages:{
             username:{
@@ -51,7 +51,7 @@ $(function () {
         },
         submitHandler:function (form) {
             var data=$(form).serialize();
-            $.post("/login",data).done(function (data) {
+            $.post("/admin/login",data).done(function (data) {
                 if(data.state=="success"){
                     var url=getParameterByName("redirect");
                     if(url){
@@ -62,7 +62,7 @@ $(function () {
                             location.href=url;
                         }
                     }else {
-                        location.href="/ttl"
+                        location.href="/admin/ttl"
                     }
                 }else {
                     alert(data.message)

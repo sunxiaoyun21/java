@@ -22,4 +22,9 @@ public class Thankdao {
     String sql="DELETE FROM thank WHERE user_id=? AND thank.topic_id=?";
     Dbhelp.update(sql,id,topicid);
     }
+
+    public void delTopicById(String id) {
+        String sql="delete from thank where topic_id=?";
+        Dbhelp.update(sql,id);
+    }
 }

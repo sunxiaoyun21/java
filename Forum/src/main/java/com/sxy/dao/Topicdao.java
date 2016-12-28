@@ -77,4 +77,9 @@ public class Topicdao {
             }
         },list.toArray());
     }
+
+    public void delById(String id) {
+        String sql="delete from topic where id=?";
+        Dbhelp.update(sql,id);
+    }
 }

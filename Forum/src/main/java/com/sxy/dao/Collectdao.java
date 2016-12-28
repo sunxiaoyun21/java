@@ -22,4 +22,9 @@ public class Collectdao {
         String sql="DELETE FROM user_has_topic WHERE user_id=? AND topic_id=?";
         Dbhelp.update(sql,id,Integer.valueOf(topicid));
     }
+
+    public void delTopicById(String id) {
+        String sql="delete from user_has_topic where topic_id=?";
+        Dbhelp.update(sql,id);
+    }
 }
