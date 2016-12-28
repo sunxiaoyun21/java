@@ -5,9 +5,11 @@ com\sxy\exception\ServiceException.class
 com\sxy\util\ConnectionManager.class
 com\sxy\web\topic\TopicDetailServlet.class
 com\sxy\web\admin\AdminTopicServlet.class
+com\sxy\web\admin\OneNodeServlet.class
 com\sxy\web\user\OnlyEmailServlet.class
 com\sxy\web\filter\LoginFilter.class
 com\sxy\dao\LoginLogdao.class
+com\sxy\web\admin\NewNodeServlet.class
 com\sxy\web\user\RegServlet.class
 com\sxy\web\topic\TopicChangeServlet.class
 com\sxy\web\user\ResetPasswordServlet.class
@@ -25,6 +27,7 @@ com\sxy\web\admin\AdminNodeServlet.class
 com\sxy\web\filter\EncodingFilter.class
 com\sxy\service\UserService$2.class
 com\sxy\service\NodeService.class
+com\sxy\web\admin\DelNodeServlet.class
 com\sxy\web\user\NotifyServlet.class
 com\sxy\entity\Reply.class
 com\sxy\util\SendEmail.class
@@ -33,6 +36,7 @@ com\sxy\dao\Thankdao.class
 com\sxy\util\Config.class
 com\sxy\entity\Admin.class
 com\sxy\service\TopicService.class
+com\sxy\web\admin\UpdateNodeServlet.class
 com\sxy\entity\Collect.class
 com\sxy\dao\Admindao.class
 com\sxy\web\user\UseractiveServlet.class

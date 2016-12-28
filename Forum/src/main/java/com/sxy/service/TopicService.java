@@ -190,4 +190,18 @@ public class TopicService {
         topicPage.setItems(topicList);
         return topicPage;
     }
+
+    public Node findNodeById(String nodeid) {
+        if(StringUtils.isNumeric(nodeid)){
+           Node node= nodedao.findNodeById(nodeid);
+           if(node!=null){
+               return  node;
+           }else {
+               throw  new ServiceException("该节点不存在");
+           }
+        }else {
+            throw new ServiceException("参数有误");
+        }
+
+    }
 }

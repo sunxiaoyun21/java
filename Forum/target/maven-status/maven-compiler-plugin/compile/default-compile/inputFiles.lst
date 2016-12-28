@@ -5,7 +5,9 @@ D:\sxy\git\Forum\src\main\java\com\sxy\entity\Thank.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\ResetPasswordServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\BaseServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\entity\Topic.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\admin\OneNodeServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\Page.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\admin\UpdateNodeServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\service\NodeService.java
 D:\sxy\git\Forum\src\main\java\com\sxy\dao\Replydao.java
 D:\sxy\git\Forum\src\main\java\com\sxy\service\AdminService.java
@@ -44,11 +46,13 @@ D:\sxy\git\Forum\src\main\java\com\sxy\web\user\OnlyEmailServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\service\TopicService.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\admin\AdminTopicServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\entity\Admin.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\admin\NewNodeServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\topic\TopicDetailServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\LoginServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\entity\Login.java
 D:\sxy\git\Forum\src\main\java\com\sxy\entity\User.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\TllServlet.java
+D:\sxy\git\Forum\src\main\java\com\sxy\web\admin\DelNodeServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\RegServlet.java
 D:\sxy\git\Forum\src\main\java\com\sxy\util\Dbhelp.java
 D:\sxy\git\Forum\src\main\java\com\sxy\web\user\LogoutServlet.java
