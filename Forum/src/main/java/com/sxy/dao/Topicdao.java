@@ -27,7 +27,7 @@ public class Topicdao {
 
 
     public Integer saveTopic(Topic topic) {
-        String sql="INSERT INTO topic( title, content,  user_id, node_id,lastreplytime) VALUES(?,?,?,?,?)";
+        String sql="INSERT INTO topic( title, content,user_id, node_id,lastreplytime) VALUES(?,?,?,?,?)";
         return Dbhelp.insert(sql,topic.getTitle(),topic.getContent(),topic.getUser_id(),topic.getNode_id(),topic.getLastreplytime());
     }
 

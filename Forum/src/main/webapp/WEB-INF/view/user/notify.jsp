@@ -34,7 +34,7 @@
                 <c:when test="${not empty notifyList}">
                     <c:forEach items="${notifyList}" var="notify">
                         <c:choose>
-                            <c:when test="${notify.data == 1}">
+                            <c:when test="${notify.state == 1}">
                                 <tr class = "" style="text-decoration: line-through">
                                     <td></td>
                                     <td>${notify.creattime}</td>
@@ -114,7 +114,7 @@
                     ids.push(sons[i].value);
                 }
             }
-            alert(ids.join(","));
+
             $.post("/notifyRead",{"ids":ids.join(",")},function(json){
                 if (json == "success"){
                     window.history.go(0);

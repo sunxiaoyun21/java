@@ -61,9 +61,9 @@
                 imagePath: '/static/img/emoji'
             },
             upload:{
-                url:"http://up-z1.qiniu.com",
+                url:"http://up-z1.qiniu.com/",
                 params:{"token":"${token}"},
-                fileKey:"file",
+                fileKey:"file"
 
             }
 
@@ -75,14 +75,14 @@
             $("#topicForm").submit();
         });
         $("#topicForm").validate({
-            errorElement:"text",
+            errorElement:"span",
             errorClass:"text-error",
             rules:{
-               title:{
-                   required:true
-               },
+                title:{
+                    required:true
+                },
                 nodeid:{
-                   required:true
+                    required:true
                 }
             },
             messages:{
