@@ -6,10 +6,19 @@ import java.sql.Timestamp;
  * Created by Administrator on 2016/12/27.
  */
 public class Notify {
+    //已读
+    public static final Integer STATEREAD=1;
+    //未读
+    public static final Integer STATEUNREAD=0;
+
+
+
+
     private Integer id;
     private  String content;
     private Timestamp creattime;
     private  Integer state;
+
     private Timestamp readtime;
     private  Integer user_id;
 

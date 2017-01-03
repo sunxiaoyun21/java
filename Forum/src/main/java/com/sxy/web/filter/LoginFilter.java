@@ -29,11 +29,26 @@ public class LoginFilter extends AbstracFilter {
              Map map= request.getParameterMap();
              Set paramset=map.entrySet();
                 Iterator it=paramset.iterator();
-                while (it.hasNext()){
-                    Map.Entry me= (Map.Entry) it.next();
-                    Object key=me.getKey();
-                    Object value=me.getValue();
-                    String valString= (String) value;
+                if(it.hasNext()){
+                    url+="?";
+                    while(it.hasNext()){
+                        Map.Entry me= (Map.Entry) it.next();
+                        Object key=me.getKey();
+                        Object value=me.getValue();
+                        String[] valString=new String[1];
+                        if(value instanceof String[]){
+                            valString= (String[]) value;
+                        }else {
+                            valString[0]=value.toString();
+                        }
+                        String param="";
+                        for(int i=0;i<valString.length;i++){
+                            param=key+"="+valString[i]+"&";
+                            url+=param;
+                        }
+                    }
+
+                    ;
                 }
                 response.sendRedirect("/login?redirect="+url);
             }else {

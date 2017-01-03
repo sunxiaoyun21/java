@@ -29,6 +29,16 @@ public class User implements Serializable {
     private Timestamp creattime;
     private String avatar;
 
+    private Login login;
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
     public Integer getId() {
          return id;
     }
@@ -92,4 +102,6 @@ public class User implements Serializable {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
+
+
 }

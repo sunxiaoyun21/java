@@ -23,6 +23,7 @@ public class TopicService {
     private Replydao replydao=new Replydao();
     private Collectdao collectdao=new Collectdao();
     private Thankdao thankdao=new Thankdao();
+    private  Notifydao notifydao=new Notifydao();
 
     public List<Node> findAllNode() {
         return nodedao.findAllNode();
@@ -91,7 +92,16 @@ public class TopicService {
         }else {
             throw new ServiceException("回复的帖子不存在或已被删除");
         }
+        //新增回复通知
+        if(!user.getId().equals(topic.getUser_id())){
+            Notify notify=new Notify();
+            notify.setUser_id(topic.getUser_id());
+            notify.setContent("您的主题<a href='/topicdetail?topicid="+topic.getId()+"'>"+topic.getTitle()+"</a>有了新的回复，请查收");
+            notify.setState(Notify.STATEUNREAD);
+            //notifydao.save
+            notifydao.save(notify);
 
+        }
 
 
 
@@ -203,5 +213,13 @@ public class TopicService {
             throw new ServiceException("参数有误");
         }
 
+    }
+
+    public Page<TopicReplyCount> findTopicCount(Integer pagenum) {
+        int count=topicdao.findtopicByDay();
+        Page<TopicReplyCount> page=new Page<>(count,pagenum);
+        List<TopicReplyCount> topicReplyCounts=topicdao.findAlltopicCount(page.getStart(),page.getPageSize());
+        page.setItems(topicReplyCounts);
+        return page;
     }
 }

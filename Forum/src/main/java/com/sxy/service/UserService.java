@@ -3,18 +3,23 @@ package com.sxy.service;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.sxy.dao.LoginLogdao;
+import com.sxy.dao.Notifydao;
 import com.sxy.dao.UserDao;
 import com.sxy.entity.Login;
+import com.sxy.entity.Notify;
 import com.sxy.entity.User;
 import com.sxy.exception.ServiceException;
 import com.sxy.util.Config;
+import com.sxy.util.Page;
 import com.sxy.util.SendEmail;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -28,6 +33,7 @@ public class UserService {
 
     UserDao userDao=new UserDao();
     LoginLogdao loginLogdao=new LoginLogdao();
+    Notifydao notifydao=new Notifydao();
     //发送激活邮件的TOKEN缓存
     private static Cache<String,String> cache = CacheBuilder.newBuilder()
             .expireAfterWrite(6, TimeUnit.HOURS)
@@ -245,5 +251,47 @@ public class UserService {
     public void updateAvatar(String filekey, User user) {
         user.setAvatar(filekey);
         userDao.update(user);
+    }
+
+    public Page<User> findAllUser(Integer pagenum) {
+        Integer count=userDao.count();
+        Page<User> page=new Page<>(count,pagenum);
+       List<User> userList=userDao.findAllUser();
+       for(User user:userList){
+           Login login=loginLogdao.findLogin(user.getId());
+           user.setLogin(login);
+       }
+       page.setItems(userList);
+       return page;
+    }
+
+    /**
+     * 查询通知列表
+     * @param user
+     * @return
+     */
+    public List<Notify> findAllNotify(User user) {
+        return notifydao.findAllNotify(user.getId());
+
+    }
+
+    public void updateStatus(String id, Integer status) {
+        if(StringUtils.isNumeric(id)){
+            User user=userDao.findById(Integer.valueOf(id));
+            user.setStatus(status);
+            userDao.update(user);
+        }else {
+            throw new ServiceException("参数异常");
+        }
+    }
+
+    public void updateNotifyStateByIds(String ids) {
+        String idArray[] = ids.split(",");
+        for (int i= 0 ;i <idArray.length;i++ ){
+            Notify notify = notifydao.findById(idArray[i]);
+            notify.setState(Notify.STATEREAD);
+            notify.setReadtime(new Timestamp(DateTime.now().getMillis()));
+            notifydao.update(notify);
+        }
     }
 }

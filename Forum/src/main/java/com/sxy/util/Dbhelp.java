@@ -54,6 +54,7 @@ public class Dbhelp {
 		
 		try {
 			T t = query.query(sql,handler,params);
+			System.out.println("SQL:" + sql);
 			return t;
 		} catch (SQLException e) {
 			e.printStackTrace();

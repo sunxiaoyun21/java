@@ -70,6 +70,7 @@ $(function () {
             $.post("/reg",data).done(function (data) {
                 if(data.state=="success"){
                     alert("注册成功,请去邮箱激活你的账户");
+                    location.href="/login"
 
                 }else {
                     alert(data.message)

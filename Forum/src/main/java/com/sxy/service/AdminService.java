@@ -6,6 +6,7 @@ import com.sxy.entity.Node;
 import com.sxy.entity.Topic;
 import com.sxy.exception.ServiceException;
 import com.sxy.util.Config;
+import com.sxy.util.Page;
 import org.apache.commons.codec.digest.DigestUtils;
 
 /**
@@ -53,4 +54,6 @@ public class AdminService {
 
 
     }
+
+
 }

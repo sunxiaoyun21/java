@@ -2,6 +2,7 @@ package com.sxy.dao;
 
 import com.sxy.entity.Node;
 import com.sxy.entity.Topic;
+import com.sxy.entity.TopicReplyCount;
 import com.sxy.entity.User;
 import com.sxy.util.Config;
 import com.sxy.util.Dbhelp;
@@ -9,6 +10,7 @@ import org.apache.commons.dbutils.BasicRowProcessor;
 import org.apache.commons.dbutils.handlers.AbstractListHandler;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.apache.commons.lang3.StringUtils;
 
@@ -81,5 +83,19 @@ public class Topicdao {
     public void delById(String id) {
         String sql="delete from topic where id=?";
         Dbhelp.update(sql,id);
+    }
+
+    public int findtopicByDay() {
+      String sql="select count(*) from (select count(*) from topic group by DATE_FORMAT(creattime,'%y-%m-%d')) AS topicCount";
+      return Dbhelp.query(sql,new ScalarHandler<Long>()).intValue();
+    }
+
+    public List<TopicReplyCount> findAlltopicCount(int start, int pageSize) {
+        String sql="SELECT COUNT(*) topicnum,DATE_FORMAT(creattime,'%y-%m-%d') 'time',\n"  +
+                " (SELECT COUNT(*) FROM reply WHERE DATE_FORMAT(creattime,'%y-%m-%d') \n" +
+                " = DATE_FORMAT(topic.creattime,'%y-%m-%d')) 'replynum'\n" +
+                "FROM topic GROUP BY (DATE_FORMAT(creattime,'%y-%m-%d')) \n" +
+                "ORDER BY (DATE_FORMAT(creattime,'%y-%m-%d')) DESC limit ?,?";
+        return Dbhelp.query(sql,new BeanListHandler<TopicReplyCount>(TopicReplyCount.class),start,pageSize);
     }
 }

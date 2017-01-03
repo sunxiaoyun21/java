@@ -1,5 +1,7 @@
 package com.sxy.entity;
 
+import com.sxy.util.Dbhelp;
+
 /**
  * Created by Administrator on 2016/12/21.
  */
@@ -32,4 +34,6 @@ public class Node {
     public void setTopicnum(Integer topicnum) {
         this.topicnum = topicnum;
     }
+
+
 }

@@ -49,5 +49,27 @@ public class NodeService  {
         }else {
             nodedao.del(id);
         }
+
+    }
+
+
+    public String firstNodeName(String node) {
+        Node node1=nodedao.findByName(node);
+        if(node1==null){
+            return "true";
+        }else {
+            return "false";
+        }
+    }
+
+    public void saveNode(String nodeName) {
+        if(StringUtils.isNotEmpty(nodeName)){
+            Node node=new Node();
+            node.setNodename(nodeName);
+            nodedao.saveNode(node);
+        }else {
+            throw new  ServiceException("参数异常");
+        }
+
     }
 }

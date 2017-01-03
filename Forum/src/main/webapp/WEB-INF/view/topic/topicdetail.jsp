@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <title>${topic.title}</title>
     <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/js/editer/styles/simditor.css">
     <link rel="stylesheet" href="/static/css/styles/atom-one-dark.css">
@@ -37,7 +37,7 @@
 <div class="container">
     <div class="box">
         <ul class="breadcrumb" style="background-color: #fff;margin-bottom: 0px;">
-            <li><a href="#">首页</a> <span class="divider">/</span></li>
+            <li><a href="/ttl">首页</a> <span class="divider">/</span></li>
             <li class="active">${requestScope.topic.node.nodename}</li>
         </ul>
         <div class="topic-head">
@@ -115,11 +115,24 @@
                     <a  name="reply"></a>
                 <div class="talk-item muted" style="font-size: 12px"><i class="fa fa-plus"></i> 添加一条新回复</div>
                 <form action="/reply"method="post" style="padding: 15px;margin-bottom:0px;" id="replyForm">
+
                     <input type="hidden" value="${topic.id}" name="topicid">
                     <textarea name="content" id="editor"></textarea>
                 </form>
                 <div class="talk-item muted" style="text-align: right;font-size: 12px">
-                    <span class="pull-left">请尽量让自己的回复能够对别人有帮助回复</span>
+                    <!-- JiaThis Button BEGIN -->
+                    <div class="jiathis_style_24x24">
+                        <a class="jiathis_button_qzone"></a>
+                        <a class="jiathis_button_tsina"></a>
+                        <a class="jiathis_button_tqq"></a>
+                        <a class="jiathis_button_weixin"></a>
+                        <a class="jiathis_button_renren"></a>
+                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                        <a class="jiathis_counter_style"></a>
+                    </div>
+                    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                    <!-- JiaThis Button END -->
+                    <span class="pull-left"></span>
                     <button id ="replyBtn" class="btn btn-primary">发布</button>
                 </div>
             </div>
@@ -132,7 +145,7 @@
     </c:choose>
 </div>
 <!--container end-->
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="/static/js/jquery-1.11.3.min.js"></script>
 <script src="/static/js/editer/scripts/module.min.js"></script>
 <script src="/static/js/editer/scripts/hotkeys.min.js"></script>
 <script src="/static/js/editer/scripts/uploader.min.js"></script>

@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2016/12/27
-  Time: 17:17
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -13,7 +7,7 @@
     <meta charset="UTF-8">
     <title>通知中心</title>
     <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -40,17 +34,17 @@
                 <c:when test="${not empty notifyList}">
                     <c:forEach items="${notifyList}" var="notify">
                         <c:choose>
-                            <c:when test="${notify.state == 1}">
+                            <c:when test="${notify.data == 1}">
                                 <tr class = "" style="text-decoration: line-through">
                                     <td></td>
-                                    <td>${notify.createtime}</td>
+                                    <td>${notify.creattime}</td>
                                     <td>${notify.content}</td>
                                 </tr>
                             </c:when>
                             <c:otherwise>
                                 <tr>
                                     <td><input value="${notify.id}" type="checkbox" class="ckSon"></td>
-                                    <td>${notify.createtime}</td>
+                                    <td>${notify.creattime}</td>
                                     <td>${notify.content}</td>
                                 </tr>
                             </c:otherwise>
@@ -73,5 +67,62 @@
     <!--box end-->
 </div>
 <!--container end-->
+<script src="/static/js/jquery-1.11.3.min.js"></script>
+
+<script>
+    $(function () {
+        $("#ckFather").click(function(){
+            var sons = $(".ckSon");
+            for(var i = 0;i<sons.length;i++){
+                sons[i].checked=$(this)[0].checked;
+            }
+
+            if ($(this)[0].checked == true){
+                $("#markBtn").removeAttr("disabled");
+            }else{
+                $("#markBtn").attr("disabled","disabled");
+            }
+        });
+
+        $(".ckSon").click(function () {
+            var sons = $(".ckSon");
+            var num = 0;
+            for(var i = 0;i<sons.length;i++){
+                if (sons[i].checked){
+                    num++;
+                }
+            }
+            if (num == sons.length){
+                $("#ckFather")[0].checked = true;
+            }else{
+                $("#ckFather")[0].checked = false;
+            }
+
+            if (num > 0){
+                $("#markBtn").removeAttr("disabled");
+            }else{
+                $("#markBtn").attr("disabled","disabled");
+            }
+
+        });
+
+        $("#markBtn").click(function(){
+            var ids = [];
+            var sons = $(".ckSon");
+            for(var i=0 ; i<sons.length;i++){
+                if(sons[i].checked == true){
+                    ids.push(sons[i].value);
+                }
+            }
+            alert(ids.join(","));
+            $.post("/notifyRead",{"ids":ids.join(",")},function(json){
+                if (json == "success"){
+                    window.history.go(0);
+                }
+            });
+        });
+
+    });
+</script>
 </body>
 </html>

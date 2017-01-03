@@ -42,4 +42,11 @@ public class Nodedao {
         String sql="delete from node where id=?";
         Dbhelp.update(sql,id);
     }
+
+    public void saveNode(Node node) {
+        String sql="INSERT INTO node(nodename) VALUES (?)";
+        Dbhelp.update(sql,node.getNodename());
+    }
+
+
 }
