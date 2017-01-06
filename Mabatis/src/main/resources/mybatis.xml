@@ -29,5 +29,6 @@
         <mapper resource="mapper/EmployeeMapper.xml" />
         <mapper resource="mapper/DepartmentMapper.xml" />
         <mapper class="com.sxy.mapper.UserMapper"/>
+        <mapper resource="mapper/UserMapper.xml"/>
     </mappers>
 </configuration>

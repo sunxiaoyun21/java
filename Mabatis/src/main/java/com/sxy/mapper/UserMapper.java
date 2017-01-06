@@ -19,4 +19,8 @@ public interface UserMapper {
 
     @Delete("delete from user where username=#{username}")
     void del(Map<String,Object> param);
+
+    User findByName(Map<String,Object> param);
+
+    void saveAll(List<User> users);
 }

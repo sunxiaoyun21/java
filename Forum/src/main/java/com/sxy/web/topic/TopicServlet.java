@@ -30,7 +30,7 @@ public class TopicServlet extends BaseServlet {
         Auth auth=Auth.create(Config.get("qiniu.ak"),Config.get("qiniu.sk"));
         StringMap stringMap=new StringMap();
 
-        stringMap.put("returnBody","{\"success\":true,\"file-path\":\""+Config.get("qiniu.domain")+"${key}\"}");
+        stringMap.put("returnBody","{\"success\":true,\"file_path\":\""+Config.get("qiniu.domain")+"${key}\"}");
        String token= auth.uploadToken(Config.get("qiniu.name"),null,3600,stringMap);
 
 

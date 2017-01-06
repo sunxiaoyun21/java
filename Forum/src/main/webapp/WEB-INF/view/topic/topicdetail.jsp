@@ -60,10 +60,10 @@
                     </c:choose>
                     <c:choose>
                         <c:when test="${not empty thank}">
-                            <li><a href="" id="thanktopic">取消感谢</a></li>
+                            <li><a href="javascript:;" id="thanktopic">取消感谢</a></li>
                         </c:when>
                        <c:otherwise>
-                           <li><a href="" id="thanktopic">感谢</a></li>
+                           <li><a href="javascript:;" id="thanktopic">感谢</a></li>
                        </c:otherwise>
                     </c:choose>
 
@@ -209,6 +209,7 @@
             }else{
                 action="unthank"
             }
+
             $.post("/thank",{"topicid":${topic.id},"action":action}).done(function (json) {
                 if(json.state=="success"){
                     if(action=="thank"){
@@ -219,9 +220,13 @@
                     $("#topicthank").text(json.thanknum)
                 }
             }).error(function () {
-                alert("服务端错误")
-            })
-        })
+
+            alert("客户端错误")
+            });
+
+
+
+        });
 
 
     });

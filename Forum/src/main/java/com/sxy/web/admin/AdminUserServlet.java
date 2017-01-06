@@ -44,5 +44,6 @@ public class AdminUserServlet extends BaseServlet{
         }catch (ServiceException e){
                 result.put("message",e.getMessage());
         }
+        readerJson(result,resp);
     }
 }
