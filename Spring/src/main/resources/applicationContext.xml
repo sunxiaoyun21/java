@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- scope="prototype" 代表是每次获取都是不同的对象实例
+         scope="singleton"代表单例
+    <alias name="userdao" alias="userdaoimpl"/>别名
+    lazy-init="true" 代表对象不会再创建时被调用
+
+    -->
+
+    <bean id="userdao" class="com.sxy.dao.impl.UserdaoImpl" scope="prototype" />
+    <alias name="userdao" alias="userdaoimpl"/>
+</beans>
