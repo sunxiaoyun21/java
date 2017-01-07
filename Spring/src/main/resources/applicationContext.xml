@@ -12,4 +12,41 @@
 
     <bean id="userdao" class="com.sxy.dao.impl.UserdaoImpl" scope="prototype" />
     <alias name="userdao" alias="userdaoimpl"/>
+
+   <!-- <bean id="userservice" class="com.sxy.service.impl.UserServiceImpl">
+        <property name="age" value="13"/>
+        <property name="name" value="jack"/>
+        <property name="names">
+            <list>
+                <value>tom</value>
+                <value>jack</value>
+            </list>
+        </property>
+        <property name="properties">
+           <props>
+               <prop key="p1">p1</prop>
+               <prop key="p2">p2</prop>
+           </props>
+        </property>
+        <property name="userdao" ref="userdao" />
+    </bean>-->
+    <!--autowire="byName"或者是bytype是基于set方法的自动注入-->
+    <bean id="userservice" class="com.sxy.service.impl.UserServiceImpl" autowire="byName"/>
+
+
+    <!--<bean id="userservice" class="com.sxy.service.impl.UserServiceImpl">
+        <property name="userdao" ref="userdao"/>
+    </bean>-->
+    <!--构造方法注入-->
+  <!--  <bean id="userservice2" class="com.sxy.service.impl.UserServiceImpl2">
+        &lt;!&ndash;<constructor-arg name="userdao" ref="userdao"/>&ndash;&gt;
+       &lt;!&ndash; <constructor-arg type="com.sxy.dao.Userdao" ref="userdao"/>&ndash;&gt;
+        <constructor-arg index="0" ref="userdao"/>
+
+    </bean>-->
+
+    <!--自动注入-->
+    <!--autowire="constructor"是基于构造方法注入的自动注入-->
+    <!--<bean id="userservice2" class="com.sxy.service.impl.UserServiceImpl2" autowire="constructor"/>-->
+
 </beans>
