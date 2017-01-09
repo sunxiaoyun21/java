@@ -1,6 +1,7 @@
 package com.sxy.test;
 
 
+import com.sxy.Application;
 import com.sxy.dao.Userdao;
 import com.sxy.dao.impl.UserdaoImpl;
 import com.sxy.service.UserService;
@@ -14,7 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:applicationContext.xml")
+//@ContextConfiguration(locations = "classpath:applicationContext.xml")
+@ContextConfiguration(classes = Application.class)
 public class UserCaseTest {
     @Autowired
     private  UserService userService;
@@ -32,7 +34,7 @@ public class UserCaseTest {
 
     @Test
     public  void service(){
-      
+
         userService.update();
         userService.save();
         userService.num();
