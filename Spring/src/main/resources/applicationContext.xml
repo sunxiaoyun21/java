@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--基于注解的bin管理-->
+    <context:component-scan base-package="com.sxy"/>
+
+    <aop:aspectj-autoproxy/>
+
+
+
+
+    <!--<bean id="userdao" class="com.sxy.dao.impl.UserdaoImpl"/>
+    <bean id="userserviceImpl" class="com.sxy.service.impl.UserServiceImpl">
+        <property name="userdao" ref="userdao" />
+    </bean>
+
+
+    <bean id="aopAspect" class="com.sxy.aspect.AopAspect"/>
+    <aop:config>
+        <aop:aspect ref="aopAspect">
+            <aop:pointcut id="pt" expression="execution(* com.sxy.service..*.*(..))"/>
+           &lt;!&ndash; <aop:before  method="beforeAspect" pointcut-ref="pt"/>
+            <aop:after-returning method="afterAspect" pointcut-ref="pt" returning="result"/>
+            <aop:after-throwing method="exceptionAspect" pointcut-ref="pt"/>
+            <aop:after method="afterExceptionAspect" pointcut-ref="pt"/>&ndash;&gt;
+            <aop:around method="aroundAspect" pointcut-ref="pt"/>
+        </aop:aspect>
+    </aop:config>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- scope="prototype" 代表是每次获取都是不同的对象实例
          scope="singleton"代表单例
     <alias name="userdao" alias="userdaoimpl"/>别名
@@ -10,8 +60,8 @@
 
     -->
 
-    <bean id="userdao" class="com.sxy.dao.impl.UserdaoImpl" scope="prototype" />
-    <alias name="userdao" alias="userdaoimpl"/>
+   <!-- <bean id="userdao" class="com.sxy.dao.impl.UserdaoImpl" scope="prototype" />
+    <alias name="userdao" alias="userdaoimpl"/>-->
 
    <!-- <bean id="userservice" class="com.sxy.service.impl.UserServiceImpl">
         <property name="age" value="13"/>
@@ -31,7 +81,7 @@
         <property name="userdao" ref="userdao" />
     </bean>-->
     <!--autowire="byName"或者是bytype是基于set方法的自动注入-->
-    <bean id="userservice" class="com.sxy.service.impl.UserServiceImpl" autowire="byName"/>
+    <!--<bean id="userservice" class="com.sxy.service.impl.UserServiceImpl" autowire="byName"/>-->
 
 
     <!--<bean id="userservice" class="com.sxy.service.impl.UserServiceImpl">

@@ -24,4 +24,9 @@ public class UserServiceImpl2 implements UserService {
     public void update() {
         System.out.println("构造方法注入");
     }
+
+    @Override
+    public int num() {
+        return 100;
+    }
 }
