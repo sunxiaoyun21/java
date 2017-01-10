@@ -14,6 +14,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+      <!--spring-->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-context</artifactId>
@@ -22,11 +23,6 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-aop</artifactId>
-          <version>4.2.1.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-jdbc</artifactId>
           <version>4.2.1.RELEASE</version>
       </dependency>
       <dependency>
@@ -40,15 +36,46 @@
           <version>4.2.1.RELEASE</version>
       </dependency>
       <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.12</version>
-      </dependency>
-      <dependency>
           <groupId>cglib</groupId>
           <artifactId>cglib</artifactId>
           <version>3.2.4</version>
       </dependency>
+      <!--spring-->
+      <!--连接数据库-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>4.2.1.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.39</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-dbcp2</artifactId>
+          <version>2.1.1</version>
+      </dependency>
+      <!--连接数据库-->
+      <!--mybatis-->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.4.0</version>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.39</version>
+      </dependency>
+      <!--mybatis-->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+      </dependency>
+
   </dependencies>
   <build>
     <finalName>Spring</finalName>
