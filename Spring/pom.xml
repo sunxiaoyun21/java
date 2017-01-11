@@ -58,6 +58,23 @@
           <version>2.1.1</version>
       </dependency>
       <!--连接数据库-->
+      <!--springMVC-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>4.2.1.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>4.2.1.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>jstl</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
+      <!--SpringMVC-->
       <!--mybatis-->
       <dependency>
           <groupId>org.mybatis</groupId>
@@ -100,6 +117,16 @@
                   <source>1.8</source>
                   <target>1.8</target>
                   <encoding>UTF-8</encoding>
+              </configuration>
+          </plugin>
+          <!--Tomcat-->
+          <plugin>
+              <groupId>org.apache.tomcat.maven</groupId>
+              <artifactId>tomcat7-maven-plugin</artifactId>
+              <version>2.2</version>
+              <configuration>
+                  <port>80</port>
+                  <path>/</path>
               </configuration>
           </plugin>
       </plugins>
