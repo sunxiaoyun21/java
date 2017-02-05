@@ -16,43 +16,44 @@
     <schema id="10" parent="1" name="sxy_db"/>
     <table id="11" parent="2" name="department"/>
     <table id="12" parent="2" name="employee"/>
-    <column id="13" parent="11" name="id">
+    <table id="13" parent="2" name="user"/>
+    <column id="14" parent="11" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="14" parent="11" name="depname">
+    <column id="15" parent="11" name="depname">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="15" parent="11" name="PRIMARY">
+    <key id="16" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="16" parent="12" name="id">
+    <column id="17" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="17" parent="12" name="name">
+    <column id="18" parent="12" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="18" parent="12" name="departmentid">
+    <column id="19" parent="12" name="departmentid">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="19" parent="12" name="fk_employee_department_idx">
+    <index id="20" parent="12" name="fk_employee_department_idx">
       <ColNames>departmentid</ColNames>
     </index>
-    <key id="20" parent="12" name="PRIMARY">
+    <key id="21" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="21" parent="12" name="fk_employee_department">
+    <foreign-key id="22" parent="12" name="fk_employee_department">
       <ColNames>departmentid</ColNames>
       <RefSchemaName>mydb</RefSchemaName>
       <RefTableName>department</RefTableName>
@@ -60,5 +61,23 @@
       <OnUpdate>no-action</OnUpdate>
       <OnDelete>no-action</OnDelete>
     </foreign-key>
+    <column id="23" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="13" name="username">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="25" parent="13" name="address">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="26" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

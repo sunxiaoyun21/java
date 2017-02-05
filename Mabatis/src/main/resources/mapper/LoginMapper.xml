@@ -2,11 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sxy.mapper.LoginMapper">
+    <cache/>
     <select id="findById" parameterType="int" resultType="Login">
       SELECT * FROM login WHERE id = #{id}
     </select>
     <select id="findAll" resultType="Login">
         SELECT * FROM login
+    </select>
+    <select id="findNameAndPwd" resultType="com.sxy.pojo.Login">
+        SELECT* FROM login WHERE
+        <choose>
+            <when test="username!=null and user !=''">
+                username=#{username}
+            </when>
+            <when test="password !=null and password !=''">
+                password=#{password}
+            </when>
+            <otherwise>
+
+            </otherwise>
+        </choose>
     </select>
 
     <insert id="save" parameterType="Login" useGeneratedKeys="true" keyProperty="id">

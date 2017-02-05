@@ -31,13 +31,95 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="mydb@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="user" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Mabatis" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/pojo/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+              <folding>
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#280#281#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+                <element signature="e#380#381#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#609#610#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/mapper/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SqlSessionFactoryUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/util/SqlSessionFactoryUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mybatis.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="30" column="48" lean-forward="false" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserInterfaceTestCase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/UserInterfaceTestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="42" column="70" lean-forward="false" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,17 +139,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sxy/pojo/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxy/util/SqlSessionFactoryUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com.sxy/MybatisTestCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sxy/pojo/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/LoginMapper.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com.sxy/MyBatisInterfaceTestCase.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/Departmentmapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxy/pojo/Employee.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sxy/mapper/LoginMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/69842805-fc01-4abb-9b11-87e024a1b997/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d79c784b-d534-44cf-89fa-a870d91e2fe1/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxy/pojo/Department.java" />
@@ -75,9 +151,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sxy/mapper/EmployeeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxy/mapper/DepartmentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/DepartmentMapper.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com.sxy/EmployeeIntrfaceTestCase.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxy/mapper/LoginMapper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com.sxy/MyBatisInterfaceTestCase.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/LoginMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxy/pojo/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/DepartmentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxy/pojo/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxy/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com.sxy/UserInterfaceTestCase.java" />
       </list>
     </option>
   </component>
@@ -100,7 +184,18 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
-    <treeState />
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Mabatis Maven Webapp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -235,11 +330,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mabatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mabatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,85 +451,7 @@
       <recent name="D:\sxy\git\Mabatis\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DepartmentIntrfaceTestCase.findAll">
-    <configuration default="false" name="MyBatisInterfaceTestCase.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.sxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Mabatis" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sxy" />
-      <option name="MAIN_CLASS_NAME" value="com.sxy.MyBatisInterfaceTestCase" />
-      <option name="METHOD_NAME" value="save" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="EmployeeIntrfaceTestCase.findById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.sxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Mabatis" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sxy" />
-      <option name="MAIN_CLASS_NAME" value="com.sxy.EmployeeIntrfaceTestCase" />
-      <option name="METHOD_NAME" value="findById" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DepartmentIntrfaceTestCase.findById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.sxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Mabatis" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sxy" />
-      <option name="MAIN_CLASS_NAME" value="com.sxy.DepartmentIntrfaceTestCase" />
-      <option name="METHOD_NAME" value="findById" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserInterfaceTestCase.del">
     <configuration default="false" name="DepartmentIntrfaceTestCase.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -431,7 +478,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="EmployeeIntrfaceTestCase.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MyBatisInterfaceTestCase.findNameAndPwd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.sxy.*" />
@@ -442,8 +489,86 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.sxy" />
-      <option name="MAIN_CLASS_NAME" value="com.sxy.EmployeeIntrfaceTestCase" />
+      <option name="MAIN_CLASS_NAME" value="com.sxy.MyBatisInterfaceTestCase" />
+      <option name="METHOD_NAME" value="findNameAndPwd" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserInterfaceTestCase.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Mabatis" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sxy" />
+      <option name="MAIN_CLASS_NAME" value="com.sxy.UserInterfaceTestCase" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserInterfaceTestCase.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Mabatis" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sxy" />
+      <option name="MAIN_CLASS_NAME" value="com.sxy.UserInterfaceTestCase" />
       <option name="METHOD_NAME" value="findAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserInterfaceTestCase.del" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Mabatis" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sxy" />
+      <option name="MAIN_CLASS_NAME" value="com.sxy.UserInterfaceTestCase" />
+      <option name="METHOD_NAME" value="del" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -838,19 +963,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MyBatisInterfaceTestCase.save" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.EmployeeIntrfaceTestCase.findById" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DepartmentIntrfaceTestCase.findById" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DepartmentIntrfaceTestCase.findAll" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.EmployeeIntrfaceTestCase.findAll" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DepartmentIntrfaceTestCase.findAll" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MyBatisInterfaceTestCase.findNameAndPwd" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.UserInterfaceTestCase.save" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.UserInterfaceTestCase.findAll" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserInterfaceTestCase.del" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DepartmentIntrfaceTestCase.findAll" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.EmployeeIntrfaceTestCase.findAll" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DepartmentIntrfaceTestCase.findById" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.EmployeeIntrfaceTestCase.findById" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MyBatisInterfaceTestCase.save" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserInterfaceTestCase.del" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UserInterfaceTestCase.findAll" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserInterfaceTestCase.save" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DepartmentIntrfaceTestCase.findAll" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MyBatisInterfaceTestCase.findNameAndPwd" />
       </list>
     </recent_temporary>
   </component>
@@ -866,48 +991,48 @@
       <updated>1483500314758</updated>
       <workItem from="1483500318984" duration="18451000" />
       <workItem from="1483526234529" duration="3946000" />
-      <workItem from="1486254569693" duration="8776000" />
+      <workItem from="1486254569693" duration="17701000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DepartmentIntrfaceTestCase_findAll - 2017.02.05 at 12h 42m 49s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findAll" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_del - 2017.02.05 at 15h 57m 04s.xml">
+      <configuration name="UserInterfaceTestCase.del" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findAll - 2017.02.05 at 12h 58m 40s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findAll" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_del - 2017.02.05 at 15h 57m 27s.xml">
+      <configuration name="UserInterfaceTestCase.del" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findById - 2017.02.05 at 08h 37m 47s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findById" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_findAll - 2017.02.05 at 15h 52m 14s.xml">
+      <configuration name="UserInterfaceTestCase.findAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findById - 2017.02.05 at 11h 03m 15s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findById" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 30m 28s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findById - 2017.02.05 at 11h 09m 29s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findById" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 31m 18s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findById - 2017.02.05 at 11h 21m 19s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findById" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 34m 20s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findById - 2017.02.05 at 11h 22m 07s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findById" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 42m 26s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DepartmentIntrfaceTestCase_findById - 2017.02.05 at 11h 24m 27s.xml">
-      <configuration name="DepartmentIntrfaceTestCase.findById" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 43m 55s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EmployeeIntrfaceTestCase_findAll - 2017.02.05 at 12h 52m 50s.xml">
-      <configuration name="EmployeeIntrfaceTestCase.findAll" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 45m 28s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EmployeeIntrfaceTestCase_findAll - 2017.02.05 at 12h 58m 22s.xml">
-      <configuration name="EmployeeIntrfaceTestCase.findAll" configurationId="JUnit" />
+    <history-entry file="UserInterfaceTestCase_save - 2017.02.05 at 15h 47m 40s.xml">
+      <configuration name="UserInterfaceTestCase.save" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31173000" />
+    <option name="totallyTimeSpent" value="40098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -931,7 +1056,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8643791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.251634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26399395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -967,10 +1092,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76960784" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8643791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.251634" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26399395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -985,7 +1110,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1041,9 +1166,9 @@
         <state relative-caret-position="180">
           <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
           <folding>
-            <marker date="1486270365882" expanded="true" signature="264:438" ph="SELECT emplo... employee" />
-            <marker date="1486270365882" expanded="true" signature="508:531" ph="SELECT *FROM... department" />
-            <marker date="1486270365882" expanded="true" signature="621:659" ph="SELECT *FROM... department" />
+            <marker date="1486278628071" expanded="true" signature="264:438" ph="SELECT emplo... employee" />
+            <marker date="1486278628071" expanded="true" signature="508:531" ph="SELECT *FROM... department" />
+            <marker date="1486278628071" expanded="true" signature="621:659" ph="SELECT *FROM... department" />
           </folding>
         </state>
       </provider>
@@ -1070,6 +1195,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,9 +1205,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
           <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,9 +1252,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <marker date="1486270365882" expanded="true" signature="264:438" ph="SELECT emplo... employee" />
-            <marker date="1486270365882" expanded="true" signature="508:531" ph="SELECT *FROM... department" />
-            <marker date="1486270365882" expanded="true" signature="621:659" ph="SELECT *FROM... department" />
+            <marker date="1486278628071" expanded="true" signature="264:438" ph="SELECT emplo... employee" />
+            <marker date="1486278628071" expanded="true" signature="508:531" ph="SELECT *FROM... department" />
+            <marker date="1486278628071" expanded="true" signature="621:659" ph="SELECT *FROM... department" />
           </folding>
         </state>
       </provider>
@@ -1138,25 +1264,13 @@
         <state relative-caret-position="216">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <marker date="1483513691534" expanded="true" signature="276:312" ph="SELECT * FRO... login" />
-            <marker date="1483513691534" expanded="true" signature="380:399" ph="SELECT * FRO... login" />
-            <marker date="1483513691534" expanded="true" signature="509:578" ph="INSERT INTO login... " />
-            <marker date="1483513691534" expanded="true" signature="649:722" ph="UPDATE login... " />
-            <marker date="1483513691534" expanded="true" signature="792:824" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/util/SqlSessionFactoryUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#837#838#0" expanded="false" />
-            <element signature="e#878#879#0" expanded="false" />
-            <element signature="e#926#927#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
+            <marker date="1486275903435" expanded="true" signature="289:325" ph="SELECT * FRO... login" />
+            <marker date="1486275903435" expanded="true" signature="393:412" ph="SELECT * FRO... login" />
+            <marker date="1486275903435" expanded="true" signature="500:524" ph="SELECT FROM login... " />
+            <marker date="1486275903435" expanded="true" signature="500:533" ph="SELECT FROM login... " />
+            <marker date="1486275903435" expanded="true" signature="948:1017" ph="INSERT INTO login... " />
+            <marker date="1486275903435" expanded="true" signature="1088:1161" ph="UPDATE login... " />
+            <marker date="1486275903435" expanded="true" signature="1231:1263" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1165,54 +1279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/pojo/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="e#433#434#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#495#496#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#558#559#0" expanded="false" />
-            <element signature="e#589#590#0" expanded="false" />
-            <element signature="e#637#638#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#712#713#0" expanded="false" />
-            <element signature="e#743#744#0" expanded="false" />
-            <element signature="e#791#792#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/MyBatisInterfaceTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/mapper/LoginMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/MybatisTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1228,28 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LoginMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1483513691534" expanded="true" signature="276:312" ph="SELECT * FRO... login" />
-            <marker date="1483513691534" expanded="true" signature="380:399" ph="SELECT * FRO... login" />
-            <marker date="1483513691534" expanded="true" signature="509:578" ph="INSERT INTO login... " />
-            <marker date="1483513691534" expanded="true" signature="649:722" ph="UPDATE login... " />
-            <marker date="1483513691534" expanded="true" signature="792:824" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,40 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DepartmentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="14" column="46" lean-forward="false" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding>
-            <marker date="1486270365882" expanded="true" signature="264:438" ph="SELECT emplo... employee" />
-            <marker date="1486270365882" expanded="true" signature="508:531" ph="SELECT *FROM... department" />
-            <marker date="1486270365882" expanded="true" signature="621:659" ph="SELECT *FROM... department" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="22" column="72" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="72" />
-          <folding>
-            <marker date="1486270365804" expanded="true" signature="260:436" ph="SELECT emp.i... employee" />
-            <marker date="1486270365804" expanded="true" signature="524:562" ph="SELECT * FRO... employee" />
-            <marker date="1486270365804" expanded="true" signature="631:654" ph="SELECT * FRO... employee" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/mapper/DepartmentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1329,6 +1339,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/EmployeeIntrfaceTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EmployeeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <marker date="1486270365804" expanded="true" signature="260:436" ph="SELECT emp.i... employee" />
+            <marker date="1486270365804" expanded="true" signature="524:562" ph="SELECT * FRO... employee" />
+            <marker date="1486270365804" expanded="true" signature="631:654" ph="SELECT * FRO... employee" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/mapper/LoginMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7d5f5433/69842805-fc01-4abb-9b11-87e024a1b997/db_22.login">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LoginMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <marker date="1486275903435" expanded="true" signature="289:325" ph="SELECT * FRO... login" />
+            <marker date="1486275903435" expanded="true" signature="393:412" ph="SELECT * FRO... login" />
+            <marker date="1486275903435" expanded="true" signature="500:524" ph="SELECT FROM login... " />
+            <marker date="1486275903435" expanded="true" signature="500:533" ph="SELECT FROM login... " />
+            <marker date="1486275903435" expanded="true" signature="948:1017" ph="INSERT INTO login... " />
+            <marker date="1486275903435" expanded="true" signature="1088:1161" ph="UPDATE login... " />
+            <marker date="1486275903435" expanded="true" signature="1231:1263" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/MybatisTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/mapper/DepartmentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/MyBatisInterfaceTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DepartmentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="72" />
+          <folding>
+            <marker date="1486278628071" expanded="true" signature="264:438" ph="SELECT emplo... employee" />
+            <marker date="1486278628071" expanded="true" signature="508:531" ph="SELECT *FROM... department" />
+            <marker date="1486278628071" expanded="true" signature="621:659" ph="SELECT *FROM... department" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/DepartmentIntrfaceTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-284">
@@ -1339,13 +1450,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/EmployeeIntrfaceTestCase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/pojo/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding>
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com.sxy/UserInterfaceTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="42" column="70" lean-forward="false" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/util/SqlSessionFactoryUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="30" column="48" lean-forward="false" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

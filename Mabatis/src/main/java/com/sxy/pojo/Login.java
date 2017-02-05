@@ -1,9 +1,11 @@
 package com.sxy.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/1/4.
  */
-public class Login {
+public class Login implements Serializable {
     private Integer id;
     private String username;
     private String password;
