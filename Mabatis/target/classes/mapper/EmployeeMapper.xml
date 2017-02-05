@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxy.mapper.EmployeeMapper">
+    <select id="findById" resultMap="emMap">
+        SELECT emp.id,`name`,departmentid,
+        dep.depname
+        FROM employee AS emp
+        INNER JOIN department AS dep  ON  emp.departmentid=dep.id
+        WHERE emp.id=#{id}
+    </select>
+    <select id="findByDepId" resultType="com.sxy.pojo.Employee">
+        SELECT  * FROM employee WHERE id=#{id}
+    </select>
+    <select id="findAll" resultMap="empMaps">
+        SELECT * FROM  employee
+    </select>
+    <resultMap id="empMaps" type="Employee">
+        <id column="id" property="id" />
+        <result property="name" column="name" />
+        <result property="departmentid" column="departmentid" />
+        <association property="department" javaType="Department" column="departmentid"
+                     select="com.sxy.mapper.DepartmentMapper.findByEmpId" />
+    </resultMap>
+
+
+
+
+    <!--配置结果集映射-->
+    <resultMap id="emMap" type="Employee">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="departmentid" property="departmentid" />
+        <association property="department" javaType="Department" column="departmentid">
+            <id column="departmentid" property="id" />
+            <result property="depname" column="depname" />
+        </association>
+    </resultMap>
+</mapper>
+    

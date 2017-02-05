@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxy.mapper.LoginMapper">
+    <select id="findById" parameterType="int" resultType="Login">
+      SELECT * FROM login WHERE id = #{id}
+    </select>
+    <select id="findAll" resultType="Login">
+        SELECT * FROM login
+    </select>
+
+    <insert id="save" parameterType="Login" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO login(username,password) VALUES (#{username},#{password})
+    </insert>
+
+    <update id="update" parameterType="Login">
+        UPDATE login SET username=#{username},password=#{password} WHERE id=#{id};
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM login WHERE id=#{id}
+    </delete>
+
+
+</mapper>

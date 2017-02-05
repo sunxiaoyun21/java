@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Mabatis:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Mabatis.war">
+      <element id="artifact" artifact-name="Mabatis:war exploded" />
+    </root>
+  </artifact>
+</component>
