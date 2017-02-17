@@ -5,9 +5,25 @@
     <insert id="save">
         INSERT INTO t_user(user_name,password) VALUES (#{userName},#{password})
     </insert>
+    <update id="editUser">
+        UPDATE t_user
+        <set>
+            user_name=#{userName},
+            <if test="password !=null and password !=''">
+                password=#{password}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="delUser">
+        DELETE FROM t_user WHERE id=#{id}
+    </delete>
 
     <select id="findAll" resultType="com.sxy.pojo.User">
         SELECT *FROM t_user
+    </select>
+    <select id="findById" resultType="com.sxy.pojo.User">
+        SELECT *FROM  t_user WHERE id=#{id}
     </select>
 </mapper>
     

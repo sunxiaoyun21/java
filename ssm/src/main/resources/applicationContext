@@ -36,8 +36,15 @@
         <property name="typeAliasesPackage" value="com.sxy.pojo"/>
         <!--mapper文件所在的位置-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!--其他配置 驼峰命名-->
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+            </bean>
+        </property>
     </bean>
-    <!--其他配置-->
+
+
     <!--mapper接口的扫描-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.sxy.mapper"/>

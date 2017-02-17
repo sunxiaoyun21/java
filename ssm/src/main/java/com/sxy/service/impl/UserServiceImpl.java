@@ -30,4 +30,21 @@ public class UserServiceImpl implements UserService {
        user.setPassword(DigestUtils.md5Hex(user.getPassword()+salt));
         userMapper.save(user);
     }
+
+    @Override
+    public User findById(Integer id) {
+        return userMapper.findById(id);
+    }
+
+    @Override
+    public void editUser(User user) {
+        userMapper.editUser(user);
+    }
+
+    @Override
+    public void delUser(Integer id) {
+        userMapper.delUser(id);
+    }
+
+
 }

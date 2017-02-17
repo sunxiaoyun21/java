@@ -33,11 +33,11 @@
                  <form method="post">
                      <div class="form-group">
                          <label>账号</label>
-                         <input type="text" class="form-control">
+                         <input type="text" class="form-control" name="userName">
                      </div>
                      <div class="form-group">
                          <label>密码(默认000000)</label>
-                         <input type="password" value="000000" class="form-control">
+                         <input type="password" value="000000" class="form-control" name="password">
                      </div>
                      <div class="form-group">
                          <button class="btn btn-success">保存</button>

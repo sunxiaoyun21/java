@@ -44,10 +44,10 @@
                         <tbody>
                         <c:forEach items="${userList}" var="user">
                             <tr>
-                                <td>${user.user_name}</td>
+                                <td>${user.userName}</td>
                                 <td>
-                                    <a href="">编辑</a>
-                                    <a href="">删除</a>
+                                    <a href="/user/edit/${user.id}">编辑</a>
+                                    <a href="/user/del/${user.id}">删除</a>
                                 </td>
                             </tr>
                         </c:forEach>

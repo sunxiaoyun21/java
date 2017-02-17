@@ -1,5 +1,6 @@
 com\sxy\controller\UserController.class
 com\sxy\mapper\UserMapper.class
 com\sxy\pojo\User.class
+com\sxy\exception\NotFoundException.class
 com\sxy\service\impl\UserServiceImpl.class
 com\sxy\service\UserService.class

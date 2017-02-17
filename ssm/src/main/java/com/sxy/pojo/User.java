@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
     private Integer id;
-    private String user_name;
+    private String userName;
     private String password;
 
     public Integer getId() {
@@ -18,12 +18,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -38,7 +38,7 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", user_name='" + user_name + '\'' +
+                ", user_name='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
