@@ -1,4 +1,8 @@
+com\sxy\mapper\RoleMapper.class
 com\sxy\controller\UserController.class
+com\sxy\util\db\Page.class
+com\sxy\pojo\User$1.class
+com\sxy\pojo\Role.class
 com\sxy\mapper\UserMapper.class
 com\sxy\pojo\User.class
 com\sxy\exception\NotFoundException.class

@@ -40,6 +40,16 @@
                          <input type="password" value="000000" class="form-control" name="password">
                      </div>
                      <div class="form-group">
+                         <label>角色</label>
+                         <div>
+                             <c:forEach items="${roleList}" var="role">
+                                 <label class="checkbox-inline">
+                                     <input type="checkbox" name="roleIds" value="${role.id}"> ${role.viewName}
+                                 </label>
+                             </c:forEach>
+                         </div>
+                     </div>
+                     <div class="form-group">
                          <button class="btn btn-success">保存</button>
                      </div>
                  </form>

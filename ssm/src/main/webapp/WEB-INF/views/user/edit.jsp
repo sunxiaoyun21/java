@@ -31,13 +31,35 @@
                 <!-- Default box -->
                 <div class="box-body">
                     <form method="post">
+                        <input type="hidden" name="id" value="${user.id}">
                         <div class="form-group">
                             <label>账号</label>
                             <input type="text" class="form-control" name="userName" value="${user.userName}">
                         </div>
                         <div class="form-group">
-                            <label>密码</label>
-                            <input type="password" value="${user.password}" class="form-control" name="password">
+                            <label>密码(若不修改可为空)</label>
+                            <input type="password"  class="form-control" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label>角色</label>
+                            <div>
+                                <c:forEach items="${roleList}" var="role">
+                                    <c:set var="flag" value="false" scope="page"/>
+                                    <c:forEach items="${user.roleList}" var="userRole">
+                                        <c:if test="${role.id==userRole.id}">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" checked name="roleIds" value="${role.id}"> ${role.viewName}
+                                            </label>
+                                            <c:set var="flag" value="true"/>
+                                        </c:if>
+                                    </c:forEach>
+                                  <c:if test="${not flag}">
+                                      <label class="checkbox-inline">
+                                          <input type="checkbox" name="roleIds" value="${role.id}"> ${role.viewName}
+                                      </label>
+                                  </c:if>
+                                </c:forEach>
+                            </div>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success">保存</button>
