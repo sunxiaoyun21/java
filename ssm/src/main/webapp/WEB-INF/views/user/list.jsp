@@ -13,7 +13,9 @@
 <div class="wrapper">
 
     <%@include file="../include/header.jsp"%>
-    <%@include file="../include/sider.jsp"%>
+    <jsp:include page="../include/sider.jsp">
+        <jsp:param name="menu" value="sys_accounts"/>
+    </jsp:include>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -27,13 +29,13 @@
                 <div class="box-body">
                     <form class="form-inline">
                         <div class="form-group">
-                            <input type="text" placeholder="姓名" class="form-control" name="q_name">
+                            <input type="text" placeholder="姓名" class="form-control" name="q_name" value="${q_name}">
                         </div>
                         <div class="form-group">
                             <select name="q_role" class="form-control">
                                 <option value=""> --角色--</option>
                                 <c:forEach items="${roleList}" var="role">
-                                    <option value="${role.id}">${role.viewName}</option>
+                                    <option value="${role.id}" ${role.id==q_role ?"selected":""}>${role.viewName}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -104,7 +106,7 @@
             last:'末页',
             prev:'上一页',
             next:'下一页',
-            href: '/user?q_name&q_role&p={{number}}'
+            href: '/user?q_name=${q_name}&q_role=${q_role}&p={{number}}'
         })
     });
 </script>

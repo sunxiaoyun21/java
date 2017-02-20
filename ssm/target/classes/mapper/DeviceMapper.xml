@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxy.mapper.DeviceMapper">
+    <insert id="saveNewDevice">
+        INSERT  INTO t_device(`name`,unit, total_num, current_num, price)
+          VALUES(#{name},#{unit},#{totalNum},${currentNum},${price})
+    </insert>
+    <delete id="del">
+        DELETE FROM t_device WHERE id=#{id}
+    </delete>
+    <select id="findAll" resultType="com.sxy.pojo.Device">
+        SELECT *FROM t_device
+    </select>
+    <select id="findDeviceByPage" resultType="com.sxy.pojo.Device">
+        SELECT *FROM t_device limit ${star},${length}
+    </select>
+    <select id="count" resultType="java.lang.Long">
+        SELECT COUNT(*) FROM t_device
+    </select>
+    <select id="findDeviceBySearchParam" resultType="com.sxy.pojo.Device">
+        SELECT *FROM t_device
+        <where>
+            <if test="deviceName!=null and deviceName!=''">
+                `name` LIKE concat('%',#{deviceName},'%')
+            </if>
+        </where>
+        <if test="orderType !=null and orderType !=''
+        and orderName !=null and orderName!='' ">
+          ORDER BY ${orderName} ${orderType}
+        </if>
+        limit ${star},${length}
+    </select>
+    <select id="filterCount" resultType="java.lang.Long">
+        SELECT count(*) FROM t_device
+        <where>
+            <if test="deviceName!=null and deviceName!=''">
+                `name` LIKE concat('%',#{deviceName},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

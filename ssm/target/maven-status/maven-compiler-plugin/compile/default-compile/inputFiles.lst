@@ -1,9 +1,14 @@
-D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Role.java
 D:\sxy\git\ssm\src\main\java\com\sxy\util\db\Page.java
 D:\sxy\git\ssm\src\main\java\com\sxy\exception\NotFoundException.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\RoleMapper.java
+D:\sxy\git\ssm\src\main\java\com\sxy\service\impl\DeviceServiceImpl.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\UserService.java
-D:\sxy\git\ssm\src\main\java\com\sxy\pojo\User.java
 D:\sxy\git\ssm\src\main\java\com\sxy\controller\UserController.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\UserMapper.java
+D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Device.java
+D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Role.java
+D:\sxy\git\ssm\src\main\java\com\sxy\service\DeviceService.java
+D:\sxy\git\ssm\src\main\java\com\sxy\pojo\User.java
+D:\sxy\git\ssm\src\main\java\com\sxy\controller\SettingDeviceController.java
+D:\sxy\git\ssm\src\main\java\com\sxy\mapper\DeviceMapper.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\impl\UserServiceImpl.java

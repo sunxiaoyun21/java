@@ -18,9 +18,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
-/**
- * Created by Administrator on 2017/2/16.
- */
+
+
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -40,6 +40,8 @@ public class UserController {
         List<Role> roleList=userService.findAllRole();
         model.addAttribute("roleList",roleList);
         model.addAttribute("page",page);
+        model.addAttribute("q_name",qName);
+        model.addAttribute("q_role",qRole);
         return "user/list";
     }
 
