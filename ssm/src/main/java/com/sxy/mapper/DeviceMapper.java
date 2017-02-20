@@ -24,4 +24,7 @@ public interface DeviceMapper {
 
     Long filterCount(Map<String, Object> searchParam);
 
+    Device findDeviceById(Integer id);
+
+
 }

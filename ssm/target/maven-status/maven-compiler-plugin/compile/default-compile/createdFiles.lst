@@ -2,12 +2,14 @@ com\sxy\mapper\RoleMapper.class
 com\sxy\controller\UserController.class
 com\sxy\mapper\DeviceMapper.class
 com\sxy\controller\SettingDeviceController.class
+com\sxy\dto\AjaxResult.class
 com\sxy\pojo\Device.class
 com\sxy\util\db\Page.class
 com\sxy\service\impl\DeviceServiceImpl.class
 com\sxy\service\DeviceService.class
 com\sxy\pojo\User$1.class
 com\sxy\pojo\Role.class
+com\sxy\controller\DeviceRentController.class
 com\sxy\mapper\UserMapper.class
 com\sxy\pojo\User.class
 com\sxy\exception\NotFoundException.class

@@ -38,4 +38,8 @@
             </if>
         </where>
     </select>
+    <select id="findDeviceById" resultType="com.sxy.pojo.Device">
+         SELECT *FROM t_device WHERE id=#{id}
+    </select>
+
 </mapper>

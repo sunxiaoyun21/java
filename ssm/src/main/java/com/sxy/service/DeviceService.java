@@ -26,4 +26,5 @@ public interface DeviceService {
 
     Long filterCount(Map<String, Object> searchParam);
 
+    Device findDeviceById(Integer id);
 }
