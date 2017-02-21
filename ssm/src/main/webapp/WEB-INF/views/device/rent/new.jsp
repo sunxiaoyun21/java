@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>新增设备租赁合同</title>
     <%@include file="../../include/css.jsp"%>
-    <link rel="stylesheet" href="/static/plugins/uploader/webuploader.css">
+
     <link rel="stylesheet" href="/static/plugins/datepicker/datepicker3.css">
     <link rel="stylesheet" href="/static/plugins/select2/select2.min.css">
 </head>
@@ -105,18 +105,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr v-if="deviceArray.length==0">
                             <td colspan="6">暂无数据</td>
-                        </tr>
-                        <tr>
-
-
-                        </tr>
+                         </tr>
+                           <tr v-for="device in deviceArray">
+                               <td>{{device.name}}</td>
+                               <td>{{device.unit}}</td>
+                               <td>{{device.price}}</td>
+                               <td>{{device.num}}</td>
+                               <td>{{device.total}}</td>
+                               <td><a href="javascript:;"  @click="remove(device)"><i class="fa fa-trash text-danger"></i></a></td>
+                           </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="box-footer" style="text-align: right">
-                    总租赁费 {{total}} 元 预付款 {{preCost}} 元 尾款 {{lastCost}} 元
+                    总租赁费 {{total}} 元 预付款 {{preCost}}元 尾款 {{lastCost}}元
                 </div>
             </div>
 
@@ -177,7 +181,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">加入列表</button>
+                    <button type="button" class="btn btn-primary" v-on:click="addRent">加入列表</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -190,28 +194,39 @@
 <script src="/static/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script src="/static/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
 <script src="/static/plugins/select2/select2.full.min.js"></script>
+<script src="/static/plugins/vue.js"></script>
 <script>
     $(function () {
         //租赁日期默认今天
-        $("#rentDate").val(moment().format("YYYY-MM-DD"))
+      $("#rentDate").val(moment().format("YYYY-MM-DD"))
         //归还日期
-        $("#backDate").datepicker({
+      $("#backDate").datepicker({
             format: "yyyy-mm-dd",
             language: "zh-CN",
             autoclose: true,
             startDate:moment().add('1','days').format("YYYY-MM-DD"),
-        });
+        }).on("changeDate",function (e) {
+          var rentDays=moment();
+          var backDays=moment(e.format(0,"yyyy-mm-dd"))
+          var days = backDays.diff(rentDays,'days')+1;
+          $("#totalDays").val(days);
+      });
+
+
+
+
         //添加设备名称时的搜索
         $("#deviceId").select2();
         $("#deviceId").change(function () {
             var id=$(this).val();
+
             $.get("/device/rent/device.json",{"id":id}).done(function (resp) {
                 if(resp.status=="success"){
                     var device=resp.data;
+                    $("#deviceName").val(device.name)
                     $("#currNum").val(device.currentNum);
                     $("#unit").val(device.unit);
                     $("#rentPrice").val(device.price);
-                    
 
                 }else {
                     alert(resp.message);
@@ -220,6 +235,62 @@
                 alert("服务器忙，请稍后")
             })
         })
+    })
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            deviceArray:[],
+
+        },
+        methods: {
+            addRent: function () {
+                var id = $("#deviceId").val();
+                //判断数组中是否存在当前的设备，如果有则数量累加，更新总价
+                var flag = false;
+                for (var i = 0; i < this.$data.deviceArray.length; i++) {
+                    var item = this.$data.deviceArray[i];
+                    if (item.id == id) {
+                        this.$data.deviceArray[i].num = parseFloat(this.$data.deviceArray[i].num) + parseFloat($("#rentNum").val());
+                        this.$data.deviceArray[i].total = parseFloat(this.$data.deviceArray[i].num) * parseFloat($("#rentPrice").val());
+                        flag = true;
+                        break;
+                    }
+                }
+                //如果没有则添加新JSON对象
+                if (!flag) {
+                    var json = {};
+                    json.id = id;
+                    json.name = $("#deviceName").val();
+                    json.unit = $("#unit").val();
+                    json.price = $("#rentPrice").val();
+                    json.num = $("#rentNum").val();
+                    json.total = parseFloat(json.price) * parseFloat(json.num);
+
+                    this.$data.deviceArray.push(json);
+                }
+            },
+            remove: function (device) {
+                this.deviceArray.splice(this.deviceArray.indexOf(device), 1)
+            },
+        },
+        computed: {
+            total: function () {
+                var result = 0;
+                for (var i = 0; i < this.$data.deviceArray.length; i++) {
+                    var item = this.$data.deviceArray[i];
+                    result += item.total;
+                }
+                return result;
+            },
+            preCost:function () {
+                return this.total*0.3;
+            },
+            lastCost:function () {
+                return this.total-this.preCost;
+            }
+
+        }
     })
 </script>
 
