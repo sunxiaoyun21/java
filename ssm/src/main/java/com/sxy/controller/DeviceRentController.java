@@ -35,6 +35,7 @@ public class DeviceRentController {
     public String newRent(Model model){
         List<Device> deviceList=deviceService.findAll();
         model.addAttribute("deviceList",deviceList);
+
         return "device/rent/new";
     }
 
