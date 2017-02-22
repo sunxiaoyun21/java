@@ -19,7 +19,7 @@ public class DeviceRentDto {
     private String backDate;
     private Integer totalDate;
     private List<DeviceArrarBean> deviceArrar;
-    private List<String> fileArray;
+    private List<DocBean> fileArray;
 
     public String getCompanyName() {
         return companyName;
@@ -101,11 +101,11 @@ public class DeviceRentDto {
         this.deviceArrar = deviceArrar;
     }
 
-    public List<String> getFileArray() {
+    public List<DocBean> getFileArray() {
         return fileArray;
     }
 
-    public void setFileArray(List<String> fileArray) {
+    public void setFileArray(List<DocBean> fileArray) {
         this.fileArray = fileArray;
     }
 
@@ -122,7 +122,7 @@ public class DeviceRentDto {
         private Integer id;
         private String name;
         private String unit;
-        private String price;
+        private Float price;
         private Integer num;
         private Float total;
 
@@ -150,11 +150,11 @@ public class DeviceRentDto {
             this.unit = unit;
         }
 
-        public String getPrice() {
+        public Float getPrice() {
             return price;
         }
 
-        public void setPrice(String price) {
+        public void setPrice(Float price) {
             this.price = price;
         }
 
@@ -172,6 +172,27 @@ public class DeviceRentDto {
 
         public void setTotal(Float total) {
             this.total = total;
+        }
+    }
+
+    public  static class  DocBean{
+        private String sourceName;
+        private String newName;
+
+        public String getSourceName() {
+            return sourceName;
+        }
+
+        public void setSourceName(String sourceName) {
+            this.sourceName = sourceName;
+        }
+
+        public String getNewName() {
+            return newName;
+        }
+
+        public void setNewName(String newName) {
+            this.newName = newName;
         }
     }
 }

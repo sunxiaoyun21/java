@@ -48,9 +48,12 @@ public class DeviceRentController {
      */
     @RequestMapping(value = "/new",method = RequestMethod.POST)
     @ResponseBody
-    public String saveRent(@RequestBody DeviceRentDto deviceRentDto){
-        deviceService.saveRent(deviceRentDto);
-        return "success";
+    public AjaxResult saveRent(@RequestBody DeviceRentDto deviceRentDto){
+       String serialNumber= deviceService.saveRent(deviceRentDto);
+       AjaxResult result=new AjaxResult();
+       result.setData(serialNumber);
+       result.setStatus(AjaxResult.SUCCESS);
+        return result;
     }
 
     /**

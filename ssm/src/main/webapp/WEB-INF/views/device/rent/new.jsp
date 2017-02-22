@@ -215,7 +215,11 @@
             var html="<li>"+resp.data.fileName+"</li>";
             $("#fileList").append(html);
 
-            fileArray.push(resp.data.newFileName);
+            var json={
+                sourceName:resp.data.fileName,
+                newName:resp.data.newFileName,
+            }
+            fileArray.push(json);
         });
 
         uploader.on( 'uploadError', function() {
@@ -296,6 +300,7 @@
                     json.num = $("#rentNum").val();
                     json.total = parseFloat(json.price) * parseFloat(json.num);
 
+
                     this.$data.deviceArray.push(json);
                 }
             },
@@ -327,15 +332,23 @@
                     type:"post",
                     data:JSON.stringify(json),
                     contentType:"application/json;charset=UTF-8 ",
-                    success:function (data) {
+                    success:function (data){
+                        if(data.status=="success"){
+                            layer.confirm("保存成功",{btn:['继续添加','打印合同']},function(){
+                                window.history.go(0)
+                                },function(){
+                                window.location.href="/device/rent/"+data.data;
+                            }
 
+                            )
+                        }
                     },
                     error:function () {
                         layer.msg("服务器繁忙，请稍后")
                     }
 
                 })
-                layer.msg("保存合同")
+
             }
         },
         computed: {

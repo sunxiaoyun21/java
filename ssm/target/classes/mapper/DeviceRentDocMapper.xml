@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxy.mapper.DeviceRentDocMapper">
+    <insert id="batchSave">
+      INSERT INTO t_device_rent_docs(source_name, new_name, rent_id)
+      VALUES
+      <foreach collection="list" separator="," item="obj">
+          (#{obj.sourceName},#{obj.newName},#{obj.rentId})
+      </foreach>
+    </insert>
+</mapper>

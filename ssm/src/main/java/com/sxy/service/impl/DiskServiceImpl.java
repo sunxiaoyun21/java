@@ -41,7 +41,7 @@ public class DiskServiceImpl implements DiskService {
     @Override
     public void saveFolder(Disk disk) {
         disk.setCreatUser("jack");
-        disk.setCreatTime(DateTime.now().toString("yyyy-mm-dd hh:mm"));
+        disk.setCreatTime(DateTime.now().toString("YYYY-MM-dd hh:mm"));
         disk.setType(Disk.DIRECTORY_TYPE);
         diskMapper.saveFolder(disk);
 
