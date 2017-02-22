@@ -8,4 +8,7 @@
           (#{obj.sourceName},#{obj.newName},#{obj.rentId})
       </foreach>
     </insert>
+    <select id="findDeviceById" resultType="com.sxy.pojo.DeviceRentDoc">
+        SELECT *FROM t_device_rent_docs WHERE rent_id=#{id}
+    </select>
 </mapper>

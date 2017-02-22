@@ -146,5 +146,35 @@ public class DeviceServiceImpl implements DeviceService{
         return deviceRent.getSerialNumber();
     }
 
+    /**
+     * 根据流水账号查询合同信息
+     * @param serialNumber
+     * @return
+     */
+    @Override
+    public DeviceRent findDeviceBySerialNumber(String serialNumber) {
+        return deviceRentMapper.findBySerialNumber(serialNumber);
+    }
+
+    /**
+     * 根据租赁id查找合同详情列表
+     * @param id
+     * @return
+     */
+    @Override
+    public List<DeviceRentDetail> findDeviceByRentId(Integer id) {
+        return deviceRentDetailMapper.findByRentId(id);
+    }
+
+    /**
+     * 根据租赁id查找合同文件详情列表
+     * @param id
+     * @return
+     */
+    @Override
+    public List<DeviceRentDoc> findDeviceDocByRentId(Integer id) {
+        return deviceRentDocMapper.findDeviceById(id);
+    }
+
 
 }

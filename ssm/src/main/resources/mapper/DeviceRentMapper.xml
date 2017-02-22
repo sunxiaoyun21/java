@@ -10,4 +10,7 @@
       UPDATE t_device_rent SET total_price=#{total}, pre_cost=#{preCost},last_cost=#{lastCost}
       where id=#{id}
     </update>
+    <select id="findBySerialNumber" resultType="com.sxy.pojo.DeviceRent">
+        SELECT *FROM t_device_rent WHERE serial_number=#{serialNumber}
+    </select>
 </mapper>

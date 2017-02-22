@@ -2,6 +2,9 @@ package com.sxy.service;
 
 import com.sxy.dto.DeviceRentDto;
 import com.sxy.pojo.Device;
+import com.sxy.pojo.DeviceRent;
+import com.sxy.pojo.DeviceRentDetail;
+import com.sxy.pojo.DeviceRentDoc;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,4 +36,9 @@ public interface DeviceService {
 
     String saveRent(DeviceRentDto deviceRentDto);
 
+    DeviceRent findDeviceBySerialNumber(String serialNumber);
+
+    List<DeviceRentDetail> findDeviceByRentId(Integer id);
+
+    List<DeviceRentDoc> findDeviceDocByRentId(Integer id);
 }
