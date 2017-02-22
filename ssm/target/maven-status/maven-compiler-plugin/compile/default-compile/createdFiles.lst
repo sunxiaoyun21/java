@@ -5,6 +5,7 @@ com\sxy\controller\UserController.class
 com\sxy\controller\SettingDeviceController.class
 com\sxy\pojo\Device.class
 com\sxy\pojo\User$1.class
+com\sxy\service\FileService.class
 com\sxy\pojo\Disk.class
 com\sxy\pojo\Role.class
 com\sxy\pojo\User.class
@@ -12,6 +13,7 @@ com\sxy\exception\NotFoundException.class
 com\sxy\service\impl\UserServiceImpl.class
 com\sxy\mapper\DiskMapper.class
 com\sxy\service\UserService.class
+com\sxy\service\impl\FileServiceImpl.class
 com\sxy\controller\PanController.class
 com\sxy\mapper\DeviceMapper.class
 com\sxy\dto\AjaxResult.class
@@ -21,3 +23,4 @@ com\sxy\service\DeviceService.class
 com\sxy\service\DiskService.class
 com\sxy\controller\DeviceRentController.class
 com\sxy\mapper\UserMapper.class
+com\sxy\controller\FileController.class

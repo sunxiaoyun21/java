@@ -86,11 +86,11 @@
                                     <td>${disk.size}</td>
                                     <td>${disk.creatTime}</td>
                                     <td>${disk.creatUser}</td>
-                                    <td></td>
+                                    <td>
+                                        <a href="javascript:;"><i class="fa fa-trash text-danger"></i></a>
+                                    </td>
                                 </tr>
                             </c:forEach>
-
-
 
                         </tbody>
                     </table>

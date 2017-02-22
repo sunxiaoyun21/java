@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>新增设备租赁合同</title>
     <%@include file="../../include/css.jsp"%>
-
+    <link rel="stylesheet" href="/static/plugins/uploader/webuploader.css">
     <link rel="stylesheet" href="/static/plugins/datepicker/datepicker3.css">
     <link rel="stylesheet" href="/static/plugins/select2/select2.min.css">
 </head>
@@ -131,9 +131,8 @@
                 <div class="box-body">
                     <div id="picker">选择文件</div>
                     <p>注意：上传合同扫描件要求清晰可见 合同必须公司法人签字盖章</p>
-                    <ul id="fileList">
-                    </ul>
-                    <button class="btn btn-primary pull-right" type="button">保存合同</button>
+                    <ul id="fileList"></ul>
+                    <button class="btn btn-primary pull-right" type="button"  @click="saveRent">保存合同</button>
                 </div>
             </div>
 
@@ -195,8 +194,38 @@
 <script src="/static/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
 <script src="/static/plugins/select2/select2.full.min.js"></script>
 <script src="/static/plugins/vue.js"></script>
+<script src="/static/plugins/uploader/webuploader.min.js"></script>
+<script src="/static/plugins/layer/layer.js"></script>
 <script>
+    var fileArray=[];
     $(function () {
+
+        //文件上传
+        var uploader=WebUploader.create({
+            // swf文件路径
+            swf: '/static/plugins/uploader/Uploader.swf',
+            // 文件接收服务端。
+            server: '/file/upload',
+            auto:true,
+            pick: '#picker',
+            fileVal:'file',
+        });
+        uploader.on("uploadSuccess", function(file ,resp) {
+              layer.msg("上传成功")
+            var html="<li>"+resp.data.fileName+"</li>";
+            $("#fileList").append(html);
+
+            fileArray.push(resp.data.newFileName);
+        });
+
+        uploader.on( 'uploadError', function() {
+            layer.msg("服务器异常")
+        });
+
+
+
+
+
         //租赁日期默认今天
       $("#rentDate").val(moment().format("YYYY-MM-DD"))
         //归还日期
@@ -270,9 +299,44 @@
                     this.$data.deviceArray.push(json);
                 }
             },
+
             remove: function (device) {
-                this.deviceArray.splice(this.deviceArray.indexOf(device), 1)
+                layer.confirm("确定要删除么",function (index) {
+                    app.$data.deviceArray.splice(app.$data.deviceArray.indexOf(device), 1)
+                    layer.close(index);
+                })
+
             },
+            saveRent:function () {
+
+                var json={
+                    deviceArrar:app.$data.deviceArray,
+                    fileArray:fileArray,
+                    companyName:$("#companyName").val(),
+                    tel:$("#tel").val(),
+                    rentDate:$("#rentDate").val(),
+                    linkMan : $("#linkMan").val(),
+                    cardNum : $("#cardNum").val(),
+                    address : $("#address").val(),
+                    fax : $("#fax").val(),
+                    backDate : $("#backDate").val(),
+                    totalDate : $("#totalDays").val()
+                };
+                $.ajax({
+                    url:"/device/rent/new",
+                    type:"post",
+                    data:JSON.stringify(json),
+                    contentType:"application/json;charset=UTF-8 ",
+                    success:function (data) {
+
+                    },
+                    error:function () {
+                        layer.msg("服务器繁忙，请稍后")
+                    }
+
+                })
+                layer.msg("保存合同")
+            }
         },
         computed: {
             total: function () {
@@ -290,7 +354,8 @@
                 return this.total-this.preCost;
             }
 
-        }
+        },
+
     })
 </script>
 

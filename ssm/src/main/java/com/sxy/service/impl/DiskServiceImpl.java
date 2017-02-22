@@ -55,7 +55,7 @@ public class DiskServiceImpl implements DiskService {
     @Override
     @Transactional
     public void saveFile(Integer fid, MultipartFile file) {
-        //存文件到磁盘
+
         //存文件到磁盘
         String sourceName=file.getOriginalFilename();
         String newName= UUID.randomUUID().toString();

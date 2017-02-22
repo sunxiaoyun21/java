@@ -1,14 +1,17 @@
 package com.sxy.controller;
 
 import com.sxy.dto.AjaxResult;
+import com.sxy.dto.DeviceRentDto;
 import com.sxy.pojo.Device;
 import com.sxy.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -40,6 +43,17 @@ public class DeviceRentController {
     }
 
     /**
+     * 保存合同
+     * @return
+     */
+    @RequestMapping(value = "/new",method = RequestMethod.POST)
+    @ResponseBody
+    public String saveRent(@RequestBody DeviceRentDto deviceRentDto){
+        deviceService.saveRent(deviceRentDto);
+        return "success";
+    }
+
+    /**
      * 根据设备ID查找设备信息
      * @param id
      * @return
@@ -54,4 +68,6 @@ public class DeviceRentController {
      }
         return new AjaxResult(device);
     }
+
+
 }

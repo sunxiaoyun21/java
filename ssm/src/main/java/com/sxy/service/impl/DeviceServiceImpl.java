@@ -1,10 +1,12 @@
 package com.sxy.service.impl;
 
+import com.sxy.dto.DeviceRentDto;
 import com.sxy.mapper.DeviceMapper;
 import com.sxy.pojo.Device;
 import com.sxy.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -59,4 +61,11 @@ public class DeviceServiceImpl implements DeviceService{
     public Device findDeviceById(Integer id) {
         return  deviceMapper.findDeviceById(id);
     }
+
+    @Override
+    public void saveRent(DeviceRentDto deviceRentDto) {
+        
+    }
+
+
 }
