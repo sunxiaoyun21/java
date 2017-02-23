@@ -139,7 +139,7 @@
 
                     <ul id="fileList">
                         <c:forEach var="doc" items="${docList}">
-                            <li>${doc.sourceName}</li>
+                            <li><a href="/device/rent/doc?id=${doc.id}">${doc.sourceName}</a></li>
                         </c:forEach>
 
                     </ul>

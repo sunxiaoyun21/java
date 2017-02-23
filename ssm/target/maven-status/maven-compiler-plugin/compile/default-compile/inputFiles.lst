@@ -7,6 +7,7 @@ D:\sxy\git\ssm\src\main\java\com\sxy\pojo\DeviceRent.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\UserService.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\UserMapper.java
 D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Role.java
+D:\sxy\git\ssm\src\main\java\com\sxy\mapper\FinanceMapper.java
 D:\sxy\git\ssm\src\main\java\com\sxy\util\SerialNumberUtil.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\DeviceRentDocMapper.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\DiskService.java
@@ -18,14 +19,18 @@ D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Disk.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\impl\UserServiceImpl.java
 D:\sxy\git\ssm\src\main\java\com\sxy\util\db\Page.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\DeviceRentMapper.java
+D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Finance.java
+D:\sxy\git\ssm\src\main\java\com\sxy\service\FinanceService.java
 D:\sxy\git\ssm\src\main\java\com\sxy\dto\DeviceRentDto.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\RoleMapper.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\impl\FileServiceImpl.java
 D:\sxy\git\ssm\src\main\java\com\sxy\controller\UserController.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\DeviceRentDetailMapper.java
+D:\sxy\git\ssm\src\main\java\com\sxy\controller\FinanceController.java
 D:\sxy\git\ssm\src\main\java\com\sxy\mapper\DiskMapper.java
 D:\sxy\git\ssm\src\main\java\com\sxy\pojo\Device.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\DeviceService.java
+D:\sxy\git\ssm\src\main\java\com\sxy\service\impl\FinanceServiceImpl.java
 D:\sxy\git\ssm\src\main\java\com\sxy\dto\AjaxResult.java
 D:\sxy\git\ssm\src\main\java\com\sxy\service\FileService.java
 D:\sxy\git\ssm\src\main\java\com\sxy\pojo\DeviceRentDetail.java

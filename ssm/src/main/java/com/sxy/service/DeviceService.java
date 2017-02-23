@@ -8,6 +8,9 @@ import com.sxy.pojo.DeviceRentDoc;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -41,4 +44,8 @@ public interface DeviceService {
     List<DeviceRentDetail> findDeviceByRentId(Integer id);
 
     List<DeviceRentDoc> findDeviceDocByRentId(Integer id);
+
+    InputStream downloadFile(Integer id) throws IOException;
+
+    DeviceRentDoc findDeviceRentById(Integer id);
 }

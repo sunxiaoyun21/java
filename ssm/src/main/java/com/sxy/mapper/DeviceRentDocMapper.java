@@ -12,4 +12,6 @@ public interface DeviceRentDocMapper {
 
 
     List<DeviceRentDoc> findDeviceById(Integer id);
+
+    DeviceRentDoc findById(Integer docId);
 }

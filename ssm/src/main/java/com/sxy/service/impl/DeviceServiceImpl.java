@@ -13,10 +13,12 @@ import com.sxy.pojo.DeviceRentDoc;
 import com.sxy.service.DeviceService;
 import com.sxy.util.SerialNumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.*;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +28,8 @@ import java.util.Map;
 @Service
 public class DeviceServiceImpl implements DeviceService{
 
+    @Value("${upload.path}")
+    private String fileSavePath;
     @Autowired
     private DeviceMapper deviceMapper;
 
@@ -174,6 +178,27 @@ public class DeviceServiceImpl implements DeviceService{
     @Override
     public List<DeviceRentDoc> findDeviceDocByRentId(Integer id) {
         return deviceRentDocMapper.findDeviceById(id);
+    }
+
+    @Override
+    public InputStream downloadFile(Integer docId) throws IOException {
+        DeviceRentDoc doc=deviceRentDocMapper.findById(docId);
+        if(doc==null){
+            return null;
+        }else {
+            File file=new File(fileSavePath+"/"+doc.getNewName());
+            if(file.exists()){
+                return new FileInputStream(file);
+            }else {
+                return null;
+            }
+        }
+
+    }
+
+    @Override
+    public DeviceRentDoc findDeviceRentById(Integer id) {
+        return deviceRentDocMapper.findById(id);
     }
 
 

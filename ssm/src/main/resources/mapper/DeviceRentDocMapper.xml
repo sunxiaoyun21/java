@@ -11,4 +11,7 @@
     <select id="findDeviceById" resultType="com.sxy.pojo.DeviceRentDoc">
         SELECT *FROM t_device_rent_docs WHERE rent_id=#{id}
     </select>
+    <select id="findById" resultType="com.sxy.pojo.DeviceRentDoc">
+        SELECT *FROM t_device_rent_docs WHERE id=#{docId}
+    </select>
 </mapper>

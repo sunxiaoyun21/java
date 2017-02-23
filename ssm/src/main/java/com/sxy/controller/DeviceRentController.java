@@ -8,12 +8,25 @@ import com.sxy.pojo.DeviceRent;
 import com.sxy.pojo.DeviceRentDetail;
 import com.sxy.pojo.DeviceRentDoc;
 import com.sxy.service.DeviceService;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.CharSet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
+
+import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.charset.Charset;
 import java.util.List;
 
 /**
@@ -96,5 +109,57 @@ public class DeviceRentController {
         return new AjaxResult(device);
     }
 
+    /**
+     * 使用mvc方式下载
+     * @param id
+     * @return
+     * @throws IOException
+     */
+    @RequestMapping(value = ("/doc"),method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<InputStreamResource> downloadDoc(Integer id) throws IOException {
+        InputStream inputStream=deviceService.downloadFile(id);
+
+        if(inputStream==null){
+            throw new NotFoundException();
+        }else {
+            HttpHeaders headers=new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            //更改下载文件名的名字
+            DeviceRentDoc doc=deviceService.findDeviceRentById(id);
+            String fileName=doc.getSourceName();
+            fileName=new String(fileName.getBytes("UTF-8"),"ISO8859-1");
+          headers.setContentDispositionFormData("attachment",fileName);
+            return new ResponseEntity<>(new InputStreamResource(inputStream),headers, HttpStatus.OK);
+        }
+
+    }
+
+    /**
+     * 原始的下载合同
+     */
+
+  /*  @RequestMapping(value = ("/doc"),method = RequestMethod.GET)
+    public void downloadDoc(Integer id, HttpServletResponse response) throws IOException {
+        InputStream inputStream=deviceService.downloadFile(id);
+
+        if(inputStream==null){
+            throw new NotFoundException();
+        }else {
+            DeviceRentDoc doc=deviceService.findDeviceRentById(id);
+            //将文件下载标记为二进制
+            response.setContentType(MediaType.APPLICATION_OCTET_STREAM.toString());
+            //更改下载文件名的名字
+            String fileName=doc.getSourceName();
+            fileName=new String(fileName.getBytes("UTF-8"),"ISO8859-1");
+            response.setHeader("Content-Disposition","attachment;filename=\""+fileName+"\"");
+            OutputStream outputStream=response.getOutputStream();
+            IOUtils.copy(inputStream,outputStream);
+            outputStream.flush();
+            outputStream.close();
+            inputStream.close();
+        }
+    }
+*/
 
 }
