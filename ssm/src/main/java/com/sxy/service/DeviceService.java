@@ -54,4 +54,10 @@ public interface DeviceService {
 
     void downloadZipFile(DeviceRent deviceRent, ZipOutputStream zipOutputStream) throws IOException;
 
+    List<DeviceRent> findDeviceRentByMap(Map<String, Object> map);
+
+    Long findDeviceCount();
+
+
+    void changRentState(Integer id);
 }

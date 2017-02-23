@@ -1,8 +1,11 @@
 package com.sxy.controller;
 
+import com.google.common.collect.Maps;
 import com.sxy.dto.AjaxResult;
+import com.sxy.dto.DataTablesResult;
 import com.sxy.dto.DeviceRentDto;
 import com.sxy.exception.NotFoundException;
+import com.sxy.exception.ServiceException;
 import com.sxy.pojo.Device;
 import com.sxy.pojo.DeviceRent;
 import com.sxy.pojo.DeviceRentDetail;
@@ -21,6 +24,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.io.IOException;
@@ -28,6 +32,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -40,10 +45,7 @@ public class DeviceRentController {
     @Autowired
     private DeviceService deviceService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String list(){
-        return "device/rent/list";
-    }
+
 
     /**
      * 新建租赁合同
@@ -57,6 +59,31 @@ public class DeviceRentController {
         return "device/rent/new";
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public String list(){
+        return "device/rent/list";
+    }
+
+    /**
+     * 合同列表
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/load",method = RequestMethod.GET)
+    @ResponseBody
+    public  DataTablesResult  load(HttpServletRequest request){
+        String draw=request.getParameter("draw");
+        String start=request.getParameter("start");
+        String length=request.getParameter("length");
+
+        Map<String,Object> map= Maps.newHashMap();
+        map.put("start",start);
+        map.put("length",length);
+
+        List<DeviceRent> deviceRentList=deviceService.findDeviceRentByMap(map);
+        Long count=deviceService.findDeviceCount();
+        return  new DataTablesResult(draw,count,count,deviceRentList);
+    }
     /**
      * 保存合同
      * @return
@@ -64,11 +91,16 @@ public class DeviceRentController {
     @RequestMapping(value = "/new",method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult saveRent(@RequestBody DeviceRentDto deviceRentDto){
-       String serialNumber= deviceService.saveRent(deviceRentDto);
-       AjaxResult result=new AjaxResult();
-       result.setData(serialNumber);
-       result.setStatus(AjaxResult.SUCCESS);
-        return result;
+       try{
+           String serialNumber= deviceService.saveRent(deviceRentDto);
+           AjaxResult result=new AjaxResult();
+           result.setData(serialNumber);
+           result.setStatus(AjaxResult.SUCCESS);
+           return result;
+       }catch (ServiceException ex){
+           return new AjaxResult(AjaxResult.ERROR,ex.getMessage());
+       }
+
     }
     /**
      * 根据流水号显示合同详情
@@ -92,6 +124,17 @@ public class DeviceRentController {
 
         return "device/rent/show";
 
+    }
+
+    /**
+     * 将合同修改为已完成
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/state/change",method = RequestMethod.POST)
+    public AjaxResult stateChang(Integer id){
+        deviceService.changRentState(id);
+        return new AjaxResult(AjaxResult.SUCCESS);
     }
 
     /**

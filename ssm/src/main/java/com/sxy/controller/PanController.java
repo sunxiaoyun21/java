@@ -57,4 +57,6 @@ public class PanController {
 
     }
 
+    public  void downLoadFile()
+
 }

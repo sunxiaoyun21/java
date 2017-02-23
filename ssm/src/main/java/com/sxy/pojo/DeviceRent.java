@@ -26,5 +26,6 @@ public class DeviceRent implements Serializable {
     private Timestamp creatTime;
     private String creatUser;
     private String serialNumber;
+    private String state;
 
 }

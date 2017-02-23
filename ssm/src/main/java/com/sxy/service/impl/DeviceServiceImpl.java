@@ -2,6 +2,7 @@ package com.sxy.service.impl;
 
 import com.google.common.collect.Lists;
 import com.sxy.dto.DeviceRentDto;
+import com.sxy.exception.ServiceException;
 import com.sxy.mapper.DeviceMapper;
 import com.sxy.mapper.DeviceRentDetailMapper;
 import com.sxy.mapper.DeviceRentDocMapper;
@@ -113,6 +114,14 @@ public class DeviceServiceImpl implements DeviceService{
         List<DeviceRentDetail> detailList= Lists.newArrayList();
         float total=0F;
         for (DeviceRentDto.DeviceArrarBean arrarBean:arrarBeanList){
+            //查询当前设备库存是否足够
+            Device device=deviceMapper.findDeviceById(arrarBean.getId());
+            if(device.getCurrentNum()<arrarBean.getNum()){
+                throw new ServiceException(device.getName()+"设备不足");
+            }else {
+                device.setCurrentNum(device.getCurrentNum()-arrarBean.getNum());
+                deviceMapper.updateCurrentNum(device);
+            }
             DeviceRentDetail deviceRentDetail=new DeviceRentDetail();
             deviceRentDetail.setDeviceName(arrarBean.getName());
             deviceRentDetail.setDeviceUnit(arrarBean.getUnit());
@@ -183,6 +192,12 @@ public class DeviceServiceImpl implements DeviceService{
         return deviceRentDocMapper.findDeviceById(id);
     }
 
+    /**
+     * 合同附件的下载
+     * @param docId
+     * @return
+     * @throws IOException
+     */
     @Override
     public InputStream downloadFile(Integer docId) throws IOException {
         DeviceRentDoc doc=deviceRentDocMapper.findById(docId);
@@ -209,6 +224,13 @@ public class DeviceServiceImpl implements DeviceService{
         return deviceRentMapper.findRentById(id);
     }
 
+    /**
+     * 合同的打包下载
+     * @param deviceRent
+     * @param zipOutputStream
+     * @throws IOException
+     */
+
     @Override
     public void downloadZipFile(DeviceRent deviceRent, ZipOutputStream zipOutputStream) throws IOException {
         //查找合同有多少附件
@@ -224,6 +246,31 @@ public class DeviceServiceImpl implements DeviceService{
         zipOutputStream.closeEntry();
         zipOutputStream.flush();
         zipOutputStream.close();
+
+    }
+
+    @Override
+    public List<DeviceRent> findDeviceRentByMap(Map<String, Object> map) {
+        return deviceRentMapper.findRentByMap(map);
+    }
+
+    @Override
+    public Long findDeviceCount() {
+        return deviceRentMapper.findDeviceCount();
+    }
+
+    /**
+     * 修改合同状态
+     * @param id
+     */
+    @Override
+    @Transactional
+    public void changRentState(Integer id) {
+        //将合同修改已完成
+        DeviceRent deviceRent=deviceRentMapper.findRentById(id);
+        deviceRent.setState("已完成");
+        deviceRentMapper.changState(deviceRent);
+        //像财务模块添加尾款记录
 
     }
 

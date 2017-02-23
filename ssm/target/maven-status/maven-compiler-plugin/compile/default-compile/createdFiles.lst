@@ -18,6 +18,7 @@ com\sxy\mapper\DeviceMapper.class
 com\sxy\dto\AjaxResult.class
 com\sxy\service\impl\FinanceServiceImpl.class
 com\sxy\util\db\Page.class
+com\sxy\dto\DataTablesResult.class
 com\sxy\service\DeviceService.class
 com\sxy\mapper\UserMapper.class
 com\sxy\controller\FileController.class

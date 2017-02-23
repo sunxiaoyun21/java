@@ -226,10 +226,6 @@
             layer.msg("服务器异常")
         });
 
-
-
-
-
         //租赁日期默认今天
       $("#rentDate").val(moment().format("YYYY-MM-DD"))
         //归还日期
@@ -338,9 +334,9 @@
                                 window.history.go(0)
                                 },function(){
                                 window.location.href="/device/rent/"+data.data;
-                            }
-
-                            )
+                            })
+                        }else {
+                            layer.msg(data.message);
                         }
                     },
                     error:function () {
