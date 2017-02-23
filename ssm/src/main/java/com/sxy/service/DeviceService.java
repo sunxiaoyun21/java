@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.ZipOutputStream;
 
 /**
  * Created by Administrator on 2017/2/18.
@@ -48,4 +49,9 @@ public interface DeviceService {
     InputStream downloadFile(Integer id) throws IOException;
 
     DeviceRentDoc findDeviceRentById(Integer id);
+
+    DeviceRent findRentById(Integer id);
+
+    void downloadZipFile(DeviceRent deviceRent, ZipOutputStream zipOutputStream) throws IOException;
+
 }

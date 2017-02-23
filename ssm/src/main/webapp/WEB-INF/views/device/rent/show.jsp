@@ -133,6 +133,11 @@
             <div class="box hidden-print">
                 <div class="box-header">
                     <h3 class="box-title">合同扫描件</h3>
+                    <div class="box-tools pull-right">
+                        <a href="/device/rent/doc/zip?id=${rent.id}" class="btn btn-sm btn-default">
+                            <i class="fa fa-arrow-down "></i>打包下载
+                        </a>
+                    </div>
                 </div>
                 <div class="box-body">
 

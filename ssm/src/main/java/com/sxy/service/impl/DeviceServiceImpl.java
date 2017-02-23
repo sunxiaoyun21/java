@@ -12,6 +12,7 @@ import com.sxy.pojo.DeviceRentDetail;
 import com.sxy.pojo.DeviceRentDoc;
 import com.sxy.service.DeviceService;
 import com.sxy.util.SerialNumberUtil;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  * Created by Administrator on 2017/2/18.
@@ -199,6 +202,29 @@ public class DeviceServiceImpl implements DeviceService{
     @Override
     public DeviceRentDoc findDeviceRentById(Integer id) {
         return deviceRentDocMapper.findById(id);
+    }
+
+    @Override
+    public DeviceRent findRentById(Integer id) {
+        return deviceRentMapper.findRentById(id);
+    }
+
+    @Override
+    public void downloadZipFile(DeviceRent deviceRent, ZipOutputStream zipOutputStream) throws IOException {
+        //查找合同有多少附件
+        List<DeviceRentDoc> docList=findDeviceDocByRentId(deviceRent.getId());
+        for (DeviceRentDoc doc:docList){
+            ZipEntry entry=new ZipEntry(doc.getSourceName());
+            zipOutputStream.putNextEntry(entry);
+
+            InputStream inputStream=downloadFile(doc.getId());
+            IOUtils.copy(inputStream,zipOutputStream);
+            inputStream.close();
+        }
+        zipOutputStream.closeEntry();
+        zipOutputStream.flush();
+        zipOutputStream.close();
+
     }
 
 

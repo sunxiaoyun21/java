@@ -28,6 +28,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.zip.ZipOutputStream;
 
 /**
  * Created by Administrator on 2017/2/20.
@@ -133,6 +134,30 @@ public class DeviceRentController {
             return new ResponseEntity<>(new InputStreamResource(inputStream),headers, HttpStatus.OK);
         }
 
+    }
+
+
+    /**
+     * 打包下载
+     */
+    @RequestMapping(value = "/doc/zip",method = RequestMethod.GET)
+    public void downloadZipFile(Integer id,HttpServletResponse response) throws IOException {
+        DeviceRent deviceRent=deviceService.findRentById(id);
+
+        if(deviceRent==null){
+            throw new NotFoundException();
+        }else {
+            //将文件下载标记为二进制
+            response.setContentType(MediaType.APPLICATION_OCTET_STREAM.toString());
+            //更改下载文件名的名字
+            DeviceRentDoc doc=deviceService.findDeviceRentById(id);
+            String fileName=deviceRent.getCompanyName()+".zip";
+            fileName=new String(fileName.getBytes("UTF-8"),"ISO8859-1");
+            response.setHeader("Content-Disposition","attachment;filename=\""+fileName+"\"");
+           OutputStream outputStream=response.getOutputStream();
+            ZipOutputStream zipOutputStream=new ZipOutputStream(outputStream);
+            deviceService.downloadZipFile(deviceRent,zipOutputStream);
+        }
     }
 
     /**
