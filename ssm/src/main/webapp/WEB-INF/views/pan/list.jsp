@@ -87,7 +87,7 @@
                                     <td>${disk.creatTime}</td>
                                     <td>${disk.creatUser}</td>
                                     <td>
-                                        <a href="javascript:;"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="javascript:;" class="delDisk"  rel="${disk.id}"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -136,12 +136,6 @@
         });
 
 
-
-
-
-
-
-
         $("#newFolder").click(function () {
             layer.prompt({title:"请输入文件夹的名称"},function (text,index) {
                 var fid=${fid};
@@ -156,6 +150,23 @@
                     layer.msg("服务器繁忙")
                 })
             })
+        });
+        $(".delDisk").click(function () {
+            var id=$(this).attr("rel");
+            layer.confirm("确定要删除么",function (index) {
+                $.get("/pan/del/"+id).done(function (resp) {
+                    if(resp.status=="success"){
+                        layer.msg("删除成功");
+                        window.history.go(0);
+                    }else {
+                        layer.msg(resp.message)
+                    }
+                }).error(function () {
+                    layer.msg("服务器忙，请稍后")
+                })
+                layer.close(index)
+            })
+
         })
     })
 

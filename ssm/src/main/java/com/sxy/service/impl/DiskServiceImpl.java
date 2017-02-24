@@ -1,5 +1,6 @@
 package com.sxy.service.impl;
 
+import com.google.common.collect.Lists;
 import com.sxy.exception.ServiceException;
 import com.sxy.mapper.DiskMapper;
 import com.sxy.pojo.Disk;
@@ -85,5 +86,68 @@ public class DiskServiceImpl implements DiskService {
         disk.setType(Disk.File_TYPE);
 
         diskMapper.saveFolder(disk);
+    }
+
+    @Override
+    public InputStream downloadFile(Integer id) throws FileNotFoundException {
+        Disk disk=diskMapper.findDiskById(id);
+        if(disk==null || Disk.DIRECTORY_TYPE==disk.getType()){
+            return  null;
+        }else {
+           File file=new File(savaPath+"/"+disk.getName());
+           return new FileInputStream(file);
+        }
+
+    }
+
+    @Override
+    public Disk findDiskById(Integer id) {
+        return diskMapper.findDiskById(id);
+    }
+
+    /**
+     * 删除文件
+     * @param id
+     */
+    @Override
+    public void delDiskById(Integer id) {
+        Disk disk=diskMapper.findDiskById(id);
+        if(disk!=null){
+            if(Disk.File_TYPE.equals(disk.getType())){
+                //删除文件
+                File file=new File(savaPath,disk.getName());
+                file.delete();
+                //删除数据库文件
+                diskMapper.delDiskById(id);
+            }else{
+                List<Disk> diskList=diskMapper.findAll();//所有记录
+                List<Integer> delListId= Lists.newArrayList();//即将被删除的ID
+                findDelId(diskList,delListId,id);
+                delListId.add(id);
+               /* for(Integer delId:delListId){
+                    Disk d=diskMapper.findDiskById(delId);
+                    if(d.getType().equals(Disk.File_TYPE)){
+                        diskMapper.delDiskById(delId);
+                    }
+                }*/
+                //批量删除
+                diskMapper.batchDel(delListId);
+            }
+        }
+
+    }
+
+    private void findDelId(List<Disk> diskList, List<Integer> delListId, Integer id) {
+        for (Disk disk:diskList){
+            if(disk.getFid().equals(id)){
+                delListId.add(disk.getId());
+                if(disk.getType().equals(Disk.DIRECTORY_TYPE)){
+                    findDelId(diskList,delListId,disk.getId());
+                }else {
+                    File file=new File(savaPath,disk.getName());
+                    file.delete();
+                }
+            }
+        }
     }
 }

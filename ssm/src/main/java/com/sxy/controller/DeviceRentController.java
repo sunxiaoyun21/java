@@ -132,6 +132,7 @@ public class DeviceRentController {
      * @return
      */
     @RequestMapping(value = "/state/change",method = RequestMethod.POST)
+    @ResponseBody
     public AjaxResult stateChang(Integer id){
         deviceService.changRentState(id);
         return new AjaxResult(AjaxResult.SUCCESS);

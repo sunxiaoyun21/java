@@ -135,6 +135,8 @@
                $.post("/device/rent/state/change",{"id":id}).done(function (resp) {
                    if(resp.status=="success"){
                        table.ajax.reload()
+                   }else {
+                       layer.msg(resp.message);
                    }
                }).error(function () {
                    layer.msg("服务器忙，请稍后")

@@ -8,7 +8,24 @@
 
 
     </insert>
+
+    <delete id="delDiskById">
+        DELETE FROM t_disk WHERE id=#{id}
+    </delete>
+    <delete id="batchDel">
+        DELETE  FROM t_disk  WHERE id IN(
+        <foreach collection="list" item="id" separator=",">
+        #{id}
+        </foreach>
+        )
+    </delete>
     <select id="findDiskByFid" resultType="com.sxy.pojo.Disk">
         SELECT * FROM t_disk where fid=#{fid}
+    </select>
+    <select id="findDiskById" resultType="com.sxy.pojo.Disk">
+        SELECT *FROM t_disk WHERE id=#{id}
+    </select>
+    <select id="findAll" resultType="com.sxy.pojo.Disk">
+        SELECT *FROM t_disk
     </select>
 </mapper>
