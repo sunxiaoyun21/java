@@ -104,6 +104,11 @@
       <artifactId>commons-codec</artifactId>
       <version>1.10</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.14</version>
+    </dependency>
     <!--shiro-->
     <dependency>
       <groupId>org.apache.shiro</groupId>

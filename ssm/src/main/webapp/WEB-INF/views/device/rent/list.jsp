@@ -75,19 +75,18 @@
                 "type":"get",
 
             },
-            //"order":[[0,'desc']],
+            "order":[[0,'desc']],
             "searching":false,
             "autoWidth":false,
             "ordering":false,
             "columns":[
-                {"data":"id","name":"id"},
+                {"data":"id"},
                 {"data":function (row) {
                 if(row.serialNumber){
                     return "<a href='/device/rent/"+row.serialNumber+"'>"+row.serialNumber+"</a>"
                 }else{
                     return""
                 }
-
                 }},
                 {"data":"companyName"},
                 {"data":"tel"},
@@ -95,9 +94,7 @@
                 {"data":"backDate","name":"price"},
                 {"data":"state"},
                 {"data":"totalPrice"},
-                {"data":function () {
-                    return ""
-                }},
+                {"data":"lastCost"},
                 {"data":function (row) {
                 if(row.state){
                     return ""

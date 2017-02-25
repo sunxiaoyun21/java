@@ -26,10 +26,21 @@
             </li>
 
                 <li class="header">财务模块</li>
-                <li class="treeview ${param.menu == 'finance' ? 'active' : ''}">
-                    <a href="/finance">
-                        <i class="fa fa-circle-o"></i> <span>财务报表</span> <i class="fa fa-angle-left pull-right"></i>
+                <li class="treeview ${fn:startsWith(param.menu,"fin_") ? 'active' : ''}">
+                    <a href="#">
+                        <i class="fa fa-bar-chart"></i> <span>财务报表</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
+                    <ul class="treeview-menu">
+                        <li class="${param.menu == 'fin_day' ? 'active' : ''}">
+                            <a href="/finance/day"><i class="fa fa-circle-o"></i> 财务日报</a>
+                        </li>
+                        <li class="${param.menu == 'fin_month' ? 'active' : ''}">
+                            <a href="/finance/month"><i class="fa fa-circle-o"></i> 财务月报</a>
+                        </li>
+                        <li class="${param.menu == 'fin_year' ? 'active' : ''}">
+                            <a href="/finance/year"><i class="fa fa-circle-o"></i> 财务年报</a>
+                        </li>
+                    </ul>
                 </li>
 
 

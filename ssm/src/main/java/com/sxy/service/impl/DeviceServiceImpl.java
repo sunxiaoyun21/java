@@ -3,17 +3,12 @@ package com.sxy.service.impl;
 import com.google.common.collect.Lists;
 import com.sxy.dto.DeviceRentDto;
 import com.sxy.exception.ServiceException;
-import com.sxy.mapper.DeviceMapper;
-import com.sxy.mapper.DeviceRentDetailMapper;
-import com.sxy.mapper.DeviceRentDocMapper;
-import com.sxy.mapper.DeviceRentMapper;
-import com.sxy.pojo.Device;
-import com.sxy.pojo.DeviceRent;
-import com.sxy.pojo.DeviceRentDetail;
-import com.sxy.pojo.DeviceRentDoc;
+import com.sxy.mapper.*;
+import com.sxy.pojo.*;
 import com.sxy.service.DeviceService;
 import com.sxy.util.SerialNumberUtil;
 import org.apache.commons.io.IOUtils;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -39,7 +34,8 @@ public class DeviceServiceImpl implements DeviceService{
 
     @Autowired
     private DeviceRentMapper deviceRentMapper;
-
+    @Autowired
+    private FinanceMapper financeMapper;
     @Autowired
     private DeviceRentDetailMapper deviceRentDetailMapper;
     @Autowired
@@ -159,6 +155,20 @@ public class DeviceServiceImpl implements DeviceService{
         }
 
         //写入财物流水
+        Finance finance=new Finance();
+        finance.setCeratUser("jack");
+        finance.setCreateDate(DateTime.now().toString("YYYY-MM-dd"));
+        finance.setRemark("预付款");
+        finance.setSerialNumber(SerialNumberUtil.getSerialNumber());
+        finance.setType(Finance.TYPE_IN);
+        finance.setState(Finance.STATE_NEW);
+        finance.setModule("设备租赁");
+        finance.setMoney(preCost);
+        finance.setModuleSerialNumber(deviceRent.getSerialNumber());
+
+        financeMapper.save(finance);
+
+
         return deviceRent.getSerialNumber();
     }
 
@@ -272,6 +282,17 @@ public class DeviceServiceImpl implements DeviceService{
         deviceRentMapper.changState(deviceRent);
         //像财务模块添加尾款记录
 
+        Finance finance=new Finance();
+        finance.setCeratUser("jack");
+        finance.setCreateDate(DateTime.now().toString("YYYY-MM-dd"));
+        finance.setRemark("合同尾款");
+        finance.setSerialNumber(SerialNumberUtil.getSerialNumber());
+        finance.setType(Finance.TYPE_IN);
+        finance.setState(Finance.STATE_NEW);
+        finance.setModule("设备租赁");
+       finance.setMoney(deviceRent.getLastCost());
+        finance.setModuleSerialNumber(deviceRent.getSerialNumber());
+        financeMapper.save(finance);
     }
 
 
