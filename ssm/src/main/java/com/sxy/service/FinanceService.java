@@ -19,4 +19,5 @@ public interface FinanceService {
 
     List<Finance> findFinanceByCreateDay(String day);
 
+    List<Map<String,Object>> findPieDataByDay(String today, String type);
 }

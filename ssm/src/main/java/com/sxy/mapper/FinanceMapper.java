@@ -1,6 +1,7 @@
 package com.sxy.mapper;
 
 import com.sxy.pojo.Finance;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -23,4 +24,5 @@ public interface FinanceMapper {
 
     List<Finance> findFinanceByCreatDay(String day);
 
+    List<Map<String,Object>> findPieDataByDay(@Param("today") String today,@Param("type") String type);
 }

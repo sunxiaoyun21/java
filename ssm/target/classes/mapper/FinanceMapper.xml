@@ -38,4 +38,10 @@
     <select id="findFinanceByCreatDay" resultType="com.sxy.pojo.Finance">
         SELECT *FROM t_finance WHERE create_date=#{day}
     </select>
+    <select id="findPieDataByDay" resultType="java.util.Map">
+         select tf.module as 'name',sum(tf.money) as 'value'
+        from t_finance as tf
+        where tf.confirm_user is not null and tf.confirm_date = #{today} and tf.type = #{type}
+        GROUP BY tf.module;
+    </select>
 </mapper>

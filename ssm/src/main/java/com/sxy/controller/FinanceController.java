@@ -125,8 +125,20 @@ public class FinanceController {
         outputStream.flush();
         outputStream.close();
 
+    }
 
+    /**
+     * 按天加载圆饼图
+     * @param type
+     * @param today
+     * @return
+     */
 
-
+    @RequestMapping(value = "/day/{type}/{today}/pie",method = RequestMethod.GET)
+    @ResponseBody
+    public AjaxResult dayPieData(@PathVariable String type,@PathVariable String today){
+        type="in".equals(type) ? "收入" : "支出";
+        List<Map<String,Object>> pieData=financeService.findPieDataByDay(today,type);
+        return  new AjaxResult(AjaxResult.SUCCESS);
     }
 }
