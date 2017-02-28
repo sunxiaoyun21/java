@@ -1,0 +1,7 @@
+archetypeCatalog=internal
+
+http://mvnrepository.com/
+
+118.89.60.219
+
+http://jetbrains.tencent.click
