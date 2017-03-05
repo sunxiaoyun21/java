@@ -17,12 +17,26 @@
     <module>../ssmweb</module>
   </modules>
 
+      <distributionManagement>
+        <repository>
+          <id>kaishengit-release</id>
+          <name>release</name>
+          <url>http://192.168.1.222:8088/repository/kaishengit-release/</url>
+        </repository>
+        <snapshotRepository>
+          <id>kaishengit-snapshot</id>
+          <name>snapshot</name>
+          <url>http://192.168.1.222:8088/repository/kaishengit-snapshot/</url>
+        </snapshotRepository>
+      </distributionManagement>
+
+
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.sxy</groupId>
         <artifactId>ssm-entity</artifactId>
-        <version>1.0</version>
+        <version>1.3</version>
       </dependency>
       <dependency>
         <groupId>com.sxy</groupId>
