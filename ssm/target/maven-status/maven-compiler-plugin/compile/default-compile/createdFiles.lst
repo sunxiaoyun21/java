@@ -13,6 +13,7 @@ com\sxy\service\impl\UserServiceImpl.class
 com\sxy\mapper\DiskMapper.class
 com\sxy\pojo\Finance.class
 com\sxy\dto\DeviceRentDto.class
+com\sxy\listner\LeaveBackTaskListnerImpl.class
 com\sxy\controller\PanController.class
 com\sxy\mapper\DeviceMapper.class
 com\sxy\dto\AjaxResult.class
@@ -36,6 +37,7 @@ com\sxy\service\FinanceService.class
 com\sxy\dto\DeviceRentDto$DeviceArrarBean.class
 com\sxy\service\impl\DeviceServiceImpl.class
 com\sxy\mapper\DeviceRentMapper.class
+com\sxy\Test.class
 com\sxy\service\DiskService.class
 com\sxy\controller\DeviceRentController.class
 com\sxy\mapper\DeviceRentDetailMapper.class
