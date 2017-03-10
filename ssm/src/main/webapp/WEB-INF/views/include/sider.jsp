@@ -9,6 +9,7 @@
         <ul class="sidebar-menu">
 
             <li class="header">业务模块</li>
+            <shiro:hasRole name="role_sales">
             <li class="treeview ${param.menu == 'business_device_rent' ? 'active' : ''}">
                 <a href="/device/rent">
                     <i class="fa fa-circle-o"></i> <span>设备租赁</span>
@@ -19,12 +20,14 @@
                     <i class="fa fa-circle-o"></i> <span>劳务派遣</span>
                 </a>
             </li>
+            </shiro:hasRole>
             <li class="treeview ${param.menu == 'pan' ? 'active' : ''}" >
                 <a href="/pan">
                     <i class="fa fa-circle-o"></i> <span>网盘系统</span>
                 </a>
             </li>
 
+            <shiro:hasRole name="role_fin">
                 <li class="header">财务模块</li>
                 <li class="treeview ${fn:startsWith(param.menu,"fin_") ? 'active' : ''}">
                     <a href="#">
@@ -42,6 +45,7 @@
                         </li>
                     </ul>
                 </li>
+            </shiro:hasRole>
             <li class="header">工作流模块</li>
             <li class="treeview ${fn:startsWith(param.menu,"process") ? 'active' : ''}">
                 <a href="#">
@@ -54,7 +58,7 @@
 
                 </ul>
             </li>
-
+            <shiro:hasRole name="role_admin">
                 <li class="header">设置模块</li>
                 <li class="treeview ${fn:startsWith(param.menu,'sys_') ? 'active' : ''}">
                     <a href="#">
@@ -69,7 +73,7 @@
                         </li>
                     </ul>
                 </li>
-
+            </shiro:hasRole>
             <li class="header">用户模块</li>
             <li class="treeview">
                 <a href="/logout">

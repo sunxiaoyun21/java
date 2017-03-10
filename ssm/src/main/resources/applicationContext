@@ -100,7 +100,7 @@
             <value>
                 /static/** = anon<!--匿名访问-->
                 /wx/** = anon
-                /user = roles[role_admin]
+                /user = roles[role_admin]<!--防止他人从url进入-->
                 /setting/** = roles[role_admin]
                 /** =authc<!--根及其子目录认证-->
             </value>

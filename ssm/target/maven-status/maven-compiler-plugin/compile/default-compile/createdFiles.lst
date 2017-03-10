@@ -25,6 +25,7 @@ com\sxy\util\db\Page.class
 com\sxy\dto\DataTablesResult.class
 com\sxy\service\DeviceService.class
 com\sxy\shiro\ShiroDbRealm.class
+com\sxy\shiro\ShiroUtil.class
 com\sxy\mapper\UserMapper.class
 com\sxy\pojo\Leave.class
 com\sxy\controller\FileController.class

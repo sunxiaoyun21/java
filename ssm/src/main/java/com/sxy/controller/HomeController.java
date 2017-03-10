@@ -47,4 +47,8 @@ public class HomeController {
         return  "redirect:/";
     }
 
+    @RequestMapping("/403")
+    public  String error(){
+        return "403";
+    }
 }
