@@ -85,4 +85,35 @@
     <bean id="managementService" factory-bean="processEngineFactory"
           factory-method="getManagementService" />
 
+
+    <!--shiro-->
+    <bean  id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!--登录成功地址-->
+        <property name="loginUrl" value="/"/>
+        <!--成功后地址-->
+        <property name="successUrl" value="/home"/>
+        <!--没有权限给用户提示的页面-->
+        <property name="unauthorizedUrl" value="/403"/>
+        <!--权限配置-->
+        <property name="filterChainDefinitions">
+            <value>
+                /static/** = anon<!--匿名访问-->
+                /wx/** = anon
+                /user = roles[role_admin]
+                /setting/** = roles[role_admin]
+                /** =authc<!--根及其子目录认证-->
+            </value>
+        </property>
+    </bean>
+
+    <bean id="securityManager"  class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="shiroDbRealm"/>
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
+    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"></bean>
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+
+
 </beans>

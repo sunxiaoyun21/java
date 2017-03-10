@@ -25,4 +25,7 @@ public interface UserMapper {
 
     List<User> findByPageAndParam(@Param("start") int start,@Param("pageSize") int pageSize,
                                   @Param("qName") String qName,@Param("qRole") String qRole);
+
+    User findUserByName(String userName);
+
 }

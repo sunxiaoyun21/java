@@ -42,7 +42,18 @@
                         </li>
                     </ul>
                 </li>
+            <li class="header">工作流模块</li>
+            <li class="treeview ${fn:startsWith(param.menu,"process") ? 'active' : ''}">
+                <a href="#">
+                    <i class="fa fa-bar-chart"></i> <span> 个人流程</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="${param.menu == 'pro_apply' ? 'active' : ''}">
+                        <a href="/process"><i class="fa fa-circle-o"></i> 发起流程</a>
+                    </li>
 
+                </ul>
+            </li>
 
                 <li class="header">设置模块</li>
                 <li class="treeview ${fn:startsWith(param.menu,'sys_') ? 'active' : ''}">
