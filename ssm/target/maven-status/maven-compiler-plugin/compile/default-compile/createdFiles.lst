@@ -1,6 +1,7 @@
 com\sxy\pojo\DeviceRentDetail.class
 com\sxy\exception\ServiceException.class
 com\sxy\controller\LeaveController.class
+com\sxy\mapper\LeaveMapper.class
 com\sxy\service\impl\DiskServiceImpl.class
 com\sxy\controller\UserController.class
 com\sxy\pojo\Device.class
@@ -40,7 +41,9 @@ com\sxy\exception\NotFoundException.class
 com\sxy\service\UserService.class
 com\sxy\service\impl\FileServiceImpl.class
 com\sxy\service\FinanceService.class
+com\sxy\service\LeaveWorkFlow.class
 com\sxy\dto\DeviceRentDto$DeviceArrarBean.class
+com\sxy\service\impl\LeaveWorkFlowImpl.class
 com\sxy\service\impl\DeviceServiceImpl.class
 com\sxy\mapper\DeviceRentMapper.class
 com\sxy\Test.class
