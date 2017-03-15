@@ -1,12 +1,20 @@
 package com.sxy.pojo;
 
+import javax.persistence.*;
+
 /**
  * Created by Administrator on 2017/3/14.
  */
+@Entity
+@Table(name = "topic")
 public class Topic {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "contentid")
     private Content content;
 
 

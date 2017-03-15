@@ -1,12 +1,20 @@
 package com.sxy.pojo;
 
+import javax.persistence.*;
+
 /**
  * Created by Administrator on 2017/3/14.
  */
+@Entity
+@Table(name = "student")
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "schoolid")
     private School school;
 
     public School getSchool() {

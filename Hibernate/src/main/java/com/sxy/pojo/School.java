@@ -1,14 +1,20 @@
 package com.sxy.pojo;
 
+import javax.persistence.*;
 import java.util.Set;
 
 /**
  * Created by Administrator on 2017/3/14.
  */
+@Entity
+@Table(name = "school")
 public class School {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String schoolname;
+    @OneToMany(mappedBy = "school")
     private Set<Student> studentSet;
 
     public Set<Student> getStudentSet() {

@@ -15,10 +15,10 @@ public class OneToOneTest {
         session.getTransaction().begin();
 
         Person person=new Person();
-        person.setName("张三");
+        person.setName("张w");
 
         Card card=new Card();
-        card.setNum(1234321);
+        card.setNum(12311);
         card.setPerson(person);
 
         session.save(person);

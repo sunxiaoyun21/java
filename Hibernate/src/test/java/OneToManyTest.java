@@ -40,7 +40,7 @@ public class OneToManyTest {
         Session session= HibernateUtil.getSession();
         session.getTransaction().begin();
 
-        School school= (School) session.get(School.class,3);
+        School school= (School) session.get(School.class,4);
         System.out.println(school.getSchoolname());
 
         Set<Student> students=school.getStudentSet();

@@ -31,8 +31,18 @@
         <property name="cache.region.factory_class">
             org.hibernate.cache.ehcache.EhCacheRegionFactory
         </property>
+        <mapping class="com.sxy.pojo.User"/>
+        <mapping class="com.sxy.pojo.School"/>
+        <mapping class="com.sxy.pojo.Student"/>
+        <mapping class="com.sxy.pojo.Person"/>
+        <mapping class="com.sxy.pojo.Card"/>
+        <mapping class="com.sxy.pojo.Topic"/>
+        <mapping class="com.sxy.pojo.Content"/>
+        <mapping class="com.sxy.pojo.Students"/>
+        <mapping class="com.sxy.pojo.Teacher"/>
+        <mapping class="com.sxy.pojo.Task"/>
 
-        <!--映射文件-->
+       <!-- &lt;!&ndash;映射文件&ndash;&gt;
         <mapping resource="mapper/User.hbm.xml"></mapping>
         <mapping resource="mapper/School.hbm.xml"/>
         <mapping resource="mapper/Student.hbm.xml"/>
@@ -43,7 +53,7 @@
         <mapping resource="mapper/Students.hbm.xml"/>
         <mapping resource="mapper/Teacher.hbm.xml"/>
         <mapping resource="mapper/Task.hbm.xml"/>
-
+-->
 
     </session-factory>
 </hibernate-configuration>

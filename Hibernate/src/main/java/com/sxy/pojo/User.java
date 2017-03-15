@@ -1,10 +1,21 @@
 package com.sxy.pojo;
 
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
+
 /**
  * Created by Administrator on 2017/3/13.
  */
+@Entity
+@Table(name="user")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String password;
