@@ -2,14 +2,16 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
-    <class table="user" name="com.sxy.pojo.User">
-        <cache usage="read-write"/>
+<hibernate-mapping package="com.sxy.pojo">
+    <class table="t_teacher" name="Teacher">
         <id column="id" name="id">
             <!--主键策略 native:自动增长-->
             <generator class="native"/>
         </id>
-        <property name="name" column="name"/>
-        <property name="password"/>
+        <property name="teacher"/>
+       <set name="studentsSet" table="t_student_teacher" inverse="true">
+           <key column="teacherid"/>
+           <many-to-many class="Students" column="stuid"/>
+       </set>
     </class>
 </hibernate-mapping>

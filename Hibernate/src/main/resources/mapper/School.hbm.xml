@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class table="school" name="com.sxy.pojo.School">
+        <id column="id" name="id">
+            <!--主键策略 native:自动增长-->
+            <generator class="native"/>
+        </id>
+        <property name="schoolname"/>
+
+        <!--
+           inverse : true 本方放弃关系维护，对方维护两者的关系
+           cascade: delete 级联删除
+       -->
+        <set name="studentSet" inverse="true" cascade="delete" order-by="id desc">
+            <key column="schoolid"/>
+            <one-to-many class="com.sxy.pojo.Student"/>
+        </set>
+    </class>
+</hibernate-mapping>

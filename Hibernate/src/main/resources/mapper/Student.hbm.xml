@@ -3,13 +3,12 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class table="user" name="com.sxy.pojo.User">
-        <cache usage="read-write"/>
+    <class table="student" name="com.sxy.pojo.Student">
         <id column="id" name="id">
             <!--主键策略 native:自动增长-->
             <generator class="native"/>
         </id>
-        <property name="name" column="name"/>
-        <property name="password"/>
+        <property name="name"/>
+       <many-to-one name="school" class="com.sxy.pojo.School" column="schoolid" fetch="join"/>
     </class>
 </hibernate-mapping>

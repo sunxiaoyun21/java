@@ -1,5 +1,7 @@
 import com.sxu.util.HibernateUtil;
+import com.sxy.pojo.Card;
 import com.sxy.pojo.User;
+import org.hibernate.Cache;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.junit.Test;
@@ -25,9 +27,28 @@ public class HibernateTest {
     public void findById(){
         Session session=HibernateUtil.getSession();
         session.getTransaction().begin();
-        User user= (User) session.get(User.class,14);
+        User user= (User) session.get(User.class,20);
         System.out.println(user);
+
+        //清除所有对象一级缓存缓存session.clear();
+        //session.evict(user);//清除指定缓存
+
         session.getTransaction().commit();
+
+        Cache cache=HibernateUtil.getSessionFactory().getCache();
+
+        //清除所有的二级缓存
+        cache.evictAllRegions();
+        //清除指定对象的二级缓存
+        //cache.evictEntityRegion(User.class);
+        Session session1=HibernateUtil.getSession();
+        session1.getTransaction().begin();
+
+        User user1= (User) session1.get(User.class,20);
+        System.out.println(user1);
+
+        session1.getTransaction().commit();
+
     }
 
     @Test
