@@ -1,0 +1,6 @@
+com\sxy\dao\BaseDao.class
+com\sxy\pojo\Roles.class
+com\sxy\dao\UserDao.class
+com\sxy\pojo\User.class
+com\sxy\Controller\UserController.class
+com\sxy\service\UserService.class

@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="git:war exploded">
+    <output-path>$PROJECT_DIR$/target/ssh</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="git" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/ssh/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="git/web/Web" />
+    </root>
+  </artifact>
+</component>
