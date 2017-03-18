@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Administrator on 2017/3/16.
  */
 @Repository
-public class UserDao extends BaseDao<User> {
+public class UserDao extends BaseDao<User,Integer> {
 
 
 }

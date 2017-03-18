@@ -1,9 +1,15 @@
 package com.sxy.dao;
 
 import com.sxy.pojo.User;
+import com.sxy.util.Page;
+import com.sxy.util.QueryParam;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
@@ -14,7 +20,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/3/16.
  */
-public class BaseDao<T> {
+public class BaseDao<T,PK extends Serializable> {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -37,17 +43,59 @@ public class BaseDao<T> {
         getSession().delete(entity);
     }
 
-    public T findById(Integer id){
+    public T findById(PK id){
        return (T) getSession().get(clazz,id);
     }
-
-
-
 
     public List<T> findAll(){
         Criteria criteria=getSession().createCriteria(clazz);
         return criteria.list();
     }
 
+    public Long cont(){
+        Criteria criteria=getSession().createCriteria(clazz);
+       criteria.setProjection(Projections.rowCount());
+       return (Long) criteria.uniqueResult();
+    }
 
+    public Page<T> findbyPage(int pageNo,int pageSize){
+        Page<T> page=new Page<T>(pageNo,pageSize,cont().intValue());
+        Criteria criteria=getSession().createCriteria(clazz);
+        criteria.setFirstResult(page.getStart());
+        criteria.setMaxResults(pageSize);
+        List<T> items=criteria.list();
+        page.setItems(items);
+        return page;
+
+
+
+    }
+
+    public List<T> findByQueryParam(List<QueryParam> queryParamList){
+        Criteria criteria=getSession().createCriteria(clazz);
+        for (QueryParam queryParam:queryParamList){
+            criteria.add(buildCriteriaByQueryParam(queryParam));
+        }
+        return criteria.list();
+    }
+   private Criterion buildCriteriaByQueryParam(QueryParam queryParam){
+
+        String propertyName=queryParam.getPropertyName();
+        Object value=queryParam.getValue();
+        String type=queryParam.getType();
+        if("eq".equalsIgnoreCase(type)){
+            return Restrictions.eq(propertyName,value);
+        }else if("gt".equalsIgnoreCase(type)){
+            return Restrictions.gt(propertyName,value);
+        }else if("ge".equalsIgnoreCase(type)) {
+            return Restrictions.ge(propertyName, value);
+        }else if("lt".equalsIgnoreCase(type)) {
+            return Restrictions.lt(propertyName, value);
+        }else if("le".equalsIgnoreCase(type)) {
+            return Restrictions.le(propertyName, value);
+        }else if("like".equalsIgnoreCase(type)) {
+            return Restrictions.like(propertyName, value.toString(), MatchMode.ANYWHERE);
+        }
+        return null;
+   }
 }

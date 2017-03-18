@@ -1,6 +1,8 @@
 D:\sxy\git\ssh\src\main\java\com\sxy\dao\UserDao.java
+D:\sxy\git\ssh\src\main\java\com\sxy\util\Page.java
 D:\sxy\git\ssh\src\main\java\com\sxy\service\UserService.java
 D:\sxy\git\ssh\src\main\java\com\sxy\pojo\Roles.java
 D:\sxy\git\ssh\src\main\java\com\sxy\pojo\User.java
 D:\sxy\git\ssh\src\main\java\com\sxy\Controller\UserController.java
 D:\sxy\git\ssh\src\main\java\com\sxy\dao\BaseDao.java
+D:\sxy\git\ssh\src\main\java\com\sxy\util\QueryParam.java

@@ -2,6 +2,8 @@ package com.sxy.service;
 
 import com.sxy.dao.UserDao;
 import com.sxy.pojo.User;
+import com.sxy.util.Page;
+import com.sxy.util.QueryParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,5 +37,18 @@ public class UserService {
     @Transactional(readOnly = true)
     public List<User> findAll(){
         return userDao.findAll();
+    }
+
+    
+
+    @Transactional(readOnly = true)
+    public Page<User> findByPage(int pageNo){
+        return userDao.findbyPage(pageNo,3);
+
+    }
+
+    @Transactional(readOnly = true)
+    public List<User> findByQueryParam(List<QueryParam> queryParamList) {
+        return userDao.findByQueryParam(queryParamList);
     }
 }
