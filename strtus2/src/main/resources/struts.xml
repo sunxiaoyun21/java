@@ -3,21 +3,57 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <constant name="struts.action.extension" value=","/>
 
-        <package name="myPackage" extends="struts-default" >
+   <include file="strut-account.xml"/>
+    <include file="strut-task.xml"/>
+    
+    <package name="basePackage" extends="struts-default" abstract="true">
+        <interceptors>
+            <!--定义一个拦截器-->
+            <interceptor name="login" class="com.sxy.action.interceptor.LoginInterceptor"/>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="login"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="myStack"/>
+        
+        <global-results>
+                <result name="login" type="redirectAction">
+                    <param name="actionName">index</param>
+                    <param name="nameSpace">/</param>
+                </result>
+        </global-results>
+    </package>
+
+
+
+   <!-- <constant name="struts.action.extension" value=","/>
+
+        <package name="myPackage" extends="struts-default" namespace="/">
+            <interceptors>
+                <interceptor-stack name="myStack">
+                    <interceptor-ref name="defaultStack"/>
+                    <interceptor-ref name="timer"/>
+                </interceptor-stack>
+            </interceptors>
+            <default-interceptor-ref name="myStack"/>
+            
+            
+            
+            
             <action name="hello"  class="com.sxy.action.HelloAction">
                 <result name="success">/WEB-INF/views/hello.jsp</result>
             </action>
 
-            <!--
+            &lt;!&ndash;
                 name : 返回结果的名称 默认值为success
                 type : 跳转类型，
                         默认为dispatch Action -> View 请求转发
                         chain Action -> Action 请求转发
                         redirect Action-> View 重定向
                         redirectAction  Action -> Action 重定向
-            -->
+            &ndash;&gt;
             <action name="add" class="com.sxy.action.HelloAction" method="add">
                 <result name="success" type="redirectAction">
                     <param name="actionName">user</param>
@@ -36,7 +72,7 @@
                     <param name="actionName">new</param>
                 </result>
             </action>
-        </package>
+        </package>-->
 
 </struts>
 
