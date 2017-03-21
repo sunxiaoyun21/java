@@ -34,8 +34,9 @@ public class UserController {
        // Page<User> page=userService.findByQueryParam(pageNo,queryParamList);
 
         //List<User> users=userService.findAll();
-        List<User> users=userService.findByQueryParam(queryParamList);
-        model.addAttribute("items",users);
+
+        Page<User> page=userService.findByPage(pageNo,queryParamList);
+        model.addAttribute("page",page);
         return "user";
     }
 

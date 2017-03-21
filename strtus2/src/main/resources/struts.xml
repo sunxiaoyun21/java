@@ -6,10 +6,11 @@
 
    <include file="strut-account.xml"/>
     <include file="strut-task.xml"/>
+    <include file="struts-upload.xml"/>
     
     <package name="basePackage" extends="struts-default" abstract="true">
-        <interceptors>
-            <!--定义一个拦截器-->
+     <!--   <interceptors>
+            &lt;!&ndash;定义一个拦截器&ndash;&gt;
             <interceptor name="login" class="com.sxy.action.interceptor.LoginInterceptor"/>
             <interceptor-stack name="myStack">
                 <interceptor-ref name="defaultStack"/>
@@ -23,7 +24,7 @@
                     <param name="actionName">index</param>
                     <param name="nameSpace">/</param>
                 </result>
-        </global-results>
+        </global-results>-->
     </package>
 
 

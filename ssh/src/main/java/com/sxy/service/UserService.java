@@ -42,8 +42,8 @@ public class UserService {
     
 
     @Transactional(readOnly = true)
-    public Page<User> findByPage(int pageNo){
-        return userDao.findbyPage(pageNo,3);
+    public Page<User> findByPage(int pageNo,List<QueryParam> queryParamList){
+        return userDao.findbyPage(pageNo,3,queryParamList);
 
     }
 

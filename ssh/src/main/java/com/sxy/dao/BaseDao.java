@@ -6,10 +6,7 @@ import com.sxy.util.QueryParam;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.MatchMode;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
@@ -58,6 +55,9 @@ public class BaseDao<T,PK extends Serializable> {
        return (Long) criteria.uniqueResult();
     }
 
+
+
+
     public Page<T> findbyPage(int pageNo,int pageSize){
         Page<T> page=new Page<T>(pageNo,pageSize,cont().intValue());
         Criteria criteria=getSession().createCriteria(clazz);
@@ -67,6 +67,29 @@ public class BaseDao<T,PK extends Serializable> {
         page.setItems(items);
         return page;
 
+    }
+
+    public Long cont(List<QueryParam> queryParamList){
+        Criteria criteria=getSession().createCriteria(clazz);
+        for (QueryParam queryParam:queryParamList){
+            criteria.add(buildCriteriaByQueryParam(queryParam));
+        }
+        criteria.setProjection(Projections.rowCount());
+        return (Long) criteria.uniqueResult();
+    }
+
+    public Page<T> findbyPage(int pageNo,int pageSize,List<QueryParam> queryParamList) {
+        Long count=cont(queryParamList);
+        Page<T> page=new Page<T>(pageNo,pageSize,count.intValue());
+        Criteria criteria=getSession().createCriteria(clazz);
+        for (QueryParam queryParam:queryParamList){
+            criteria.add(buildCriteriaByQueryParam(queryParam));
+        }
+        criteria.setFirstResult(page.getStart());
+        criteria.setMaxResults(pageSize);
+        List<T> items=criteria.list();
+        page.setItems(items);
+        return page;
 
 
     }
@@ -78,11 +101,30 @@ public class BaseDao<T,PK extends Serializable> {
         }
         return criteria.list();
     }
-   private Criterion buildCriteriaByQueryParam(QueryParam queryParam){
 
+
+   private Criterion buildCriteriaByQueryParam(QueryParam queryParam){
         String propertyName=queryParam.getPropertyName();
-        Object value=queryParam.getValue();
-        String type=queryParam.getType();
+       Object value=queryParam.getValue();
+       String type=queryParam.getType();
+        if(propertyName.contains("_or_")){
+            String[] array=propertyName.split("_or_");
+            Disjunction disjunction=Restrictions.disjunction();
+            for (String name:array){
+               Criterion criterion=buildCriteriaByQueryParam(name,value,type);
+               disjunction.add(criterion);
+            }
+            return disjunction;
+        }else {
+            return buildCriteriaByQueryParam(propertyName,value,type);
+        }
+
+
+
+   }
+
+    private Criterion buildCriteriaByQueryParam(String propertyName,Object value,String type){
+
         if("eq".equalsIgnoreCase(type)){
             return Restrictions.eq(propertyName,value);
         }else if("gt".equalsIgnoreCase(type)){
@@ -97,5 +139,5 @@ public class BaseDao<T,PK extends Serializable> {
             return Restrictions.like(propertyName, value.toString(), MatchMode.ANYWHERE);
         }
         return null;
-   }
+    }
 }

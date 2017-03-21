@@ -1,0 +1,7 @@
+127.0.0.1 - - [21/Mar/2017:21:34:55 +0800] "GET /user/list HTTP/1.1" 200 2354 http-bio-80-exec-1 2294
+127.0.0.1 - - [21/Mar/2017:21:34:55 +0800] "GET /repo/css/bootstrap.min.css HTTP/1.1" 304 - http-bio-80-exec-3 38
+127.0.0.1 - - [21/Mar/2017:21:35:01 +0800] "POST /user/list HTTP/1.1" 200 979 http-bio-80-exec-4 110
+127.0.0.1 - - [21/Mar/2017:21:35:11 +0800] "POST /user/list HTTP/1.1" 200 703 http-bio-80-exec-5 24
+127.0.0.1 - - [21/Mar/2017:21:35:14 +0800] "GET /user/list HTTP/1.1" 200 2354 http-bio-80-exec-6 30
+127.0.0.1 - - [21/Mar/2017:21:35:27 +0800] "POST /user/list HTTP/1.1" 200 703 http-bio-80-exec-10 15
+127.0.0.1 - - [21/Mar/2017:21:35:29 +0800] "GET /user/list HTTP/1.1" 200 2354 http-bio-80-exec-10 32

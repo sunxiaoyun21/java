@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <form action="" class="form-inline">
-            <input type="text" name="q_eq_username" class="form-control" placeholder="请输入姓名">
+            <input type="text" name="q_eq_s_username_or_address" value="${q_eq_s_username_or_address}" class="form-control" placeholder="请输入姓名">
+
             <button class="btn btn-default">搜索</button>
         </form>
         <table class="table">
@@ -21,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${items}" var="user">
+                <c:forEach items="${page.items}" var="user">
                     <tr>
                         <td><a href="/user/${user.id}">${user.username}</a></td>
                         <td>${user.address}</td>
@@ -43,7 +44,7 @@
                 prev:'上一页',
                 next:'下一页',
                 last:'末页',
-                href:'?p={{number}}'
+                href:'?p={{number}}&q_eq_s_username_or_address=${q_eq_s_username_or_address}'
             });
         });
     </script>
