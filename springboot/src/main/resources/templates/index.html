@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${message}"></h1>
+
+    <h1 th:if="${name == 'jack'}">你好Jack </h1>
+    <h1 th:unless="${name =='jack'}">你好jack</h1>
+
+    <!--条件判断-->
+    <ul th:switch="${name}">
+        <li th:case="'jacks'">nihao</li>
+        <li th:case="'rose'">rose</li>
+        <li th:case="*">others</li>
+    </ul>
+    <hr>
+    <!--循环-->
+        <ul>
+            <li th:each="n,iterStat : ${names}" th:text="${iterStat.count}"></li>
+        </ul>
+
+  <!--表单值-->
+    <input type="text" th:value="${name}" th:attr="data-name=${name},rel=${name}">
+
+    <hr>
+    <a th:href="@{/book(name=${name})}">删除</a>
+    <a th:href="@{/book/{name}/del(name=${name})}">删除2</a>
+
+    <script th:inline="javascript">
+        var name=[[${name}]];
+        [# th:if=${name=='rose'}]
+            var id=112;
+        [/]
+    </script>
+</body>
+</html>

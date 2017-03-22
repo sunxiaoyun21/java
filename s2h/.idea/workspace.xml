@@ -33,10 +33,21 @@
       <file leaf-file-name="QueryParam.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/util/QueryParam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1444">
+            <state relative-caret-position="2484">
               <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#502#503#0" expanded="false" />
+                <element signature="e#529#530#0" expanded="false" />
+                <element signature="e#569#570#0" expanded="false" />
+                <element signature="e#601#602#0" expanded="false" />
+                <element signature="e#640#641#0" expanded="false" />
+                <element signature="e#675#676#0" expanded="false" />
+                <element signature="e#731#732#0" expanded="false" />
+                <element signature="e#779#780#0" expanded="false" />
+                <element signature="e#811#812#0" expanded="false" />
+                <element signature="e#839#840#0" expanded="false" />
+                <element signature="e#881#882#0" expanded="false" />
+                <element signature="e#915#916#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -57,9 +68,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,8 +96,8 @@
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="864">
+              <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,13 +108,18 @@
       <file leaf-file-name="BaseDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/dao/BaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="864">
               <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#BaseDao#0;class#BaseDao#0" expanded="false" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="false" />
+                <element signature="e#892#893#0" expanded="false" />
+                <element signature="e#926#927#0" expanded="false" />
+                <element signature="e#975#976#0" expanded="false" />
+                <element signature="e#1010#1011#0" expanded="false" />
+                <element signature="e#1053#1054#0" expanded="false" />
+                <element signature="e#1167#1168#0" expanded="false" />
+                <element signature="e#1220#1221#0" expanded="false" />
                 <element signature="method#findAll#0;class#BaseDao#0" expanded="false" />
               </folding>
             </state>
@@ -115,7 +129,7 @@
       <file leaf-file-name="UserAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/action/UserAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="756">
               <caret line="29" column="91" lean-forward="false" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -471,9 +485,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -949,15 +963,16 @@
       <updated>1490069924550</updated>
       <workItem from="1490069929792" duration="12861000" />
       <workItem from="1490096746539" duration="2035000" />
-      <workItem from="1490103092286" duration="243000" />
+      <workItem from="1490103092286" duration="431000" />
+      <workItem from="1490142990313" duration="847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15139000" />
+    <option name="totallyTimeSpent" value="16174000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -981,7 +996,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8594771" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1018,6 +1033,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/util/QueryParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="e#502#503#0" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#569#570#0" expanded="false" />
+            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#640#641#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#731#732#0" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#811#812#0" expanded="false" />
+            <element signature="e#839#840#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/content/user/edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1030,9 +1066,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/content/user/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/content/user/new.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="23" column="67" lean-forward="false" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding>
+            <element signature="method#BaseDao#0;class#BaseDao#0" expanded="false" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#926#927#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
+            <element signature="method#findAll#0;class#BaseDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/action/UserAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="29" column="91" lean-forward="false" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/content/user/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="17" column="68" lean-forward="false" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,10 +1180,15 @@
         <state relative-caret-position="720">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#BaseDao#0;class#BaseDao#0" expanded="false" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#926#927#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
             <element signature="method#findAll#0;class#BaseDao#0" expanded="false" />
           </folding>
         </state>
@@ -1106,9 +1224,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,10 +1259,15 @@
         <state relative-caret-position="1404">
           <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#BaseDao#0;class#BaseDao#0" expanded="false" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#926#927#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
             <element signature="method#findAll#0;class#BaseDao#0" expanded="false" />
           </folding>
         </state>
@@ -1173,7 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,9 +1358,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,7 +1380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/action/UserAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="756">
           <caret line="29" column="91" lean-forward="false" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1281,23 +1398,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/util/QueryParam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
+        <state relative-caret-position="2484">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#502#503#0" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#569#570#0" expanded="false" />
+            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#640#641#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#731#732#0" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#811#812#0" expanded="false" />
+            <element signature="e#839#840#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/dao/BaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
+        <state relative-caret-position="864">
           <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#BaseDao#0;class#BaseDao#0" expanded="false" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#926#927#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
             <element signature="method#findAll#0;class#BaseDao#0" expanded="false" />
           </folding>
         </state>
@@ -1305,8 +1438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxy/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="864">
+          <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
