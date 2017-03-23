@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title layout:title-pattern=" $LAYOUT_TITLE - $CONTENT_TITLE">Title</title>
+</head>
+<body>
+
+  <h1>Header</h1>
+  <div layout:fragment="content"></div>
+
+  <h3>Footer
+    <p layout:fragment="ft"></p>
+  </h3>
+
+
+
+
+
+
+
+   <!-- <div class="head" th:fragment="hd(name,year)">
+        @<span th:text="${name}+'-'+${year}"></span>
+
+    </div>
+    <div class="ft" th:fragment="ft">
+        @系统软件
+    </div>-->
+</body>
+</html>

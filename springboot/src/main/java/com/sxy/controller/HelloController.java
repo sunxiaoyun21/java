@@ -23,6 +23,6 @@ public class HelloController {
         model.addAttribute("name",name);
         model.addAttribute("names",names);
 
-        return "index";
+        return "main";
     }
 }
