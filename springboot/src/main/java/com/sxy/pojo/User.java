@@ -2,14 +2,22 @@ package com.sxy.pojo;
 
 import lombok.Data;
 
-/**
- * Created by Administrator on 2017/3/23.
- */
+import java.sql.Timestamp;
+
 @Data
 public class User {
 
+
     private Integer id;
     private String username;
-    private String address;
+    private String password;
+    private String realname;
+    private String weixin;
+    private Timestamp createtime;
+    private Boolean enable;
+    private Integer roleid;
+    private Role role;
+
+
 
 }

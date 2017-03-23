@@ -1,8 +1,13 @@
 package com.sxy.controller;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
@@ -14,15 +19,23 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-    @GetMapping("/hello")
-    public String hello(Model model){
-        model.addAttribute("message","hello,你好");
+    @GetMapping("/login")
+    public String hello(){
+        return "login";
+    }
 
-        String name="jack";
-        List<String> names= Arrays.asList("aa","bb","cc");
-        model.addAttribute("name",name);
-        model.addAttribute("names",names);
+    @PostMapping ("/login")
+    public String hello(String username,String password){
+        Subject subject= SecurityUtils.getSubject();
+        try {
+            subject.login(new UsernamePasswordToken(username,password));
 
-        return "main";
+
+            return "redirect:/home";
+        }catch (LockedAccountException ex){
+            ex.printStackTrace();
+            return "redirect:/login";
+        }
+
     }
 }

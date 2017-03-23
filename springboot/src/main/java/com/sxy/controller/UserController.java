@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/3/23.
  */
-@Controller("/user")
+@Controller("/home")
 public class UserController {
 
     @Autowired
@@ -21,8 +21,10 @@ public class UserController {
     @GetMapping
     public String list(Model model){
 
-        List<User> userList=userService.findAll();
-        model.addAttribute("userList",userList);
-        return "list";
+        //List<User> userList=userService.findAll();
+        //model.addAttribute("userList",userList);
+        return "main";
     }
+
+
 }
