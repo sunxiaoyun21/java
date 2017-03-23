@@ -1,0 +1,24 @@
+2017-03-23 22:26:25,305 INFO  - Starting ServiceWrapper in the CLI mode
+2017-03-23 22:26:37,509 INFO  - Completed. Exit code is 0
+2017-03-23 22:29:02,705 INFO  - Starting ServiceWrapper in the service mode
+2017-03-23 22:29:04,202 INFO  - Starting java -jar app.jar --debug 
+2017-03-23 22:29:04,348 INFO  - Starting java -jar app.jar --debug 
+2017-03-23 22:29:06,019 INFO  - Completed. Exit code is 0
+2017-03-23 22:30:54,271 INFO  - Starting ServiceWrapper in the CLI mode
+2017-03-23 22:30:55,607 FATAL - Unhandled exception
+System.Exception: Unknown command: uninatall
+   дк winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   дк winsw.WrapperService.Main(String[] args)
+2017-03-23 22:31:29,360 INFO  - Starting ServiceWrapper in the CLI mode
+2017-03-23 22:31:29,944 INFO  - Uninstalling the service with id 'myapp'
+2017-03-23 22:31:30,134 INFO  - Completed. Exit code is 0
+2017-03-23 22:35:08,061 INFO  - Starting ServiceWrapper in the CLI mode
+2017-03-23 22:35:09,446 INFO  - Completed. Exit code is 0
+2017-03-23 22:35:25,392 INFO  - Starting ServiceWrapper in the service mode
+2017-03-23 22:35:25,429 INFO  - Starting java -jar "C:\Users\Administrator\Desktop\app\app.jar"
+2017-03-23 22:35:25,434 INFO  - Starting java -jar "C:\Users\Administrator\Desktop\app\app.jar"
+2017-03-23 22:35:25,647 INFO  - Started 2692
+2017-03-23 22:38:03,068 INFO  - Starting ServiceWrapper in the CLI mode
+2017-03-23 22:38:05,221 INFO  - Uninstalling the service with id 'myapp'
+2017-03-23 22:38:05,221 WARN  - The service with id 'myapp' is running. It may be impossible to uninstall it
+2017-03-23 22:38:05,252 INFO  - Completed. Exit code is 0
