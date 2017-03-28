@@ -80,7 +80,7 @@
         limit ${start},${pageSize}
     </select>
     <select id="findUserByName" resultType="com.sxy.pojo.User">
-        SELECT *from t_user WHERE username=#{userName}
+        SELECT *from t_user WHERE user_name=#{userName}
     </select>
     <resultMap id="UserMapN1" type="User">
         <id column="id" property="id"/>
